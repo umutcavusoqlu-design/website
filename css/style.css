@@ -106,16 +106,18 @@ ul { list-style: none; }
 
 /* ---- HEADER & NAVİGASYON ---- */
 #main-header {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: linear-gradient(
-    to bottom,
-    rgba(5,10,20,0.88) 0%,
-    rgba(5,10,20,0.00) 100%
-  );
-  border: none;
-  box-shadow: none;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1320px;
+  background: rgba(5, 10, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 /* Container'ı header içinde tam genişliğe aç */
@@ -130,7 +132,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 60px;
+  padding: 4px 60px;
   gap: 0;
 }
 
@@ -143,7 +145,7 @@ ul { list-style: none; }
 }
 
 .logo-img {
-  height: 96px;
+  height: 75px;
   width: auto;
   display: block;
 }
@@ -247,12 +249,12 @@ ul { list-style: none; }
   background-image:
     linear-gradient(
       to right,
-      rgba(5,10,20,0.82) 0%,
-      rgba(5,10,20,0.82) 35%,
-      rgba(5,10,20,0.15) 65%,
+      rgba(5,10,20,0.75) 0%,
+      rgba(5,10,20,0.75) 30%,
+      rgba(5,10,20,0.20) 60%,
       rgba(5,10,20,0.00) 100%
     ),
-    url('../images/c3788b4d-8335-41e2-92af-01dd82377218.png');
+    url('../images/aluminyum-profil.png');
   background-size: cover;
   background-position: center center;
   background-color: #05080e;
@@ -331,8 +333,13 @@ ul { list-style: none; }
 .hero-features {
   position: relative;
   z-index: 1;
-  background: rgba(255,255,255,0.05);
-  border-top: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 10, 20, 0.0) 0%,
+    rgba(5, 10, 20, 0.85) 40%,
+    rgba(5, 10, 20, 0.95) 100%
+  );
+  border-top: none;
   padding: 26px 0;
 }
 
