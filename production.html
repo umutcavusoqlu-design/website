@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production — RAU Metals</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%);
+      padding: 130px 0 70px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size:clamp(2rem,4vw,3rem); color:var(--white); font-weight:900; margin-bottom:14px; }
+    .page-hero p  { color:rgba(255,255,255,0.6); font-size:1rem; max-width:580px; margin:0 auto; }
+    .breadcrumb   { color:rgba(255,255,255,0.4); font-size:0.8rem; margin-bottom:16px; }
+    .breadcrumb a { color:var(--orange); }
+
+    /* ---- DETAYLI ADIM BÖLÜMÜ ---- */
+    .process-detail { padding: 90px 0; background: var(--white); }
+    .process-detail:nth-child(even) { background: var(--light); }
+
+    .step-detail-grid {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 36px;
+      align-items: start;
+      max-width: 860px;
+      margin: 0 auto 60px;
+    }
+    .step-detail-grid:last-child { margin-bottom: 0; }
+
+    .step-number-large {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .step-detail-body h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .step-detail-body p {
+      color: var(--gray);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .step-specs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .step-spec-tag {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* ---- KAPASİTE BÖLÜMÜ ---- */
+    .capacity-section {
+      padding: 90px 0;
+      background: var(--navy);
+    }
+    .capacity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .capacity-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .capacity-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(26,111,255,0.12);
+      border: 1.5px solid rgba(26,111,255,0.3);
+      display: flex; align-items:center; justify-content:center;
+      margin: 0 auto 16px;
+    }
+    .capacity-num {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .capacity-label {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    /* ---- MAKİNE PARKI ---- */
+    .machines-section { padding: 90px 0; background: var(--light); }
+    .machines-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .machine-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--orange);
+    }
+    .machine-icon {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      background: rgba(26,111,255,0.08);
+      display: flex; align-items:center; justify-content:center;
+      margin-bottom: 16px;
+    }
+    .machine-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .machine-spec {
+      color: var(--gray);
+      font-size: 0.83rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .step-detail-grid { grid-template-columns: 1fr; gap: 16px; }
+      .capacity-grid    { grid-template-columns: repeat(2, 1fr); }
+      .machines-grid    { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 1024px) {
+      .machines-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav id="nav-links">
+          <a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a>
+          <a href="production.html" data-en="Production" data-tr="Üretim">Production</a>
+          <a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a>
+          <a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a>
+          <a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-blue"
+               data-en="Request a Quote →" data-tr="Teklif Al →">
+              Request a Quote →
+            </a>
+          </div>
+          <div class="lang-switcher">
+            <button id="lang-en" onclick="switchLang('en')" class="active">EN</button>
+            <span class="lang-sep">|</span>
+            <button id="lang-tr" onclick="switchLang('tr')">TR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SAYFA BAŞLIĞI -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-en="Home" data-tr="Anasayfa">Home</a>
+        <span> / </span>
+        <span data-en="Production" data-tr="Üretim">Production</span>
+      </div>
+      <h1 data-en="Our Production" data-tr="Üretim Sürecimiz">Our Production</h1>
+      <p data-en="From raw billet to finished profile — precision at every step of our manufacturing process."
+         data-tr="Ham bilyetten bitmiş profile — üretim sürecimizin her adımında hassasiyet.">
+        From raw billet to finished profile — precision at every step of our manufacturing process.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       8 ADIMLI ÜRETİM SÜRECİ — DETAYLI AÇIKLAMA
+  =================================================== -->
+  <section class="process-detail">
+    <div class="container">
+
+      <div style="text-align:center; margin-bottom:56px;">
+        <span class="section-tag" data-en="STEP BY STEP" data-tr="ADIM ADIM">STEP BY STEP</span>
+        <h2 class="section-title"
+            data-en="From Billet to Finished Profile"
+            data-tr="Bilyetten Bitmiş Profile">
+          From Billet to Finished Profile
+        </h2>
+      </div>
+
+      <!-- Adım 01 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">01</div>
+        <div class="step-detail-body">
+          <h3 data-en="Billet Preparation" data-tr="Bilyet Hazırlama">Billet Preparation</h3>
+          <p data-en="[Placeholder] High-quality aluminum billets are selected and inspected according to alloy specifications before entering the production line. Our billets conform to EN 573 standards and are sourced from certified suppliers."
+             data-tr="[Yer Tutucu] Yüksek kaliteli alüminyum bilyetler, üretim hattına girmeden önce alaşım özelliklerine göre seçilir ve denetlenir. Bilyetlerimiz EN 573 standartlarına uygundur ve sertifikalı tedarikçilerden temin edilir.">
+            [Placeholder] High-quality aluminum billets are selected and inspected according to alloy specifications before entering the production line. Our billets conform to EN 573 standards and are sourced from certified suppliers.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag">Alloy: 6063 / 6061 / 6082</span>
+            <span class="step-spec-tag">EN 573 Standard</span>
+            <span class="step-spec-tag" data-en="Incoming Inspection" data-tr="Gelen Malzeme Kontrolü">Incoming Inspection</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 02 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">02</div>
+        <div class="step-detail-body">
+          <h3 data-en="Extrusion" data-tr="Ekstrüzyon">Extrusion</h3>
+          <p data-en="[Placeholder] Preheated billets are forced through precision-engineered dies under high pressure, forming the desired cross-section profile. Our extrusion presses operate at [X] MN capacity, enabling profiles up to [X] mm diameter."
+             data-tr="[Yer Tutucu] Önceden ısıtılmış bilyetler, yüksek basınç altında hassas kalıplardan geçirilerek istenen kesit profili elde edilir. Ekstrüzyon preslerimiz [X] MN kapasitede çalışmakta olup [X] mm çapa kadar profil üretilebilmektedir.">
+            [Placeholder] Preheated billets are forced through precision-engineered dies under high pressure, forming the desired cross-section profile. Our extrusion presses operate at [X] MN capacity, enabling profiles up to [X] mm diameter.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag">[X] MN Press</span>
+            <span class="step-spec-tag" data-en="Circle Size: up to [X] mm" data-tr="Çember Çapı: [X] mm'ye kadar">Circle Size: up to [X] mm</span>
+            <span class="step-spec-tag" data-en="Tolerance: ±0.1 mm" data-tr="Tolerans: ±0.1 mm">Tolerance: ±0.1 mm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 03 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">03</div>
+        <div class="step-detail-body">
+          <h3 data-en="Aging (Heat Treatment)" data-tr="Yaşlandırma (Isıl İşlem)">Aging (Heat Treatment)</h3>
+          <p data-en="[Placeholder] Freshly extruded profiles undergo controlled aging at specific temperatures to achieve the required mechanical properties (temper). T5 and T6 tempers are standard; custom heat treatments are available on request."
+             data-tr="[Yer Tutucu] Yeni ekstrüde edilmiş profiller, gerekli mekanik özellikleri (temperliği) elde etmek için belirli sıcaklıklarda kontrollü yaşlandırma işlemine tabi tutulur. T5 ve T6 temperleri standarttır; talep üzerine özel ısıl işlem uygulanabilir.">
+            [Placeholder] Freshly extruded profiles undergo controlled aging at specific temperatures to achieve the required mechanical properties (temper). T5 and T6 tempers are standard; custom heat treatments are available on request.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag">T5 / T6 Temper</span>
+            <span class="step-spec-tag">175–200 °C</span>
+            <span class="step-spec-tag" data-en="8–12 Hours" data-tr="8–12 Saat">8–12 Hours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 04 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">04</div>
+        <div class="step-detail-body">
+          <h3 data-en="Anodising" data-tr="Anodizasyon">Anodising</h3>
+          <p data-en="[Placeholder] Anodising creates a durable oxide layer on the aluminum surface, enhancing corrosion resistance and allowing for a range of decorative finishes. We offer natural, bronze, gold, and black anodising."
+             data-tr="[Yer Tutucu] Anodizasyon işlemi, alüminyum yüzeyde dayanıklı bir oksit tabakası oluşturarak korozyon direncini artırır ve çeşitli dekoratif yüzey işlemleri yapılabilmesini sağlar. Doğal, bronz, altın ve siyah anodizasyon sunmaktayız.">
+            [Placeholder] Anodising creates a durable oxide layer on the aluminum surface, enhancing corrosion resistance and allowing for a range of decorative finishes. We offer natural, bronze, gold, and black anodising.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag" data-en="Natural / Bronze / Gold / Black" data-tr="Doğal / Bronz / Altın / Siyah">Natural / Bronze / Gold / Black</span>
+            <span class="step-spec-tag">5–25 µm</span>
+            <span class="step-spec-tag">EN 12373</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 05 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">05</div>
+        <div class="step-detail-body">
+          <h3 data-en="Powder Coating" data-tr="Toz Boya">Powder Coating</h3>
+          <p data-en="[Placeholder] Electrostatic powder coating provides a uniform, durable and weather-resistant finish. We offer all RAL colors and wood-effect finishes. The coating thickness is [X]–[X] µm, conforming to Qualicoat Class 1 standards."
+             data-tr="[Yer Tutucu] Elektrostatik toz boya, düzgün, dayanıklı ve hava koşullarına dirençli bir yüzey sağlar. Tüm RAL renkleri ve ahşap görünümlü kaplamalar sunmaktayız. Kaplama kalınlığı [X]–[X] µm olup Qualicoat Sınıf 1 standartlarına uygundur.">
+            [Placeholder] Electrostatic powder coating provides a uniform, durable and weather-resistant finish. We offer all RAL colors and wood-effect finishes. The coating thickness is [X]–[X] µm, conforming to Qualicoat Class 1 standards.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag" data-en="All RAL Colors" data-tr="Tüm RAL Renkleri">All RAL Colors</span>
+            <span class="step-spec-tag">60–80 µm</span>
+            <span class="step-spec-tag">Qualicoat Class 1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 06 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">06</div>
+        <div class="step-detail-body">
+          <h3 data-en="CNC Machining" data-tr="CNC İşleme">CNC Machining</h3>
+          <p data-en="[Placeholder] Post-extrusion CNC machining allows for precise drilling, milling, cutting and punching operations. Our CNC department handles complex fabrication requirements to tight tolerances."
+             data-tr="[Yer Tutucu] Ekstrüzyon sonrası CNC işleme, hassas delme, frezeleme, kesme ve zımbalama işlemlerine olanak tanır. CNC departmanımız, sıkı toleranslarla karmaşık imalat gereksinimlerini karşılamaktadır.">
+            [Placeholder] Post-extrusion CNC machining allows for precise drilling, milling, cutting and punching operations. Our CNC department handles complex fabrication requirements to tight tolerances.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag" data-en="Drilling / Milling / Cutting" data-tr="Delme / Frezeleme / Kesme">Drilling / Milling / Cutting</span>
+            <span class="step-spec-tag">±0.05 mm</span>
+            <span class="step-spec-tag" data-en="Custom Fabrication" data-tr="Özel İmalat">Custom Fabrication</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 07 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">07</div>
+        <div class="step-detail-body">
+          <h3 data-en="Quality Control" data-tr="Kalite Kontrol">Quality Control</h3>
+          <p data-en="[Placeholder] Every batch undergoes dimensional inspection, surface quality checks and mechanical property testing before release. We use CMM machines, spectrometers and tensile testing equipment."
+             data-tr="[Yer Tutucu] Her parti, serbest bırakılmadan önce boyutsal muayene, yüzey kalitesi kontrolü ve mekanik özellik testinden geçirilir. CMM makineleri, spektrometreler ve çekme test cihazları kullanmaktayız.">
+            [Placeholder] Every batch undergoes dimensional inspection, surface quality checks and mechanical property testing before release. We use CMM machines, spectrometers and tensile testing equipment.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag">CMM Inspection</span>
+            <span class="step-spec-tag" data-en="Spectrometer Analysis" data-tr="Spektrometre Analizi">Spectrometer Analysis</span>
+            <span class="step-spec-tag" data-en="Tensile Testing" data-tr="Çekme Testi">Tensile Testing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adım 08 -->
+      <div class="step-detail-grid" data-animate>
+        <div class="step-number-large">08</div>
+        <div class="step-detail-body">
+          <h3 data-en="Packaging &amp; Delivery" data-tr="Paketleme &amp; Teslimat">Packaging &amp; Delivery</h3>
+          <p data-en="[Placeholder] Approved profiles are carefully packaged using protective film and wooden bundles to prevent damage during transport. We ship worldwide with standard lead times of [X]–[X] weeks."
+             data-tr="[Yer Tutucu] Onaylı profiller, taşıma sırasında hasarı önlemek için koruyucu film ve ahşap demetler kullanılarak özenle paketlenir. Standart [X]–[X] haftalık teslim süreleriyle dünya genelinde sevkiyat yapılmaktadır.">
+            [Placeholder] Approved profiles are carefully packaged using protective film and wooden bundles to prevent damage during transport. We ship worldwide with standard lead times of [X]–[X] weeks.
+          </p>
+          <div class="step-specs">
+            <span class="step-spec-tag" data-en="Protective Film" data-tr="Koruyucu Film">Protective Film</span>
+            <span class="step-spec-tag" data-en="Wooden Bundles" data-tr="Ahşap Demet">Wooden Bundles</span>
+            <span class="step-spec-tag" data-en="Worldwide Shipping" data-tr="Dünya Geneli Sevkiyat">Worldwide Shipping</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ÜRETİM KAPASİTESİ
+  =================================================== -->
+  <section class="capacity-section">
+    <div class="container">
+      <span class="section-tag" data-en="OUR CAPACITY" data-tr="ÜRETİM KAPASİTESİ">OUR CAPACITY</span>
+      <h2 class="section-title light"
+          data-en="Production Capacity" data-tr="Üretim Kapasitesi">
+        Production Capacity
+      </h2>
+
+      <div class="capacity-grid">
+
+        <div class="capacity-card" data-animate>
+          <div class="capacity-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><rect x="2" y="9" width="9" height="6" rx="1"/><path d="M11 12h11"/><polyline points="17 8 22 12 17 16"/></svg>
+          </div>
+          <div class="capacity-num">[X]</div>
+          <div class="capacity-label" data-en="MN Press Capacity" data-tr="MN Pres Kapasitesi">MN Press Capacity</div>
+        </div>
+
+        <div class="capacity-card" data-animate class="delay-1">
+          <div class="capacity-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="capacity-num">[X]</div>
+          <div class="capacity-label" data-en="Tonnes / Month" data-tr="Ton / Ay">Tonnes / Month</div>
+        </div>
+
+        <div class="capacity-card" data-animate class="delay-2">
+          <div class="capacity-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="capacity-num">500+</div>
+          <div class="capacity-label" data-en="Active Die Profiles" data-tr="Aktif Kalıp Profili">Active Die Profiles</div>
+        </div>
+
+        <div class="capacity-card" data-animate class="delay-3">
+          <div class="capacity-icon">
+            <svg class="icon-svg" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="capacity-num">30+</div>
+          <div class="capacity-label" data-en="Export Countries" data-tr="İhracat Ülkesi">Export Countries</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       MAKİNE PARKI
+  =================================================== -->
+  <section class="machines-section">
+    <div class="container">
+      <span class="section-tag" data-en="EQUIPMENT" data-tr="EKİPMAN">EQUIPMENT</span>
+      <h2 class="section-title"
+          data-en="Our Machinery &amp; Equipment"
+          data-tr="Makine Parkurumuz &amp; Ekipmanlar">
+        Our Machinery &amp; Equipment
+      </h2>
+
+      <div class="machines-grid">
+
+        <div class="machine-card" data-animate>
+          <div class="machine-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><rect x="2" y="9" width="9" height="6" rx="1"/><path d="M11 12h11"/><polyline points="17 8 22 12 17 16"/></svg>
+          </div>
+          <div class="machine-name" data-en="Extrusion Press" data-tr="Ekstrüzyon Presi">Extrusion Press</div>
+          <p class="machine-spec"
+             data-en="[Placeholder] [X] MN horizontal extrusion press. Billet diameter: [X] mm. Maximum profile circle: [X] mm."
+             data-tr="[Yer Tutucu] [X] MN yatay ekstrüzyon presi. Bilyet çapı: [X] mm. Maksimum profil dairesi: [X] mm.">
+            [Placeholder] [X] MN horizontal extrusion press. Billet diameter: [X] mm. Maximum profile circle: [X] mm.
+          </p>
+        </div>
+
+        <div class="machine-card" data-animate class="delay-1">
+          <div class="machine-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="machine-name" data-en="Aging Furnaces" data-tr="Yaşlandırma Fırınları">Aging Furnaces</div>
+          <p class="machine-spec"
+             data-en="[Placeholder] [X] forced-air circulation aging ovens. Capacity: [X] tonnes per cycle. Temperature precision: ±2 °C."
+             data-tr="[Yer Tutucu] [X] adet zorlamalı hava sirkülasyonlu yaşlandırma fırını. Kapasite: Çevrim başına [X] ton. Sıcaklık hassasiyeti: ±2 °C.">
+            [Placeholder] [X] forced-air circulation aging ovens. Capacity: [X] tonnes per cycle. Temperature precision: ±2 °C.
+          </p>
+        </div>
+
+        <div class="machine-card" data-animate class="delay-2">
+          <div class="machine-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+          </div>
+          <div class="machine-name" data-en="Powder Coating Line" data-tr="Toz Boya Hattı">Powder Coating Line</div>
+          <p class="machine-spec"
+             data-en="[Placeholder] Fully automated electrostatic powder coating line. Profile length: up to [X] m. Oven curing at 180–200 °C."
+             data-tr="[Yer Tutucu] Tam otomatik elektrostatik toz boya hattı. Profil uzunluğu: [X] m'ye kadar. 180–200 °C'de fırın kürü.">
+            [Placeholder] Fully automated electrostatic powder coating line. Profile length: up to [X] m. Oven curing at 180–200 °C.
+          </p>
+        </div>
+
+        <div class="machine-card" data-animate class="delay-1">
+          <div class="machine-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="machine-name" data-en="CNC Machining Centers" data-tr="CNC İşleme Merkezleri">CNC Machining Centers</div>
+          <p class="machine-spec"
+             data-en="[Placeholder] [X] multi-axis CNC machining centers. Drilling, milling, cutting and punching. Tolerance: ±0.05 mm."
+             data-tr="[Yer Tutucu] [X] adet çok eksenli CNC işleme merkezi. Delme, frezeleme, kesme ve zımbalama. Tolerans: ±0.05 mm.">
+            [Placeholder] [X] multi-axis CNC machining centers. Drilling, milling, cutting and punching. Tolerance: ±0.05 mm.
+          </p>
+        </div>
+
+        <div class="machine-card" data-animate class="delay-2">
+          <div class="machine-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <div class="machine-name" data-en="Anodising Line" data-tr="Anodizasyon Hattı">Anodising Line</div>
+          <p class="machine-spec"
+             data-en="[Placeholder] Continuous anodising line with pre-treatment tanks. Layer thickness: 5–25 µm. Capacity: [X] m² / day."
+             data-tr="[Yer Tutucu] Ön işlem tanklı sürekli anodizasyon hattı. Tabaka kalınlığı: 5–25 µm. Kapasite: [X] m² / gün.">
+            [Placeholder] Continuous anodising line with pre-treatment tanks. Layer thickness: 5–25 µm. Capacity: [X] m² / day.
+          </p>
+        </div>
+
+        <div class="machine-card" data-animate class="delay-3">
+          <div class="machine-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="machine-name" data-en="Quality Lab" data-tr="Kalite Laboratuvarı">Quality Lab</div>
+          <p class="machine-spec"
+             data-en="[Placeholder] In-house lab equipped with CMM, spectrometer, hardness tester and tensile testing machine. All batches tested before shipment."
+             data-tr="[Yer Tutucu] CMM, spektrometre, sertlik test cihazı ve çekme test makinesiyle donatılmış şirket içi laboratuvar. Tüm partiler sevkiyat öncesi test edilir.">
+            [Placeholder] In-house lab equipped with CMM, spectrometer, hardness tester and tensile testing machine. All batches tested before shipment.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+          <p data-en="RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide."
+             data-tr="RAU Metals, dünya genelinde endüstriyel, inşaat, güneş enerjisi ve otomotiv uygulamaları için yüksek kaliteli alüminyum ekstrüzyon profiller üretmektedir.">
+            RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Quick Links" data-tr="Hızlı Linkler">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a></li>
+            <li><a href="production.html" data-en="Production" data-tr="Üretim">Production</a></li>
+            <li><a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a></li>
+            <li><a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a></li>
+            <li><a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Contact Us" data-tr="İletişim">Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@raumetals.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.13 1 .37 1.97.71 2.91a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.34 1.91.58 2.91.71A2 2 0 0122 16.92z"/></svg>
+            <span>+90 000 000 00 00</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-en="[City], Turkey" data-tr="[Şehir], Türkiye">[City], Turkey</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Request a Quote" data-tr="Teklif Al">Request a Quote</h4>
+          <div class="footer-quote">
+            <p data-en="Send us your drawing and specifications."
+               data-tr="Çizim ve teknik özelliklerinizi bize gönderin.">Send us your drawing and specifications.</p>
+            <a href="contact.html" class="btn btn-blue" style="width:100%; justify-content:center;"
+               data-en="Get a Quote →" data-tr="Teklif Al →">Get a Quote →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="© 2025 RAU Metals. All Rights Reserved." data-tr="© 2025 RAU Metals. Tüm Hakları Saklıdır.">© 2025 RAU Metals. All Rights Reserved.</p>
+        <p data-en="Aluminum Extrusion Profiles Manufacturer" data-tr="Alüminyum Ekstrüzyon Profil Üreticisi">Aluminum Extrusion Profiles Manufacturer</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — RAU Metals</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Bu sayfaya özel ek stiller */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+      padding: 130px 0 70px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .page-hero p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: var(--orange); }
+
+    .about-section  { padding: 90px 0; background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-img {
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy), #1a3a5c);
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .about-img img { width:100%; height:380px; object-fit:cover; }
+
+    .about-text h2 { margin-bottom: 20px; }
+    .about-text p  { color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+
+    .stats-bar {
+      background: var(--navy);
+      padding: 50px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--orange);
+    }
+    .stat-label {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      margin-top: 4px;
+    }
+
+    .values-section { padding: 90px 0; background: var(--light); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .value-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 32px;
+      border-top: 3px solid var(--orange);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .value-icon { font-size: 2rem; margin-bottom: 16px; }
+    .value-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .value-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .about-grid  { grid-template-columns: 1fr; }
+      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER (tüm sayfalarda aynı) -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav id="nav-links">
+          <a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a>
+          <a href="production.html" data-en="Production" data-tr="Üretim">Production</a>
+          <a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a>
+          <a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a>
+          <a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-blue"
+               data-en="Request a Quote →" data-tr="Teklif Al →">
+              Request a Quote →
+            </a>
+          </div>
+          <div class="lang-switcher">
+            <button id="lang-en" onclick="switchLang('en')" class="active">EN</button>
+            <span class="lang-sep">|</span>
+            <button id="lang-tr" onclick="switchLang('tr')">TR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SAYFA BAŞLIĞI -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-en="Home" data-tr="Anasayfa">Home</a>
+        <span> / </span>
+        <span data-en="About Us" data-tr="Hakkımızda">About Us</span>
+      </div>
+      <h1 data-en="About RAU Metals" data-tr="RAU Metals Hakkında">About RAU Metals</h1>
+      <p data-en="Learn more about our company, our values and our mission."
+         data-tr="Firmamız, değerlerimiz ve misyonumuz hakkında daha fazla bilgi edinin.">
+        Learn more about our company, our values and our mission.
+      </p>
+    </div>
+  </div>
+
+  <!-- HAKKIMIZDA İÇERİK -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-img">
+          <img src="images/about-factory.jpg"
+               alt="RAU Metals Factory"
+               onerror="this.style.display='none'" />
+          🏭
+        </div>
+
+        <div class="about-text" data-animate>
+          <span class="section-tag"
+                data-en="OUR STORY" data-tr="HİKAYEMİZ">OUR STORY</span>
+          <h2 class="section-title"
+              data-en="Who We Are" data-tr="Biz Kimiz">Who We Are</h2>
+          <p data-en="RAU Metals is a leading manufacturer of aluminum extrusion profiles, serving global markets with precision-engineered solutions for industrial, construction, solar and automotive sectors."
+             data-tr="RAU Metals, endüstriyel, inşaat, güneş enerjisi ve otomotiv sektörlerine hassas mühendislik çözümleri sunarak küresel pazarlara hizmet eden önde gelen bir alüminyum ekstrüzyon profil üreticisidir.">
+            RAU Metals is a leading manufacturer of aluminum extrusion profiles, serving global markets with precision-engineered solutions for industrial, construction, solar and automotive sectors.
+          </p>
+          <p data-en="With over 20 years of experience, our state-of-the-art facility produces custom profiles to exact specifications, backed by rigorous quality control and ISO certification."
+             data-tr="20 yılı aşkın deneyimimizle, son teknoloji tesisimiz ISO sertifikası ve titiz kalite kontrol güvencesiyle tam spesifikasyona göre özel profiller üretmektedir.">
+            With over 20 years of experience, our state-of-the-art facility produces custom profiles to exact specifications, backed by rigorous quality control and ISO certification.
+          </p>
+          <p data-en="We export to over 30 countries across Europe, the Middle East and beyond, building lasting partnerships based on quality and reliability."
+             data-tr="Avrupa, Orta Doğu ve ötesinde 30'dan fazla ülkeye ihracat yaparak kalite ve güvenilirlik temeline dayalı kalıcı ortaklıklar kuruyoruz.">
+            We export to over 30 countries across Europe, the Middle East and beyond, building lasting partnerships based on quality and reliability.
+          </p>
+          <a href="contact.html" class="btn btn-orange" style="margin-top:12px;"
+             data-en="Contact Us →" data-tr="Bize Ulaşın →">Contact Us →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- İSTATİSTİKLER -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div data-animate>
+          <div class="stat-num">20+</div>
+          <div class="stat-label" data-en="Years of Experience" data-tr="Yıllık Deneyim">Years of Experience</div>
+        </div>
+        <div data-animate class="delay-1">
+          <div class="stat-num">30+</div>
+          <div class="stat-label" data-en="Countries Served" data-tr="Hizmet Verilen Ülke">Countries Served</div>
+        </div>
+        <div data-animate class="delay-2">
+          <div class="stat-num">500+</div>
+          <div class="stat-label" data-en="Profile Types" data-tr="Profil Çeşidi">Profile Types</div>
+        </div>
+        <div data-animate class="delay-3">
+          <div class="stat-num">1000+</div>
+          <div class="stat-label" data-en="Happy Clients" data-tr="Memnun Müşteri">Happy Clients</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEĞERLERİMİZ -->
+  <section class="values-section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:8px;">
+        <span class="section-tag"
+              data-en="WHAT WE STAND FOR" data-tr="DEĞERLERİMİZ">WHAT WE STAND FOR</span>
+      </div>
+      <h2 class="section-title" style="text-align:center;"
+          data-en="Our Core Values" data-tr="Temel Değerlerimiz">Our Core Values</h2>
+
+      <div class="values-grid">
+        <div class="value-card" data-animate>
+          <div class="value-icon">🎯</div>
+          <div class="value-title" data-en="Precision" data-tr="Hassasiyet">Precision</div>
+          <p class="value-desc"
+             data-en="Every profile we produce meets exact dimensional tolerances and surface quality standards."
+             data-tr="Ürettiğimiz her profil tam boyutsal toleransları ve yüzey kalitesi standartlarını karşılar.">
+            Every profile we produce meets exact dimensional tolerances and surface quality standards.
+          </p>
+        </div>
+        <div class="value-card" data-animate class="delay-1">
+          <div class="value-icon">🤝</div>
+          <div class="value-title" data-en="Reliability" data-tr="Güvenilirlik">Reliability</div>
+          <p class="value-desc"
+             data-en="We build long-term relationships with clients through consistent quality and on-time delivery."
+             data-tr="Tutarlı kalite ve zamanında teslimat ile müşterilerimizle uzun vadeli ilişkiler kuruyoruz.">
+            We build long-term relationships with clients through consistent quality and on-time delivery.
+          </p>
+        </div>
+        <div class="value-card" data-animate class="delay-2">
+          <div class="value-icon">🌱</div>
+          <div class="value-title" data-en="Sustainability" data-tr="Sürdürülebilirlik">Sustainability</div>
+          <p class="value-desc"
+             data-en="Aluminum is 100% recyclable. We are committed to environmentally responsible manufacturing."
+             data-tr="Alüminyum %100 geri dönüştürülebilir. Çevreye duyarlı üretime kararlıyız.">
+            Aluminum is 100% recyclable. We are committed to environmentally responsible manufacturing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (tüm sayfalarda aynı) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+          <p data-en="RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide."
+             data-tr="RAU Metals, dünya genelinde endüstriyel, inşaat, güneş enerjisi ve otomotiv uygulamaları için yüksek kaliteli alüminyum ekstrüzyon profiller üretmektedir.">
+            RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Quick Links" data-tr="Hızlı Linkler">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a></li>
+            <li><a href="production.html" data-en="Production" data-tr="Üretim">Production</a></li>
+            <li><a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a></li>
+            <li><a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a></li>
+            <li><a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Contact Us" data-tr="İletişim">Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@raumetals.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.13 1 .37 1.97.71 2.91a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.34 1.91.58 2.91.71A2 2 0 0122 16.92z"/></svg>
+            <span>+90 000 000 00 00</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-en="[City], Turkey" data-tr="[Şehir], Türkiye">[City], Turkey</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Request a Quote" data-tr="Teklif Al">Request a Quote</h4>
+          <div class="footer-quote">
+            <p data-en="Send us your drawing and specifications."
+               data-tr="Çizim ve teknik özelliklerinizi bize gönderin.">
+              Send us your drawing and specifications.
+            </p>
+            <a href="contact.html" class="btn btn-blue" style="width:100%; justify-content:center;"
+               data-en="Get a Quote →" data-tr="Teklif Al →">Get a Quote →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="© 2025 RAU Metals. All Rights Reserved."
+           data-tr="© 2025 RAU Metals. Tüm Hakları Saklıdır.">© 2025 RAU Metals. All Rights Reserved.</p>
+        <p data-en="Aluminum Extrusion Profiles Manufacturer"
+           data-tr="Alüminyum Ekstrüzyon Profil Üreticisi">Aluminum Extrusion Profiles Manufacturer</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

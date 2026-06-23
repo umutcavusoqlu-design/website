@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — RAU Metals</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+      padding: 130px 0 70px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size:clamp(2rem,4vw,3rem); color:var(--white); font-weight:900; margin-bottom:14px; }
+    .page-hero p  { color:rgba(255,255,255,0.6); font-size:1rem; max-width:550px; margin:0 auto; }
+    .breadcrumb   { color:rgba(255,255,255,0.4); font-size:0.8rem; margin-bottom:16px; }
+    .breadcrumb a { color:var(--orange); }
+
+    /* İletişim ana bölümü */
+    .contact-section { padding: 90px 0; background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 60px;
+    }
+
+    /* Sol: Bilgi kutuları */
+    .contact-info-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .contact-info-sub {
+      color: var(--gray);
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+    .info-card {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+    .info-card:hover { border-color: var(--orange); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .info-card-icon {
+      width: 46px; height: 46px;
+      border-radius: 8px;
+      background: rgba(232,100,10,0.1);
+      display: flex; align-items:center; justify-content:center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .info-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .info-card-value {
+      font-size: 0.9rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* Sağ: Form */
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .form-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-sub {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+    }
+
+    /* Form satırları */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(232,100,10,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* Dosya yükleme */
+    .file-upload {
+      border: 2px dashed var(--border);
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .file-upload:hover { border-color: var(--orange); background: rgba(232,100,10,0.03); }
+    .file-upload input { display: none; }
+    .file-upload-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .file-upload-text { font-size: 0.82rem; color: var(--gray); }
+    .file-upload-text span { color: var(--orange); font-weight: 600; }
+
+    /* Form gönder butonu */
+    .form-submit { width: 100%; justify-content: center; font-size: 1rem; padding: 15px; margin-top: 8px; }
+
+    /* Harita bölümü */
+    .map-section {
+      height: 380px;
+      background: var(--light);
+      position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      display: flex; flex-direction:column;
+      align-items: center; justify-content: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+      gap: 10px;
+    }
+    .map-placeholder span { font-size: 3rem; }
+
+    /* Başarı mesajı (form gönderildikten sonra) */
+    .success-msg {
+      display: none;
+      background: #dcfce7;
+      border: 1px solid #86efac;
+      color: #166534;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 0.88rem;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row     { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav id="nav-links">
+          <a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a>
+          <a href="production.html" data-en="Production" data-tr="Üretim">Production</a>
+          <a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a>
+          <a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a>
+          <a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-blue"
+               data-en="Request a Quote →" data-tr="Teklif Al →">
+              Request a Quote →
+            </a>
+          </div>
+          <div class="lang-switcher">
+            <button id="lang-en" onclick="switchLang('en')" class="active">EN</button>
+            <span class="lang-sep">|</span>
+            <button id="lang-tr" onclick="switchLang('tr')">TR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SAYFA BAŞLIĞI -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-en="Home" data-tr="Anasayfa">Home</a>
+        <span> / </span>
+        <span data-en="Contact" data-tr="İletişim">Contact</span>
+      </div>
+      <h1 data-en="Contact Us" data-tr="İletişim">Contact Us</h1>
+      <p data-en="Get in touch with our team for quotes, technical support or any questions."
+         data-tr="Teklif, teknik destek veya sorularınız için ekibimizle iletişime geçin.">
+        Get in touch with our team for quotes, technical support or any questions.
+      </p>
+    </div>
+  </div>
+
+  <!-- İLETİŞİM FORMU + BİLGİLER -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Sol: Bilgiler -->
+        <div data-animate>
+          <h2 class="contact-info-title"
+              data-en="Get In Touch" data-tr="Bize Ulaşın">Get In Touch</h2>
+          <p class="contact-info-sub"
+             data-en="We are here to help. Reach us through any of the channels below."
+             data-tr="Yardımcı olmaktan memnuniyet duyarız. Aşağıdaki kanallardan bize ulaşın.">
+            We are here to help. Reach us through any of the channels below.
+          </p>
+
+          <div class="info-card">
+            <div class="info-card-icon">✉</div>
+            <div>
+              <div class="info-card-label" data-en="Email" data-tr="E-posta">Email</div>
+              <!-- Gerçek e-posta adresinizi buraya yazın -->
+              <div class="info-card-value">info@raumetals.com</div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon">📞</div>
+            <div>
+              <div class="info-card-label" data-en="Phone" data-tr="Telefon">Phone</div>
+              <!-- Gerçek telefon numaranızı buraya yazın -->
+              <div class="info-card-value">+90 000 000 00 00</div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon">📍</div>
+            <div>
+              <div class="info-card-label" data-en="Address" data-tr="Adres">Address</div>
+              <!-- Gerçek adresinizi buraya yazın -->
+              <div class="info-card-value"
+                   data-en="[Street Address], [City], Turkey"
+                   data-tr="[Sokak Adresi], [Şehir], Türkiye">
+                [Street Address], [City], Turkey
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon">🕐</div>
+            <div>
+              <div class="info-card-label"
+                   data-en="Working Hours" data-tr="Çalışma Saatleri">Working Hours</div>
+              <div class="info-card-value"
+                   data-en="Mon – Fri: 08:00 – 18:00"
+                   data-tr="Pzt – Cum: 08:00 – 18:00">
+                Mon – Fri: 08:00 – 18:00
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sağ: Form -->
+        <div class="contact-form-card" data-animate class="delay-1">
+          <h3 class="form-title"
+              data-en="Request a Quote" data-tr="Teklif Talep Et">Request a Quote</h3>
+          <p class="form-sub"
+             data-en="Fill in the form and we will get back to you within 24 hours."
+             data-tr="Formu doldurun, 24 saat içinde size geri dönelim.">
+            Fill in the form and we will get back to you within 24 hours.
+          </p>
+
+          <!-- NOT: Bu form şu an sadece görsel — gerçek e-posta göndermek için
+               ileride bir backend veya Formspree/EmailJS gibi servis eklenecek -->
+          <form id="contact-form" onsubmit="handleFormSubmit(event)">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label data-en="Full Name *" data-tr="Ad Soyad *">Full Name *</label>
+                <input type="text" required
+                       data-placeholder-en="John Smith"
+                       data-placeholder-tr="Ad Soyad"
+                       placeholder="John Smith" />
+              </div>
+              <div class="form-group">
+                <label data-en="Company" data-tr="Firma">Company</label>
+                <input type="text"
+                       data-placeholder-en="Company Name"
+                       data-placeholder-tr="Firma Adı"
+                       placeholder="Company Name" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label data-en="Email *" data-tr="E-posta *">Email *</label>
+                <input type="email" required
+                       data-placeholder-en="you@company.com"
+                       data-placeholder-tr="siz@firma.com"
+                       placeholder="you@company.com" />
+              </div>
+              <div class="form-group">
+                <label data-en="Phone" data-tr="Telefon">Phone</label>
+                <input type="tel"
+                       data-placeholder-en="+90 000 000 00 00"
+                       data-placeholder-tr="+90 000 000 00 00"
+                       placeholder="+90 000 000 00 00" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-en="Product / Application" data-tr="Ürün / Uygulama">Product / Application</label>
+              <select>
+                <option value="" data-en="Select a category" data-tr="Kategori seçin">Select a category</option>
+                <option value="industrial"   data-en="Industrial Profiles"    data-tr="Endüstriyel Profiller">Industrial Profiles</option>
+                <option value="construction" data-en="Construction Profiles"  data-tr="İnşaat Profilleri">Construction Profiles</option>
+                <option value="solar"        data-en="Solar Profiles"         data-tr="Güneş Enerjisi Profilleri">Solar Profiles</option>
+                <option value="custom"       data-en="Custom Profile"         data-tr="Özel Profil">Custom Profile</option>
+                <option value="other"        data-en="Other"                  data-tr="Diğer">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label data-en="Message *" data-tr="Mesaj *">Message *</label>
+              <textarea required
+                        data-placeholder-en="Please describe your requirements, quantities and any technical specifications..."
+                        data-placeholder-tr="Lütfen gereksinimlerinizi, miktarlarınızı ve teknik özelliklerinizi açıklayın..."
+                        placeholder="Please describe your requirements, quantities and any technical specifications..."></textarea>
+            </div>
+
+            <!-- Dosya yükleme (çizim için) -->
+            <div class="form-group">
+              <label data-en="Upload Drawing (optional)" data-tr="Çizim Yükle (opsiyonel)">Upload Drawing (optional)</label>
+              <label class="file-upload" for="file-input">
+                <input type="file" id="file-input" accept=".pdf,.dwg,.dxf,.jpg,.png" />
+                <div class="file-upload-icon">📎</div>
+                <div class="file-upload-text">
+                  <span data-en="Click to upload" data-tr="Yüklemek için tıklayın">Click to upload</span>
+                  <span data-en=" or drag and drop" data-tr=" veya sürükleyip bırakın"> or drag and drop</span><br>
+                  <span style="color:var(--gray)">PDF, DWG, DXF, JPG, PNG</span>
+                </div>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-orange form-submit"
+                    data-en="Send Message →" data-tr="Mesaj Gönder →">
+              Send Message →
+            </button>
+
+          </form>
+
+          <!-- Form gönderildikten sonra gösterilecek mesaj -->
+          <div class="success-msg" id="success-msg">
+            ✅ <span data-en="Your message has been sent! We will contact you within 24 hours."
+                     data-tr="Mesajınız gönderildi! 24 saat içinde size geri döneceğiz.">
+              Your message has been sent! We will contact you within 24 hours.
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARİTA YER TUTUCUSU -->
+  <!-- İstersen buraya Google Maps embed kodu ekleyebilirsin -->
+  <div class="map-section">
+    <div class="map-placeholder">
+      <span>📍</span>
+      <p data-en="Map will be embedded here — add your Google Maps embed code"
+         data-tr="Harita buraya eklenecek — Google Maps embed kodunuzu ekleyin">
+        Map will be embedded here — add your Google Maps embed code
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+          <p data-en="RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide."
+             data-tr="RAU Metals, dünya genelinde endüstriyel, inşaat, güneş enerjisi ve otomotiv uygulamaları için yüksek kaliteli alüminyum ekstrüzyon profiller üretmektedir.">
+            RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Quick Links" data-tr="Hızlı Linkler">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a></li>
+            <li><a href="production.html" data-en="Production" data-tr="Üretim">Production</a></li>
+            <li><a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a></li>
+            <li><a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a></li>
+            <li><a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Contact Us" data-tr="İletişim">Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@raumetals.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.13 1 .37 1.97.71 2.91a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.34 1.91.58 2.91.71A2 2 0 0122 16.92z"/></svg>
+            <span>+90 000 000 00 00</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-en="[City], Turkey" data-tr="[Şehir], Türkiye">[City], Turkey</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Request a Quote" data-tr="Teklif Al">Request a Quote</h4>
+          <div class="footer-quote">
+            <p data-en="Send us your drawing and specifications."
+               data-tr="Çizim ve teknik özelliklerinizi bize gönderin.">Send us your drawing and specifications.</p>
+            <a href="contact.html" class="btn btn-blue" style="width:100%; justify-content:center;"
+               data-en="Get a Quote →" data-tr="Teklif Al →">Get a Quote →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="© 2025 RAU Metals. All Rights Reserved." data-tr="© 2025 RAU Metals. Tüm Hakları Saklıdır.">© 2025 RAU Metals. All Rights Reserved.</p>
+        <p data-en="Aluminum Extrusion Profiles Manufacturer" data-tr="Alüminyum Ekstrüzyon Profil Üreticisi">Aluminum Extrusion Profiles Manufacturer</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    /* Form gönderme simülasyonu
+       Gerçek e-posta için ileride Formspree veya EmailJS eklenecek */
+    function handleFormSubmit(e) {
+      e.preventDefault(); /* Sayfanın yenilenmesini engelle */
+      document.getElementById("contact-form").style.display = "none";
+      document.getElementById("success-msg").style.display  = "block";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quality — RAU Metals</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 100%);
+      padding: 130px 0 70px;
+      text-align: center;
+    }
+    .page-hero h1 { font-size:clamp(2rem,4vw,3rem); color:var(--white); font-weight:900; margin-bottom:14px; }
+    .page-hero p  { color:rgba(255,255,255,0.6); font-size:1rem; max-width:580px; margin:0 auto; }
+    .breadcrumb   { color:rgba(255,255,255,0.4); font-size:0.8rem; margin-bottom:16px; }
+    .breadcrumb a { color:var(--orange); }
+
+    /* ---- KALİTE POLİTİKASI ---- */
+    .quality-intro { padding: 90px 0; background: var(--white); }
+    .quality-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .quality-intro-text h2 { margin-bottom: 20px; }
+    .quality-intro-text p  { color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+
+    .quality-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .pillar-card {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 18px;
+      border-left: 3px solid var(--orange);
+    }
+    .pillar-card h4 { color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .pillar-card p  { color: var(--gray); font-size: 0.78rem; line-height: 1.5; }
+
+    /* ---- SERTİFİKALAR (büyütülmüş) ---- */
+    .certs-section { padding: 90px 0; background: var(--navy); }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .cert-detail-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .cert-badge-large {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.85rem;
+      color: var(--navy);
+      text-align: center;
+      padding: 10px;
+      flex-direction: column;
+      line-height: 1.2;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      margin: 0 auto 20px;
+    }
+    .cert-detail-name {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+    .cert-detail-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    /* ---- KALİTE KONTROL SÜRECİ ---- */
+    .qc-section { padding: 90px 0; background: var(--light); }
+    .qc-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .qc-step-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .qc-step-num {
+      position: absolute;
+      top: -16px;
+      left: 24px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qc-step-icon {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      background: rgba(26,111,255,0.08);
+      border: 1.5px solid rgba(26,111,255,0.2);
+      display: flex; align-items:center; justify-content:center;
+      margin-bottom: 14px;
+    }
+    .qc-step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .qc-step-desc {
+      color: var(--gray);
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+
+    /* ---- TEST EKİPMANLARI ---- */
+    .testing-section { padding: 90px 0; background: var(--white); }
+    .testing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .testing-card {
+      text-align: center;
+      padding: 24px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .testing-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: rgba(26,111,255,0.07);
+      border: 1.5px solid rgba(26,111,255,0.2);
+      display: flex; align-items:center; justify-content:center;
+      margin: 0 auto 14px;
+    }
+    .testing-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .testing-desc {
+      color: var(--gray);
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1024px) {
+      .certs-grid    { grid-template-columns: repeat(2, 1fr); }
+      .qc-steps      { grid-template-columns: repeat(2, 1fr); }
+      .testing-grid  { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .quality-intro-grid { grid-template-columns: 1fr; }
+      .quality-pillars    { grid-template-columns: 1fr; }
+      .certs-grid         { grid-template-columns: repeat(2, 1fr); }
+      .qc-steps           { grid-template-columns: 1fr; }
+      .testing-grid       { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav id="nav-links">
+          <a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a>
+          <a href="production.html" data-en="Production" data-tr="Üretim">Production</a>
+          <a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a>
+          <a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a>
+          <a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-blue"
+               data-en="Request a Quote →" data-tr="Teklif Al →">
+              Request a Quote →
+            </a>
+          </div>
+          <div class="lang-switcher">
+            <button id="lang-en" onclick="switchLang('en')" class="active">EN</button>
+            <span class="lang-sep">|</span>
+            <button id="lang-tr" onclick="switchLang('tr')">TR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SAYFA BAŞLIĞI -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html" data-en="Home" data-tr="Anasayfa">Home</a>
+        <span> / </span>
+        <span data-en="Quality" data-tr="Kalite">Quality</span>
+      </div>
+      <h1 data-en="Quality Assurance" data-tr="Kalite Güvencesi">Quality Assurance</h1>
+      <p data-en="Quality is not a department — it is embedded in every step of our production process."
+         data-tr="Kalite bir departman değil — üretim sürecimizin her adımına işlenmiştir.">
+        Quality is not a department — it is embedded in every step of our production process.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       KALİTE POLİTİKASI
+  =================================================== -->
+  <section class="quality-intro">
+    <div class="container">
+      <div class="quality-intro-grid">
+
+        <div class="quality-intro-text" data-animate>
+          <span class="section-tag" data-en="OUR COMMITMENT" data-tr="TAAHHÜDÜMÜZ">OUR COMMITMENT</span>
+          <h2 class="section-title"
+              data-en="Quality Policy" data-tr="Kalite Politikası">Quality Policy</h2>
+          <p data-en="[Placeholder] At RAU Metals, quality is the cornerstone of everything we do. Our integrated quality management system ensures that every aluminum profile we produce meets or exceeds the expectations of our customers and the requirements of international standards."
+             data-tr="[Yer Tutucu] RAU Metals'ta kalite, yaptığımız her şeyin temel taşıdır. Entegre kalite yönetim sistemimiz, ürettiğimiz her alüminyum profilin müşterilerimizin beklentilerini ve uluslararası standartların gerekliliklerini karşılamasını veya aşmasını sağlar.">
+            [Placeholder] At RAU Metals, quality is the cornerstone of everything we do. Our integrated quality management system ensures that every aluminum profile we produce meets or exceeds the expectations of our customers and the requirements of international standards.
+          </p>
+          <p data-en="[Placeholder] We invest continuously in testing equipment, staff training and process improvement to maintain the highest quality levels. All products are shipped with a material certificate and test report upon request."
+             data-tr="[Yer Tutucu] En yüksek kalite düzeylerini korumak için test ekipmanlarına, personel eğitimine ve süreç iyileştirmeye sürekli yatırım yapıyoruz. Tüm ürünler, talep üzerine malzeme sertifikası ve test raporu ile teslim edilir.">
+            [Placeholder] We invest continuously in testing equipment, staff training and process improvement to maintain the highest quality levels. All products are shipped with a material certificate and test report upon request.
+          </p>
+        </div>
+
+        <div data-animate class="delay-1">
+          <div class="quality-pillars">
+            <div class="pillar-card">
+              <h4 data-en="Customer Focus" data-tr="Müşteri Odaklılık">Customer Focus</h4>
+              <p data-en="[Placeholder] Meeting and exceeding customer requirements at every order."
+                 data-tr="[Yer Tutucu] Her siparişte müşteri gerekliliklerini karşılamak ve aşmak.">
+                [Placeholder] Meeting and exceeding customer requirements at every order.
+              </p>
+            </div>
+            <div class="pillar-card">
+              <h4 data-en="Continuous Improvement" data-tr="Sürekli İyileştirme">Continuous Improvement</h4>
+              <p data-en="[Placeholder] Regular audits, KPI tracking and corrective action processes."
+                 data-tr="[Yer Tutucu] Düzenli denetimler, KPI takibi ve düzeltici faaliyet süreçleri.">
+                [Placeholder] Regular audits, KPI tracking and corrective action processes.
+              </p>
+            </div>
+            <div class="pillar-card">
+              <h4 data-en="Traceability" data-tr="İzlenebilirlik">Traceability</h4>
+              <p data-en="[Placeholder] Full batch traceability from raw billet to finished product."
+                 data-tr="[Yer Tutucu] Ham bilyetten nihai ürüne tam parti izlenebilirliği.">
+                [Placeholder] Full batch traceability from raw billet to finished product.
+              </p>
+            </div>
+            <div class="pillar-card">
+              <h4 data-en="Trained Personnel" data-tr="Eğitimli Personel">Trained Personnel</h4>
+              <p data-en="[Placeholder] All operators are certified and receive ongoing training."
+                 data-tr="[Yer Tutucu] Tüm operatörler sertifikalıdır ve sürekli eğitim almaktadır.">
+                [Placeholder] All operators are certified and receive ongoing training.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SERTİFİKALAR — BÜYÜTÜLMÜŞ
+  =================================================== -->
+  <section class="certs-section">
+    <div class="container">
+      <span class="section-tag" data-en="CERTIFICATIONS" data-tr="SERTİFİKALAR">CERTIFICATIONS</span>
+      <h2 class="section-title light"
+          data-en="Our Certifications" data-tr="Sertifikalarımız">Our Certifications</h2>
+
+      <div class="certs-grid">
+
+        <div class="cert-detail-card" data-animate>
+          <div class="cert-badge-large">ISO<br>9001</div>
+          <div class="cert-detail-name">ISO 9001:2015</div>
+          <p class="cert-detail-desc"
+             data-en="[Placeholder] Quality Management System. Covers design, production, inspection and delivery of aluminum extrusion profiles."
+             data-tr="[Yer Tutucu] Kalite Yönetim Sistemi. Alüminyum ekstrüzyon profillerinin tasarım, üretim, muayene ve teslimatını kapsar.">
+            [Placeholder] Quality Management System. Covers design, production, inspection and delivery of aluminum extrusion profiles.
+          </p>
+        </div>
+
+        <div class="cert-detail-card" data-animate class="delay-1">
+          <div class="cert-badge-large">ISO<br>14001</div>
+          <div class="cert-detail-name">ISO 14001:2015</div>
+          <p class="cert-detail-desc"
+             data-en="[Placeholder] Environmental Management System. Demonstrates our commitment to reducing environmental impact and sustainable manufacturing practices."
+             data-tr="[Yer Tutucu] Çevre Yönetim Sistemi. Çevresel etkiyi azaltma ve sürdürülebilir üretim uygulamalarına olan bağlılığımızı gösterir.">
+            [Placeholder] Environmental Management System. Demonstrates our commitment to reducing environmental impact and sustainable manufacturing practices.
+          </p>
+        </div>
+
+        <div class="cert-detail-card" data-animate class="delay-2">
+          <div class="cert-badge-large">CE</div>
+          <div class="cert-detail-name">CE Marking</div>
+          <p class="cert-detail-desc"
+             data-en="[Placeholder] CE marking confirms that our profiles comply with EU directives and are suitable for use in construction and structural applications across Europe."
+             data-tr="[Yer Tutucu] CE işareti, profillerimizin AB direktiflerine uygun olduğunu ve Avrupa genelinde inşaat ve yapısal uygulamalarda kullanıma uygun olduğunu onaylar.">
+            [Placeholder] CE marking confirms that our profiles comply with EU directives and are suitable for use in construction and structural applications across Europe.
+          </p>
+        </div>
+
+        <div class="cert-detail-card" data-animate class="delay-3">
+          <div class="cert-badge-large">RoHS</div>
+          <div class="cert-detail-name">RoHS Compliance</div>
+          <p class="cert-detail-desc"
+             data-en="[Placeholder] RoHS compliance confirms our products are free from restricted hazardous substances, making them suitable for electronics and automotive industries."
+             data-tr="[Yer Tutucu] RoHS uyumluluğu, ürünlerimizin kısıtlı tehlikeli maddelerden arındırılmış olduğunu, elektronik ve otomotiv endüstrileri için uygun olduğunu onaylar.">
+            [Placeholder] RoHS compliance confirms our products are free from restricted hazardous substances, making them suitable for electronics and automotive industries.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       KALİTE KONTROL SÜRECİ
+  =================================================== -->
+  <section class="qc-section">
+    <div class="container">
+      <span class="section-tag" data-en="QUALITY CONTROL" data-tr="KALİTE KONTROL">QUALITY CONTROL</span>
+      <h2 class="section-title"
+          data-en="Our Quality Control Process"
+          data-tr="Kalite Kontrol Sürecimiz">Our Quality Control Process</h2>
+
+      <div class="qc-steps">
+
+        <div class="qc-step-card" data-animate>
+          <div class="qc-step-num">1</div>
+          <div class="qc-step-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="qc-step-title" data-en="Incoming Material Inspection" data-tr="Gelen Malzeme Muayenesi">Incoming Material Inspection</div>
+          <p class="qc-step-desc"
+             data-en="[Placeholder] All incoming billets are tested for chemical composition using a spectrometer. Certificates of conformance are verified against order requirements."
+             data-tr="[Yer Tutucu] Gelen tüm bilyetler, spektrometre kullanılarak kimyasal bileşim açısından test edilir. Uygunluk sertifikaları sipariş gerekliliklerine göre doğrulanır.">
+            [Placeholder] All incoming billets are tested for chemical composition using a spectrometer. Certificates of conformance are verified against order requirements.
+          </p>
+        </div>
+
+        <div class="qc-step-card" data-animate class="delay-1">
+          <div class="qc-step-num">2</div>
+          <div class="qc-step-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="qc-step-title" data-en="In-Process Checks" data-tr="Süreç İçi Kontroller">In-Process Checks</div>
+          <p class="qc-step-desc"
+             data-en="[Placeholder] Dimensional sampling is performed at the press and after each surface treatment stage. Any out-of-tolerance profiles are immediately quarantined."
+             data-tr="[Yer Tutucu] Boyutsal örnekleme, preste ve her yüzey işlemi aşamasından sonra yapılır. Tolerans dışı profiller derhal karantinaya alınır.">
+            [Placeholder] Dimensional sampling is performed at the press and after each surface treatment stage. Any out-of-tolerance profiles are immediately quarantined.
+          </p>
+        </div>
+
+        <div class="qc-step-card" data-animate class="delay-2">
+          <div class="qc-step-num">3</div>
+          <div class="qc-step-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          </div>
+          <div class="qc-step-title" data-en="Mechanical Testing" data-tr="Mekanik Test">Mechanical Testing</div>
+          <p class="qc-step-desc"
+             data-en="[Placeholder] Tensile strength, yield strength and hardness are measured per batch to verify compliance with the specified temper (T5, T6, etc.)."
+             data-tr="[Yer Tutucu] Belirtilen temperliğe (T5, T6 vb.) uyumu doğrulamak için parti başına çekme dayanımı, akma dayanımı ve sertlik ölçülür.">
+            [Placeholder] Tensile strength, yield strength and hardness are measured per batch to verify compliance with the specified temper (T5, T6, etc.).
+          </p>
+        </div>
+
+        <div class="qc-step-card" data-animate>
+          <div class="qc-step-num">4</div>
+          <div class="qc-step-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="qc-step-title" data-en="Surface Quality Inspection" data-tr="Yüzey Kalitesi Muayenesi">Surface Quality Inspection</div>
+          <p class="qc-step-desc"
+             data-en="[Placeholder] Visual and instrumental inspection of anodised and powder-coated surfaces to check coating thickness, adhesion and appearance."
+             data-tr="[Yer Tutucu] Kaplama kalınlığını, yapışmayı ve görünümü kontrol etmek için anodize edilmiş ve toz boyalı yüzeylerin görsel ve enstrümantal muayenesi.">
+            [Placeholder] Visual and instrumental inspection of anodised and powder-coated surfaces to check coating thickness, adhesion and appearance.
+          </p>
+        </div>
+
+        <div class="qc-step-card" data-animate class="delay-1">
+          <div class="qc-step-num">5</div>
+          <div class="qc-step-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="qc-step-title" data-en="Dimensional Verification (CMM)" data-tr="Boyutsal Doğrulama (CMM)">Dimensional Verification (CMM)</div>
+          <p class="qc-step-desc"
+             data-en="[Placeholder] Critical profiles are measured on a Coordinate Measuring Machine to verify cross-section dimensions against approved drawings."
+             data-tr="[Yer Tutucu] Kritik profiller, onaylı çizimlere göre kesit boyutlarını doğrulamak için Koordinat Ölçüm Makinasında ölçülür.">
+            [Placeholder] Critical profiles are measured on a Coordinate Measuring Machine to verify cross-section dimensions against approved drawings.
+          </p>
+        </div>
+
+        <div class="qc-step-card" data-animate class="delay-2">
+          <div class="qc-step-num">6</div>
+          <div class="qc-step-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="qc-step-title" data-en="Final Release &amp; Documentation" data-tr="Nihai Serbest Bırakma &amp; Dokümantasyon">Final Release &amp; Documentation</div>
+          <p class="qc-step-desc"
+             data-en="[Placeholder] Batches are released only after all inspections pass. Material test reports and certificates of conformance are issued with every shipment."
+             data-tr="[Yer Tutucu] Partiler, ancak tüm muayeneler geçildikten sonra serbest bırakılır. Her sevkiyatla birlikte malzeme test raporları ve uygunluk sertifikaları düzenlenir.">
+            [Placeholder] Batches are released only after all inspections pass. Material test reports and certificates of conformance are issued with every shipment.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       TEST EKİPMANLARI
+  =================================================== -->
+  <section class="testing-section">
+    <div class="container">
+      <span class="section-tag" data-en="LABORATORY" data-tr="LABORATUVAR">LABORATORY</span>
+      <h2 class="section-title"
+          data-en="Testing Equipment" data-tr="Test Ekipmanları">Testing Equipment</h2>
+
+      <div class="testing-grid">
+
+        <div class="testing-card" data-animate>
+          <div class="testing-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div class="testing-name">CMM</div>
+          <p class="testing-desc"
+             data-en="Coordinate Measuring Machine for 3D dimensional inspection"
+             data-tr="3D boyutsal muayene için Koordinat Ölçüm Makinası">
+            Coordinate Measuring Machine for 3D dimensional inspection
+          </p>
+        </div>
+
+        <div class="testing-card" data-animate class="delay-1">
+          <div class="testing-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14"/></svg>
+          </div>
+          <div class="testing-name" data-en="Spectrometer" data-tr="Spektrometre">Spectrometer</div>
+          <p class="testing-desc"
+             data-en="OES spectrometer for alloy composition verification"
+             data-tr="Alaşım bileşimi doğrulaması için OES spektrometre">
+            OES spectrometer for alloy composition verification
+          </p>
+        </div>
+
+        <div class="testing-card" data-animate class="delay-2">
+          <div class="testing-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="testing-name" data-en="Tensile Tester" data-tr="Çekme Test Cihazı">Tensile Tester</div>
+          <p class="testing-desc"
+             data-en="Universal testing machine for mechanical property verification"
+             data-tr="Mekanik özellik doğrulaması için evrensel test makinası">
+            Universal testing machine for mechanical property verification
+          </p>
+        </div>
+
+        <div class="testing-card" data-animate class="delay-3">
+          <div class="testing-icon">
+            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="testing-name" data-en="Hardness Tester" data-tr="Sertlik Test Cihazı">Hardness Tester</div>
+          <p class="testing-desc"
+             data-en="Vickers / Brinell hardness measurement for temper verification"
+             data-tr="Temperlik doğrulaması için Vickers / Brinell sertlik ölçümü">
+            Vickers / Brinell hardness measurement for temper verification
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img" /></a>
+          <p data-en="RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide."
+             data-tr="RAU Metals, dünya genelinde endüstriyel, inşaat, güneş enerjisi ve otomotiv uygulamaları için yüksek kaliteli alüminyum ekstrüzyon profiller üretmektedir.">
+            RAU Metals provides high-quality aluminum extrusion profiles for industrial, construction, solar and automotive applications worldwide.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Quick Links" data-tr="Hızlı Linkler">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"      data-en="Home"       data-tr="Anasayfa">Home</a></li>
+            <li><a href="production.html" data-en="Production" data-tr="Üretim">Production</a></li>
+            <li><a href="quality.html"    data-en="Quality"    data-tr="Kalite">Quality</a></li>
+            <li><a href="about.html"      data-en="About Us"   data-tr="Hakkımızda">About Us</a></li>
+            <li><a href="contact.html"    data-en="Contact"    data-tr="İletişim">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Contact Us" data-tr="İletişim">Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@raumetals.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.13 1 .37 1.97.71 2.91a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.17-1.17a2 2 0 012.11-.45c.94.34 1.91.58 2.91.71A2 2 0 0122 16.92z"/></svg>
+            <span>+90 000 000 00 00</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon-svg footer-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-en="[City], Turkey" data-tr="[Şehir], Türkiye">[City], Turkey</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title" data-en="Request a Quote" data-tr="Teklif Al">Request a Quote</h4>
+          <div class="footer-quote">
+            <p data-en="Send us your drawing and specifications."
+               data-tr="Çizim ve teknik özelliklerinizi bize gönderin.">Send us your drawing and specifications.</p>
+            <a href="contact.html" class="btn btn-blue" style="width:100%; justify-content:center;"
+               data-en="Get a Quote →" data-tr="Teklif Al →">Get a Quote →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-en="© 2025 RAU Metals. All Rights Reserved." data-tr="© 2025 RAU Metals. Tüm Hakları Saklıdır.">© 2025 RAU Metals. All Rights Reserved.</p>
+        <p data-en="Aluminum Extrusion Profiles Manufacturer" data-tr="Alüminyum Ekstrüzyon Profil Üreticisi">Aluminum Extrusion Profiles Manufacturer</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
