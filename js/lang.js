@@ -17,20 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Dili uygula: tüm data-en / data-tr özellikli elemanları güncelle */
 function applyLanguage(lang) {
+  /* DE henüz çevrilmedi — EN içeriklerini kullan */
+  var effectiveLang = (lang === "de") ? "en" : lang;
+
   var elements = document.querySelectorAll("[data-en]");
   elements.forEach(function (el) {
+    var val = el.getAttribute("data-" + lang) || el.getAttribute("data-" + effectiveLang);
     /* Elemanın içeriği HTML (örn. <br> içeriyorsa) mi düz metin mi? */
     if (el.hasAttribute("data-html")) {
-      el.innerHTML = el.getAttribute("data-" + lang);
+      el.innerHTML = val;
     } else {
-      el.textContent = el.getAttribute("data-" + lang);
+      el.textContent = val;
     }
   });
 
   /* Placeholder metinleri de değiştir (input alanları için) */
   var placeholders = document.querySelectorAll("[data-placeholder-en]");
   placeholders.forEach(function (el) {
-    el.placeholder = el.getAttribute("data-placeholder-" + lang);
+    el.placeholder = el.getAttribute("data-placeholder-" + lang)
+                  || el.getAttribute("data-placeholder-" + effectiveLang);
   });
 
   /* <html> etiketinin lang özelliğini güncelle (erişilebilirlik için) */
@@ -40,19 +45,18 @@ function applyLanguage(lang) {
   localStorage.setItem("rau-lang", lang);
 }
 
-/* EN / TR butonlarının aktif görünümünü güncelle */
+/* EN / DE / TR butonlarının aktif görünümünü güncelle */
 function updateButtons(lang) {
   var enBtn = document.getElementById("lang-en");
+  var deBtn = document.getElementById("lang-de");
   var trBtn = document.getElementById("lang-tr");
-  if (!enBtn || !trBtn) return;
 
-  if (lang === "en") {
-    enBtn.classList.add("active");
-    trBtn.classList.remove("active");
-  } else {
-    trBtn.classList.add("active");
-    enBtn.classList.remove("active");
-  }
+  [enBtn, deBtn, trBtn].forEach(function (btn) {
+    if (btn) btn.classList.remove("active");
+  });
+
+  var activeBtn = document.getElementById("lang-" + lang);
+  if (activeBtn) activeBtn.classList.add("active");
 }
 
 /* Dil butonuna tıklandığında çağrılan fonksiyon */

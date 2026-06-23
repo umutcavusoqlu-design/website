@@ -345,32 +345,55 @@ ul { list-style: none; }
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
+}
+
+.feature-item:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 2rem;
+}
+
+.feature-item:not(:first-child) {
+  padding-left: 2rem;
 }
 
 .feature-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1.5px solid rgba(255,255,255,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
   flex-shrink: 0;
 }
 
+.hero-features .feature-icon i {
+  color: #ffffff;
+  font-size: 3rem;
+  opacity: 1;
+}
+
+.feature-svg-icon {
+  width: 56px;
+  height: 56px;
+  color: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.feature-icon i {
+  display: none;
+}
+
 .feature-title {
-  color: var(--white);
-  font-size: 0.82rem;
-  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.945rem;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: 2px;
 }
 
 .feature-desc {
-  color: rgba(255,255,255,0.85);
-  font-size: 0.72rem;
+  color: #cccccc;
+  font-size: 0.845rem;
 }
 
 /* ---- ÜRÜNLER / HİZMETLER BÖLÜMÜ ---- */
