@@ -615,13 +615,22 @@ ul { list-style: none; }
   align-self: stretch;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
-.cert-area .section-tag { color: var(--orange); } /* mavi, görünür */
+.cert-area .section-tag {
+  color: var(--orange);
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+  display: block;
+  text-align: center;
+}
 
 
 .cert-badges {
   display: flex;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -677,7 +686,8 @@ ul { list-style: none; }
 
 .cert-badges {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
