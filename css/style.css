@@ -537,6 +537,12 @@ ul { list-style: none; }
   letter-spacing: 0.8px;
 }
 
+html[lang="de"] .process-labels span:not(.arrow),
+.lang-de .process-labels span:not(.arrow) {
+  font-size: 0.58rem;
+  letter-spacing: 0.3px;
+}
+
 .process-labels .arrow {
   flex: 0 0 16px;
   text-align: center;
