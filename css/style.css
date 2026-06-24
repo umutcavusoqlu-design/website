@@ -405,7 +405,8 @@ ul { list-style: none; }
 
 /* ---- ÜRÜNLER / HİZMETLER BÖLÜMÜ ---- */
 .products-section {
-  padding: 90px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background: #f8f9fa;
 }
 
@@ -493,18 +494,58 @@ ul { list-style: none; }
 
 /* ---- ÜRETİM SÜRECİ ---- */
 .process-section {
-  padding: 70px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background: #f1f2f4;
 }
 
-.process-steps {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 0;
+.process-image-strip {
   width: 100%;
+  margin: 24px 0 0 0;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.process-image-strip img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.process-section .container {
+  max-width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.process-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 0 0;
+  width: 97%;
+}
+
+.process-labels span:not(.arrow) {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.process-labels .arrow {
+  flex: 0 0 16px;
+  text-align: center;
+  color: #1a6fff;
+  font-size: 1.2rem;
+}
+
+.process-steps {
+  display: none;
 }
 
 .process-step {
@@ -535,16 +576,16 @@ ul { list-style: none; }
 
 /* Çembersiz ikon — sadece SVG */
 .step-icon {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .step-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--navy);
   text-transform: uppercase;
@@ -650,8 +691,8 @@ ul { list-style: none; }
 /* Üretim süreci ikonları — koyu lacivert, biraz büyük */
 .process-section .icon-svg {
   stroke: var(--navy);
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
 }
 
 .process-arrow {
