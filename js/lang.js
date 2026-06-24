@@ -17,12 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Dili uygula: tüm data-en / data-tr özellikli elemanları güncelle */
 function applyLanguage(lang) {
-  /* DE henüz çevrilmedi — EN içeriklerini kullan */
-  var effectiveLang = (lang === "de") ? "en" : lang;
-
   var elements = document.querySelectorAll("[data-en]");
   elements.forEach(function (el) {
-    var val = el.getAttribute("data-" + lang) || el.getAttribute("data-" + effectiveLang);
+    var val;
+    if (lang === "de") {
+      /* data-de varsa kullan, yoksa data-en'e düş */
+      val = el.getAttribute("data-de") || el.getAttribute("data-en");
+    } else {
+      val = el.getAttribute("data-" + lang);
+    }
     /* Elemanın içeriği HTML (örn. <br> içeriyorsa) mi düz metin mi? */
     if (el.hasAttribute("data-html")) {
       el.innerHTML = val;
@@ -34,8 +37,11 @@ function applyLanguage(lang) {
   /* Placeholder metinleri de değiştir (input alanları için) */
   var placeholders = document.querySelectorAll("[data-placeholder-en]");
   placeholders.forEach(function (el) {
-    el.placeholder = el.getAttribute("data-placeholder-" + lang)
-                  || el.getAttribute("data-placeholder-" + effectiveLang);
+    if (lang === "de") {
+      el.placeholder = el.getAttribute("data-placeholder-de") || el.getAttribute("data-placeholder-en");
+    } else {
+      el.placeholder = el.getAttribute("data-placeholder-" + lang);
+    }
   });
 
   /* <html> etiketinin lang özelliğini güncelle (erişilebilirlik için) */
