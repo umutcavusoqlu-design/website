@@ -1275,3 +1275,39 @@ footer .logo-img {
 .social-link[aria-label="Instagram"]:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
 .social-link[aria-label="YouTube"]:hover { background: #FF0000; }
 .social-link[aria-label="X"]:hover { background: #000000; }
+
+/* ---- NAV DROPDOWN ---- */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(5, 10, 20, 0.95);
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 160px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown .dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.nav-dropdown .dropdown-menu a:hover {
+  color: #4a9eff;
+}
