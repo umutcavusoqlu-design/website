@@ -781,9 +781,6 @@ html[lang="de"] .process-labels span:not(.arrow),
   font-weight: 600;
 }
 
-/* Footer'da logo biraz daha küçük */
-.footer-about .logo { margin-right: 0; margin-bottom: 16px; }
-.footer-about .logo-img { height: 40px; }
 
 /* ---- FOOTER ---- */
 footer {
@@ -1063,9 +1060,21 @@ footer {
 }
 
 .footer-logo {
-  height: 48px;
+  height: 100px;
   width: auto;
   flex-shrink: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+footer .logo-img {
+  height: 100px;
+  width: auto;
+}
+
+.footer-logo {
+  height: 70px !important;
+  width: auto !important;
 }
 
 .footer-about p {
