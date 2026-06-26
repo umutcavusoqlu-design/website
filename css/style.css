@@ -292,12 +292,13 @@ ul { list-style: none; }
 
 /* Büyük başlık */
 .hero-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
   font-weight: 900;
   color: var(--white);
   line-height: 1.06;
   margin-bottom: 22px;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .hero-desc {
@@ -956,3 +957,312 @@ footer {
   .hero-btns          { flex-direction: column; }
   .btn                { justify-content: center; }
 }
+
+.applications-section .section-tag {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-item img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.why-section {
+  background: var(--dark, #0d1b2a);
+  padding: 40px 0;
+}
+
+.why-section .section-tag {
+  margin-bottom: 16px;
+  display: block;
+}
+
+.why-banner {
+  width: 100%;
+  max-height: 200px;
+  margin-bottom: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.why-banner-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  text-align: center;
+}
+
+.why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px 0 12px;
+}
+
+.why-item h3 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #00aaff;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  order: -1;
+}
+
+.why-item p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  order: 1;
+}
+
+footer {
+  padding: 20px 0 0;
+}
+
+.footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.footer-about {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.footer-about p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 500px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+}
+
+.footer-social-link[aria-label="WhatsApp"]:hover { background: #25D366; }
+.footer-social-link[aria-label="LinkedIn"]:hover { background: #0077B5; }
+.footer-social-link[aria-label="Instagram"]:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.footer-social-link[aria-label="YouTube"]:hover { background: #FF0000; }
+.footer-social-link[aria-label="X"]:hover { background: #000000; }
+
+.footer-social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.page-hero {
+  background: var(--dark, #0d1b2a);
+  padding: 80px 0 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.page-hero p:not(.section-tag) {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  margin-top: 12px;
+}
+
+.articles-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.article-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.article-img {
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.article-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #4a9eff;
+  background: rgba(74,158,255,0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+.article-date {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.article-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.article-body p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.article-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a6fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.article-link:hover {
+  color: #0044cc;
+}
+
+.teklif-btn {
+  position: fixed;
+  right: 0;
+  top: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a6fff;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 12px 18px 12px 14px;
+  border-radius: 8px 0 0 8px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: -3px 0 12px rgba(26, 111, 255, 0.4);
+}
+
+.teklif-btn:hover {
+  background: #0055dd;
+  padding-right: 24px;
+}
+
+.teklif-btn svg {
+  flex-shrink: 0;
+}
+
+.social-sidebar {
+  position: fixed;
+  right: 0;
+  top: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 999;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(13, 27, 42, 0.85);
+  color: #ffffff;
+  border-radius: 8px 0 0 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  width: 56px;
+  transform: translateX(-4px);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.social-link[aria-label="WhatsApp"]:hover { background: #25D366; }
+.social-link[aria-label="LinkedIn"]:hover { background: #0077B5; }
+.social-link[aria-label="Instagram"]:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.social-link[aria-label="YouTube"]:hover { background: #FF0000; }
+.social-link[aria-label="X"]:hover { background: #000000; }
