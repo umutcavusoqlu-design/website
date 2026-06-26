@@ -607,8 +607,11 @@ html[lang="de"] .process-labels span:not(.arrow),
 
 /* ---- NEDEN BİZ + SERTİFİKALAR ---- */
 .why-section {
-  padding: 90px 0;
-  background: var(--navy);
+  background: var(--dark, #0d1b2a);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  min-height: 160px;
 }
 
 .why-grid {
@@ -743,7 +746,7 @@ html[lang="de"] .process-labels span:not(.arrow),
 
 /* ---- UYGULAMALAR (APPLICATIONS) ---- */
 .applications-section {
-  padding: 70px 0;
+  padding: 0;
   background: var(--white);
 }
 
@@ -986,9 +989,8 @@ footer {
   border-radius: 12px;
 }
 
-.why-section {
-  background: var(--dark, #0d1b2a);
-  padding: 40px 0;
+.why-section-duplicate-removed {
+  display: none;
 }
 
 .why-section .section-tag {
@@ -1350,4 +1352,113 @@ footer .logo-img {
 
 .nav-dropdown:hover .dropdown-arrow {
   transform: rotate(180deg);
+}
+
+.rau-intro-banner {
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
+  padding: 32px 48px 32px 48px;
+  border: none;
+  box-shadow: none;
+  margin: 0 -20px;
+}
+
+.rau-intro-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.rau-intro-header h2 {
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  font-weight: 800;
+  color: #0d1b2a;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rau-intro-header p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto 10px;
+}
+
+.rau-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.rau-intro-card {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.rau-intro-card:hover {
+  transform: translateY(-4px);
+}
+
+.rau-intro-card--highlight {
+  background: #f5f7fa;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.rau-intro-card--highlight h3 {
+  color: #0d1b2a;
+}
+
+.rau-intro-card--highlight p {
+  color: #555;
+}
+
+.rau-intro-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+}
+
+.footer-contact-info h4 {
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.footer-contact-info p {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.rau-intro-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0d1b2a;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.rau-intro-card p {
+  font-size: 0.98rem;
+  color: #555;
+  line-height: 1.8;
 }
