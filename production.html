@@ -330,10 +330,9 @@
   </footer>
   <script>
   (function(){
-    var groups = {};
+    var groups = new Map();
     document.querySelectorAll('.prod-slide').forEach(function(img){
       var parent = img.parentElement;
-      if(!groups.has) groups = new Map();
       if(!groups.get(parent)) groups.set(parent, []);
       groups.get(parent).push(img);
     });
@@ -345,6 +344,16 @@
         imgs[i].style.opacity = '1';
       }, 2000);
     });
+
+    // Anchor'a scroll sorununu düzelt
+    if(window.location.hash) {
+      var target = document.querySelector(window.location.hash);
+      if(target) {
+        setTimeout(function(){
+          window.scrollTo({ top: target.offsetTop - 110, behavior: 'auto' });
+        }, 50);
+      }
+    }
   })();
   </script>
   <script src="js/main.js"></script>
