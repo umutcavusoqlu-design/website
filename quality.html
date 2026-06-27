@@ -18,7 +18,7 @@
     .breadcrumb a { color:var(--orange); }
 
     /* ---- KALİTE POLİTİKASI ---- */
-    .quality-intro { padding: 90px 0; background: var(--white); }
+    .quality-intro { padding: 40px 0; background: var(--white); }
     .quality-intro-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -43,8 +43,20 @@
     .pillar-card h4 { color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
     .pillar-card p  { color: var(--gray); font-size: 0.78rem; line-height: 1.5; }
 
+    #sertifikalar {
+      scroll-margin-top: 110px;
+    }
+
+    #taahhut {
+      scroll-margin-top: 110px;
+    }
+
+    #kalite-kontrol {
+      scroll-margin-top: 110px;
+    }
+
     /* ---- SERTİFİKALAR (büyütülmüş) ---- */
-    .certs-section { padding: 90px 0; background: var(--navy); }
+    .certs-section { padding: 40px 0; background: var(--navy); }
     .certs-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -57,25 +69,6 @@
       border-radius: 12px;
       padding: 32px 24px;
       text-align: center;
-    }
-    .cert-badge-large {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 3px solid rgba(255,255,255,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 0.85rem;
-      color: var(--navy);
-      text-align: center;
-      padding: 10px;
-      flex-direction: column;
-      line-height: 1.2;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      margin: 0 auto 20px;
     }
     .cert-detail-name {
       color: var(--white);
@@ -90,7 +83,7 @@
     }
 
     /* ---- KALİTE KONTROL SÜRECİ ---- */
-    .qc-section { padding: 90px 0; background: var(--light); }
+    .qc-section { padding: 50px 0 90px; background: var(--light); }
     .qc-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -140,7 +133,7 @@
     }
 
     /* ---- TEST EKİPMANLARI ---- */
-    .testing-section { padding: 90px 0; background: var(--white); }
+    .testing-section { padding: 40px 0; background: var(--navy); }
     .testing-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -171,6 +164,26 @@
       color: var(--gray);
       font-size: 0.76rem;
       line-height: 1.5;
+    }
+
+    .testing-section .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 40px 0;
+    }
+
+    .testing-section .cert-detail-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .testing-section .cert-detail-name {
+      color: var(--white);
+    }
+
+    .testing-section .cert-detail-desc {
+      color: rgba(255,255,255,0.5);
     }
 
     @media (max-width: 1024px) {
@@ -211,6 +224,7 @@
           <div class="nav-dropdown">
             <a href="quality.html">Kalite <span class="dropdown-arrow">▾</span></a>
             <div class="dropdown-menu">
+              <a href="quality.html#taahhut">Taahhüdümüz</a>
               <a href="quality.html#sertifikalar">Sertifikalar</a>
               <a href="quality.html#kalite-kontrol">Kalite Kontrol</a>
               <a href="quality.html#laboratuvar">Laboratuvar</a>
@@ -223,50 +237,42 @@
     </div>
   </header>
 
-  <!-- SAYFA BAŞLIĞI -->
   <div class="page-hero">
     <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Anasayfa</a>
-        <span> / </span>
-        <span>Kalite</span>
-      </div>
-      <h1>Kalite Güvencesi</h1>
-      <p>Kalite bir departman değil — üretim sürecimizin her adımına işlenmiştir.</p>
     </div>
   </div>
 
   <!-- ===================================================
        KALİTE POLİTİKASI
   =================================================== -->
-  <section class="quality-intro">
+  <section class="quality-intro" id="taahhut">
     <div class="container">
       <div class="quality-intro-grid">
 
         <div class="quality-intro-text" data-animate>
-          <span class="section-tag">TAAHHÜDÜMÜZ</span>
+          <span class="section-tag">TAAHHÜDÜMÜZ & KALİTE POLİTİKAMIZ</span>
           <h2 class="section-title">Kalite Politikası</h2>
-          <p>[Yer Tutucu] RAU Metals'ta kalite, yaptığımız her şeyin temel taşıdır. Entegre kalite yönetim sistemimiz, ürettiğimiz her alüminyum profilin müşterilerimizin beklentilerini ve uluslararası standartların gerekliliklerini karşılamasını veya aşmasını sağlar.</p>
-          <p>[Yer Tutucu] En yüksek kalite düzeylerini korumak için test ekipmanlarına, personel eğitimine ve süreç iyileştirmeye sürekli yatırım yapıyoruz. Tüm ürünler, talep üzerine malzeme sertifikası ve test raporu ile teslim edilir.</p>
+          <p>RAU Metals olarak kaliteyi bir kontrol aşaması değil, üretim felsefemizin temel taşı olarak kabul ediyoruz. Entegre yönetim sistemimiz ve ödün vermediğimiz standartlarımız sayesinde, ürettiğimiz her alüminyum profilin uluslararası normları ve müşteri beklentilerini eksiksiz karşılamasını güvence altına alıyoruz.</p>
+          <p>Süreçlerimizi sürekli iyileştirmek adına ileri teknoloji test ekipmanlarına ve insan kaynağımıza kesintisiz yatırım yapıyoruz. Küresel pazardaki sorumluluğumuzun bilinciyle; tüm ürünlerimizi uluslararası geçerliliğe sahip malzeme sertifikaları ve detaylı test raporları ile taahhüt ettiğimiz standartlarda teslim ediyoruz.</p>
         </div>
 
         <div data-animate class="delay-1">
           <div class="quality-pillars">
             <div class="pillar-card">
-              <h4>Müşteri Odaklılık</h4>
-              <p>[Yer Tutucu] Her siparişte müşteri gerekliliklerini karşılamak ve aşmak.</p>
+              <h4>Müşteri Odaklı Çözümler</h4>
+              <p>Her projede, müşterilerimizin teknik gereksinimlerini en üst düzeyde karşılamak ve beklentilerinin ötesine geçen çözümler üretmek için çalışıyoruz.</p>
             </div>
             <div class="pillar-card">
-              <h4>Sürekli İyileştirme</h4>
-              <p>[Yer Tutucu] Düzenli denetimler, KPI takibi ve düzeltici faaliyet süreçleri.</p>
+              <h4>Sürekli İyileştirme & KPI Yönetimi</h4>
+              <p>Üretim performansımızı düzenli iç ve dış denetimlerle denetliyor, dönemsel KPI takipleri ve proaktif düzeltici faaliyetlerle süreçlerimizi sürekli optimize ediyoruz.</p>
             </div>
             <div class="pillar-card">
-              <h4>İzlenebilirlik</h4>
-              <p>[Yer Tutucu] Ham bilyetten nihai ürüne tam parti izlenebilirliği.</p>
+              <h4>Uçtan Uca Tam İzlenebilirlik</h4>
+              <p>Hammaddemiz olan silindirik bilyetten nihai ürüne kadar tüm süreçleri parti bazlı %100 izlenebilirlik altyapısı ile takip ediyoruz.</p>
             </div>
             <div class="pillar-card">
-              <h4>Eğitimli Personel</h4>
-              <p>[Yer Tutucu] Tüm operatörler sertifikalıdır ve sürekli eğitim almaktadır.</p>
+              <h4>Sertifikalı Uzman Kadro</h4>
+              <p>Tüm operatörlerimizi düzenli mesleki eğitimlerle destekliyor ve sertifikalı uzman kadromuzla hata payını sıfıra indiriyoruz.</p>
             </div>
           </div>
         </div>
@@ -286,97 +292,81 @@
       <div class="certs-grid">
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">ISO<br>9001</div>
           <div class="cert-detail-name">ISO 9001:2015</div>
           <p class="cert-detail-desc">Kalite Yönetim Sistemi. Alüminyum ekstrüzyon profillerinin tasarım, üretim, muayene ve teslimatını kapsar.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">ISO<br>14001</div>
           <div class="cert-detail-name">ISO 14001:2015</div>
           <p class="cert-detail-desc">Çevre Yönetim Sistemi. Çevresel etkiyi azaltma ve sürdürülebilir üretim uygulamalarına olan bağlılığımızı gösterir.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">ISO<br>50001</div>
           <div class="cert-detail-name">ISO 50001:2018</div>
           <p class="cert-detail-desc">Enerji Yönetim Sistemi. Enerji verimliliğini artırma ve enerji tüketimini sistematik biçimde azaltma taahhüdümüzü gösterir.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">ISO<br>45001</div>
           <div class="cert-detail-name">ISO 45001:2018</div>
           <p class="cert-detail-desc">İş Sağlığı ve Güvenliği Yönetim Sistemi. Çalışanlarımızın güvenli ve sağlıklı bir iş ortamında çalışmasını güvence altına alır.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">ISO<br>27001</div>
           <div class="cert-detail-name">ISO 27001</div>
           <p class="cert-detail-desc">Bilgi Güvenliği Yönetim Sistemi. Müşteri ve kurumsal verilerin korunmasına yönelik uluslararası standarda uygunluğumuzu belgeler.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">QUALI<br>COAT</div>
           <div class="cert-detail-name">QUALICOAT</div>
           <p class="cert-detail-desc">Alüminyum yüzeyler için toz boya ve sıvı boya kalitesini düzenleyen uluslararası lisans sistemi. Kaplama kalitesinin güvencesidir.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">QUAL<br>ANOD</div>
           <div class="cert-detail-name">QUALANOD</div>
           <p class="cert-detail-desc">Alüminyum anodizasyon işlemleri için kalite güvence lisansı. Anodik kaplama kalınlığı ve dayanıklılığını uluslararası standartlara göre belgeler.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">RoHS</div>
           <div class="cert-detail-name">RoHS</div>
           <p class="cert-detail-desc">Tehlikeli Maddelerin Kısıtlanması. Ürünlerimizin zararlı maddelerden arındırılmış olduğunu onaylar; elektronik ve otomotiv sektörlerinde uyumluluk sağlar.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">REACH</div>
           <div class="cert-detail-name">REACH</div>
           <p class="cert-detail-desc">AB kimyasal madde yönetmeliğine uygunluk. Kullanılan malzemelerin insan sağlığı ve çevre açısından güvenli olduğunu belgeler.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">SIFIR<br>ATIK</div>
           <div class="cert-detail-name">Sıfır Atık Belgesi</div>
           <p class="cert-detail-desc">Üretim süreçlerinde atık minimizasyonuna verilen taahhüdü ve çevresel sorumluluk anlayışını belgeleyen ulusal sertifikasyon.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">TS EN<br>755</div>
           <div class="cert-detail-name">TS EN 755-1</div>
           <p class="cert-detail-desc">Alüminyum ve alüminyum alaşımlarından yapılmış ekstrüzyon çubuk, boru ve profillerine ilişkin teknik teslimat koşulları standardı.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">TS EN<br>12020</div>
           <div class="cert-detail-name">TS EN 12020-1</div>
           <p class="cert-detail-desc">Hassas toleranslı alüminyum alaşımlı ekstrüzyon profilleri için teknik teslimat koşulları. Mimari ve yapısal uygulamalarda kullanılır.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">CE</div>
           <div class="cert-detail-name">CE Sertifikaları</div>
           <p class="cert-detail-desc">Ürünlerimizin AB direktiflerine uygunluğunu onaylayan CE işareti. Avrupa pazarına yönelik yapısal ve mimari uygulamalarda zorunlu sertifikasyon.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">UKCA</div>
           <div class="cert-detail-name">UKCA</div>
           <p class="cert-detail-desc">Birleşik Krallık Uygunluk Değerlendirmesi. Brexit sonrası İngiltere pazarına yönelik ürün uygunluğunu belgeleyen sertifikasyon.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">TS<br>4922</div>
           <div class="cert-detail-name">TS 4922</div>
           <p class="cert-detail-desc">Alüminyum ve alüminyum alaşımlı profillere ilişkin Türk standardı. Yurt içi yapı ve endüstriyel uygulamalarda ürün kalitesini güvence altına alır.</p>
         </div>
 
         <div class="cert-detail-card" data-animate>
-          <div class="cert-badge-large">IATF<br>16949</div>
           <div class="cert-detail-name">IATF 16949</div>
           <p class="cert-detail-desc">Otomotiv sektörüne yönelik kalite yönetim sistemi standardı. Araç üreticilerine tedarik edilen parça ve profillerde kalite güvencesini sağlar.</p>
         </div>
@@ -388,7 +378,7 @@
   <!-- ===================================================
        KALİTE KONTROL SÜRECİ
   =================================================== -->
-  <section class="qc-section">
+  <section class="qc-section" id="kalite-kontrol">
     <div class="container">
       <span class="section-tag">KALİTE KONTROL</span>
       <h2 class="section-title">Kalite Kontrol Sürecimiz</h2>
@@ -401,7 +391,7 @@
             <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </div>
           <div class="qc-step-title">Gelen Malzeme Muayenesi</div>
-          <p class="qc-step-desc">[Yer Tutucu] Gelen tüm bilyetler, spektrometre kullanılarak kimyasal bileşim açısından test edilir. Uygunluk sertifikaları sipariş gerekliliklerine göre doğrulanır.</p>
+          <p class="qc-step-desc">Gelen tüm bilyetler, spektrometre kullanılarak kimyasal bileşim açısından test edilir. Uygunluk sertifikaları sipariş gerekliliklerine göre doğrulanır.</p>
         </div>
 
         <div class="qc-step-card" data-animate class="delay-1">
@@ -410,7 +400,7 @@
             <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="qc-step-title">Süreç İçi Kontroller</div>
-          <p class="qc-step-desc">[Yer Tutucu] Boyutsal örnekleme, preste ve her yüzey işlemi aşamasından sonra yapılır. Tolerans dışı profiller derhal karantinaya alınır.</p>
+          <p class="qc-step-desc">Boyutsal örnekleme, preste ve her yüzey işlemi aşamasından sonra yapılır. Tolerans dışı profiller derhal karantinaya alınır.</p>
         </div>
 
         <div class="qc-step-card" data-animate class="delay-2">
@@ -419,7 +409,7 @@
             <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
           </div>
           <div class="qc-step-title">Mekanik Test</div>
-          <p class="qc-step-desc">[Yer Tutucu] Belirtilen temperliğe (T5, T6 vb.) uyumu doğrulamak için parti başına çekme dayanımı, akma dayanımı ve sertlik ölçülür.</p>
+          <p class="qc-step-desc">Belirtilen temperliğe (T5, T6 vb.) uyumu doğrulamak için parti başına çekme dayanımı, akma dayanımı ve sertlik ölçülür.</p>
         </div>
 
         <div class="qc-step-card" data-animate>
@@ -428,7 +418,7 @@
             <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <div class="qc-step-title">Yüzey Kalitesi Muayenesi</div>
-          <p class="qc-step-desc">[Yer Tutucu] Kaplama kalınlığını, yapışmayı ve görünümü kontrol etmek için anodize edilmiş ve toz boyalı yüzeylerin görsel ve enstrümantal muayenesi.</p>
+          <p class="qc-step-desc">Kaplama kalınlığını, yapışmayı ve görünümü kontrol etmek için anodize edilmiş ve toz boyalı yüzeylerin görsel ve enstrümantal muayenesi.</p>
         </div>
 
         <div class="qc-step-card" data-animate class="delay-1">
@@ -437,7 +427,7 @@
             <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <div class="qc-step-title">Boyutsal Doğrulama (CMM)</div>
-          <p class="qc-step-desc">[Yer Tutucu] Kritik profiller, onaylı çizimlere göre kesit boyutlarını doğrulamak için Koordinat Ölçüm Makinasında ölçülür.</p>
+          <p class="qc-step-desc">Kritik profiller, onaylı çizimlere göre kesit boyutlarını doğrulamak için Koordinat Ölçüm Makinasında ölçülür.</p>
         </div>
 
         <div class="qc-step-card" data-animate class="delay-2">
@@ -446,7 +436,7 @@
             <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           </div>
           <div class="qc-step-title">Nihai Serbest Bırakma &amp; Dokümantasyon</div>
-          <p class="qc-step-desc">[Yer Tutucu] Partiler, ancak tüm muayeneler geçildikten sonra serbest bırakılır. Her sevkiyatla birlikte malzeme test raporları ve uygunluk sertifikaları düzenlenir.</p>
+          <p class="qc-step-desc">Partiler, ancak tüm muayeneler geçildikten sonra serbest bırakılır. Her sevkiyatla birlikte malzeme test raporları ve uygunluk sertifikaları düzenlenir.</p>
         </div>
 
       </div>
@@ -456,43 +446,97 @@
   <!-- ===================================================
        TEST EKİPMANLARI
   =================================================== -->
+  <div id="laboratuvar" style="scroll-margin-top: 110px;"></div>
   <section class="testing-section">
     <div class="container">
       <span class="section-tag">LABORATUVAR</span>
-      <h2 class="section-title">Test Ekipmanları</h2>
+      <h2 class="section-title light">Test Ekipmanları</h2>
 
-      <div class="testing-grid">
+      <div class="certs-grid">
 
-        <div class="testing-card" data-animate>
-          <div class="testing-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div class="testing-name">CMM</div>
-          <p class="testing-desc">3D boyutsal muayene için Koordinat Ölçüm Makinası</p>
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Optik Emisyon Spektrometresi (OES)</h3>
+          <p class="cert-detail-desc">Alüminyum alaşımlarının kimyasal bileşimini saniyeler içinde hassas biçimde analiz eder.</p>
         </div>
 
-        <div class="testing-card" data-animate class="delay-1">
-          <div class="testing-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14"/></svg>
-          </div>
-          <div class="testing-name">Spektrometre</div>
-          <p class="testing-desc">Alaşım bileşimi doğrulaması için OES spektrometre</p>
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Metalurjik Mikroskop ve Mikroyapı Analiz Yazılımı</h3>
+          <p class="cert-detail-desc">Malzeme mikroyapısını inceleyerek tane boyutu, faz dağılımı ve iç kusurları tespit eder.</p>
         </div>
 
-        <div class="testing-card" data-animate class="delay-2">
-          <div class="testing-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div class="testing-name">Çekme Test Cihazı</div>
-          <p class="testing-desc">Mekanik özellik doğrulaması için evrensel test makinası</p>
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Numune Hazırlama Cihazları</h3>
+          <p class="cert-detail-desc">Zımparalama, parlatma ve dağlama üniteleriyle metalografik numune hazırlığı sağlar.</p>
         </div>
 
-        <div class="testing-card" data-animate class="delay-3">
-          <div class="testing-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <div class="testing-name">Sertlik Test Cihazı</div>
-          <p class="testing-desc">Temperlik doğrulaması için Vickers / Brinell sertlik ölçümü</p>
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Çekme-Basma Test Cihazı (Universal Tensile Tester)</h3>
+          <p class="cert-detail-desc">Profillerin çekme mukavemeti, akma dayanımı ve uzama değerlerini standartlara göre ölçer.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Sertlik Ölçüm Cihazları</h3>
+          <p class="cert-detail-desc">Webster sertlik pensesi ve Brinell/Vickers/Rockwell cihazlarıyla malzeme sertliği ölçülür.</p>
+        </div>
+
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Kaplama Kalınlığı Ölçüm Cihazı (Eddy Current Prensipli)</h3>
+          <p class="cert-detail-desc">Eloksal ve toz boya kaplama kalınlığını tahribatsız olarak hassas şekilde ölçer.</p>
+        </div>
+
+
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Reflektometre / Parlaklık Ölçer</h3>
+          <p class="cert-detail-desc">Eloksal yüzeyinin parlaklık derecesini ölçerek yüzey kalitesini sayısal olarak doğrular.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Yüzey Sızdırmazlık (Admittance/Seal) Test Cihazı</h3>
+          <p class="cert-detail-desc">Eloksal gözeneklerinin yeterince kapatılıp kapatılmadığını ölçer ve sızdırmazlığı doğrular.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Boya Kalınlığı Ölçüm Cihazı</h3>
+          <p class="cert-detail-desc">Toz boya kaplama kalınlığını standart değerlerle karşılaştırarak uygunluğunu doğrular.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Çentik Açma (Cross-Hatch) Test Kiti</h3>
+          <p class="cert-detail-desc">Boya veya kaplamanın alt yüzeye yapışma kuvvetini standart kesim testi ile ölçer.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Darbe (Impact) Test Cihazı</h3>
+          <p class="cert-detail-desc">Kaplama yüzeyinin ani darbeler karşısındaki dayanımını ve esnekliğini ölçer.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Silindir Mandrel Bükme Cihazı</h3>
+          <p class="cert-detail-desc">Kaplama esnekliğini ve bükülme sonrası çatlama direncini test eder.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Glossmetre (Parlaklık Ölçer)</h3>
+          <p class="cert-detail-desc">Toz boya yüzeyinin parlaklık değerini ölçer ve standart aralıkta olup olmadığını doğrular.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Kürlenme Takip Cihazı (Oven Tracker)</h3>
+          <p class="cert-detail-desc">Fırın içi sıcaklık profilini kayıt altına alarak boya kürlenme koşullarını doğrular.</p>
+        </div>
+
+
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Profil Projektör / Optik Ölçüm Cihazı</h3>
+          <p class="cert-detail-desc">Profil kesit geometrisini optik olarak büyüterek boyutsal doğruluğu kontrol eder.</p>
+        </div>
+
+        <div class="cert-detail-card">
+          <h3 class="cert-detail-name">Yüzey Pürüzlülük Ölçüm Cihazı</h3>
+          <p class="cert-detail-desc">Ra ve Rz parametreleriyle yüzey pürüzlülüğünü hassas biçimde ölçer ve kayıt altına alır.</p>
         </div>
 
       </div>
