@@ -35,6 +35,7 @@ body {
   color: var(--text);
   background: var(--white);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img { max-width: 100%; display: block; }
@@ -934,6 +935,20 @@ footer {
   .footer-about { display: none; }
   .section-header { flex-direction: column; align-items: flex-start; }
   .process-steps { gap: 0; }
+
+  /* Yatay kayma engelle */
+  html, body { overflow-x: hidden; max-width: 100%; }
+  * { max-width: 100%; }
+
+  /* Neden Biz kartları 1 sütun */
+  .rau-intro-grid { grid-template-columns: 1fr !important; }
+  .rau-intro-card { text-align: left; }
+
+  /* Footer düzelt */
+  .footer-about { display: none !important; }
+  .footer-grid { grid-template-columns: 1fr !important; }
+  .footer-contact-info .contact-row { flex-direction: column !important; gap: 8px !important; }
+  .footer-social { justify-content: flex-start; }
 }
 
 @media (max-width: 480px) {
