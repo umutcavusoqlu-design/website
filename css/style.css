@@ -168,7 +168,7 @@ ul { list-style: none; }
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 #nav-links > a:hover { color: var(--white); }
@@ -299,7 +299,7 @@ ul { list-style: none; }
   line-height: 1.06;
   margin-bottom: 22px;
   letter-spacing: -0.5px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hero-desc {
@@ -900,63 +900,51 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Menü gizle, hamburger göster */
+  .container { padding: 0 16px; }
   #menu-toggle { display: block; }
-
-  #nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background: rgba(5,10,20,0.97);
-    flex-direction: column;
-    padding: 14px 20px 22px;
-    gap: 2px;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  }
-
+  #nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(5,10,20,0.97); flex-direction: column; padding: 14px 20px 22px; gap: 2px; border-top: 1px solid rgba(255,255,255,0.07); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
   #nav-links.open { display: flex; }
-
-  #nav-links > a {
-    padding: 10px 14px;
-    width: 100%;
-  }
-
-  /* Mobilde header-actions gizle, hamburger menüye taşı */
+  #nav-links > a { padding: 10px 14px; width: 100%; }
   .header-actions { display: none; }
-
-  .lang-switcher {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 10px;
-    margin-top: 4px;
-    margin-left: 0;
-    width: 100%;
-  }
-
+  .header-inner { padding: 4px 16px; }
   .nav-cta { width: 100%; }
   .nav-cta .btn { width: 100%; justify-content: center; }
-
-  /* Hero tek sütun */
-  .hero-inner { grid-template-columns: 1fr; gap: 30px; }
+  .social-sidebar { display: none !important; }
+  .teklif-btn { display: none !important; }
+  .hero-inner { padding: 120px 0 60px; }
+  .hero-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
   .hero-image { display: none; }
-  .hero-features-grid { grid-template-columns: repeat(2, 1fr); }
-
+  .hero-features-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .feature-item:not(:last-child) { border-right: none; padding-right: 0; }
+  .feature-item:not(:first-child) { padding-left: 0; }
   .products-grid { grid-template-columns: 1fr; }
-  .why-features  { grid-template-columns: 1fr; }
-  .apps-grid     { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid   { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-
+  .rau-intro-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .why-features { grid-template-columns: 1fr; }
+  .apps-grid { grid-template-columns: repeat(2, 1fr); }
+  .cert-grid { grid-template-columns: repeat(3, 1fr); }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  .quality-intro-grid { grid-template-columns: 1fr; }
+  .quality-pillars { grid-template-columns: 1fr; }
+  section[id="kaliphane"] .container > div, section[id="ekstruzyon"] .container > div, section[id="eloksal"] .container > div, section[id="boyahane"] .container > div, section[id="mekanik"] .container > div { grid-template-columns: 1fr !important; gap: 24px !important; }
+  section[id="kaliphane"] .container > div > div:first-child, section[id="ekstruzyon"] .container > div > div:first-child, section[id="eloksal"] .container > div > div:first-child, section[id="boyahane"] .container > div > div:first-child, section[id="mekanik"] .container > div > div:first-child { height: 240px !important; }
+  .lab-equipment-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+  .contact-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .footer-about { display: none; }
   .section-header { flex-direction: column; align-items: flex-start; }
-
   .process-steps { gap: 0; }
 }
 
 @media (max-width: 480px) {
-  .hero-features-grid { grid-template-columns: 1fr; }
-  .apps-grid          { grid-template-columns: 1fr; }
-  .hero-btns          { flex-direction: column; }
-  .btn                { justify-content: center; }
+  .hero-features-grid { grid-template-columns: 1fr 1fr; }
+  .apps-grid { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+  .btn { justify-content: center; }
+  .rau-intro-grid { grid-template-columns: 1fr; }
+  .lab-equipment-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .applications-section .section-tag {
@@ -1375,7 +1363,7 @@ footer .logo-img {
   letter-spacing: 1px;
   margin-bottom: 24px;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .rau-intro-header p {
