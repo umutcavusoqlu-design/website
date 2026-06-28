@@ -224,10 +224,10 @@
           <div class="nav-dropdown">
             <a href="quality.html">Kalite <span class="dropdown-arrow">▾</span></a>
             <div class="dropdown-menu">
-              <a href="quality.html#taahhut">Taahhüdümüz</a>
-              <a href="quality.html#sertifikalar">Sertifikalar</a>
-              <a href="quality.html#kalite-kontrol">Kalite Kontrol</a>
-              <a href="quality.html#laboratuvar">Laboratuvar</a>
+              <a href="quality.html?s=taahhut">Taahhüdümüz</a>
+              <a href="quality.html?s=sertifikalar">Sertifikalar</a>
+              <a href="quality.html?s=kalite-kontrol">Kalite Kontrol</a>
+              <a href="quality.html?s=laboratuvar">Laboratuvar</a>
             </div>
           </div>
           <a href="articles.html">Makaleler</a>
@@ -591,6 +591,38 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+
+<script>
+(function(){
+  // Aynı sayfadaki linkleri yakala
+  document.querySelectorAll('a[href*="quality.html"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      var s = new URLSearchParams(href.split('?')[1] || '').get('s');
+      if(!s) return;
+      e.preventDefault();
+      var target = document.getElementById(s);
+      if(target) {
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Sayfa ilk açılınca query param ile scroll
+  var params = new URLSearchParams(window.location.search);
+  var section = params.get('s');
+  if(section) {
+    document.addEventListener('DOMContentLoaded', function(){
+      var target = document.getElementById(section);
+      if(target) {
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  }
+})();
+</script>
 
   <a href="#iletisim" class="teklif-btn">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
