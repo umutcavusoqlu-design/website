@@ -912,8 +912,9 @@ footer {
   .nav-cta .btn { width: 100%; justify-content: center; }
   .social-sidebar { display: none !important; }
   .teklif-btn { display: none !important; }
-  .hero-inner { padding: 120px 0 60px; }
-  .hero-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  .hero-inner { padding: 120px 0 60px; max-width: calc(100% - 52px) !important; }
+  .hero-title { font-size: clamp(1.4rem, 6vw, 2rem) !important; white-space: normal !important; overflow-wrap: break-word !important; word-break: break-word !important; }
+  .hero-desc { max-width: 100% !important; }
   .hero-image { display: none; }
   .hero-features-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .feature-item:not(:last-child) { border-right: none; padding-right: 0; }
@@ -986,10 +987,29 @@ footer {
   .rau-intro-card { min-width: 0; word-break: break-word; }
 
   /* Hero feature ikonları mobil */
-  .feature-icon img { width: 70px !important; height: 70px !important; }
-  .feature-title { font-size: 0.8rem !important; }
-  .hero-features-grid { gap: 8px !important; padding: 0 8px !important; }
-  .feature-item { gap: 8px !important; }
+  .feature-icon img { width: 52px !important; height: 52px !important; }
+  .feature-svg-icon { width: 52px !important; height: 52px !important; }
+  .feature-title { font-size: 0.72rem !important; text-align: center !important; }
+  .feature-desc { font-size: 0.68rem !important; text-align: center !important; }
+  .hero-features-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+    padding: 0 8px !important;
+  }
+  .feature-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 6px !important;
+    padding: 8px 4px !important;
+  }
+  .feature-item:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.15) !important;
+    padding-right: 4px !important;
+  }
+  .feature-item:not(:first-child) {
+    padding-left: 4px !important;
+  }
 
   /* Neden Biz banner düzelt */
   .rau-intro-banner { overflow: hidden; width: 100%; padding: 0 16px; box-sizing: border-box; margin: 0 !important; }
