@@ -349,10 +349,26 @@
     }, 2000);
   });
 
+  // Aynı sayfadaki linkleri yakala
+  document.querySelectorAll('a[href*="production.html"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      var s = new URLSearchParams(href.split('?')[1] || '').get('s');
+      if(!s) return;
+      e.preventDefault();
+      var target = document.getElementById(s);
+      if(target) {
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Sayfa ilk açılınca query param ile scroll
   var params = new URLSearchParams(window.location.search);
   var section = params.get('s');
   if(section) {
-    window.addEventListener('load', function(){
+    document.addEventListener('DOMContentLoaded', function(){
       var target = document.getElementById(section);
       if(target) {
         var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
