@@ -958,8 +958,14 @@ footer {
   .logo { flex: 1; display: flex; justify-content: center; }
   #menu-toggle { flex: 0 0 auto; }
 
-  .teklif-btn { display: none !important; }
-  .social-sidebar { display: none !important; }
+  /* TEKLİF AL küçük ikon olarak göster */
+  .teklif-btn { display: flex !important; right: 8px !important; bottom: 80px !important; width: 44px !important; height: 44px !important; padding: 0 !important; border-radius: 50% !important; justify-content: center !important; align-items: center !important; }
+  .teklif-btn span { display: none !important; }
+
+  /* Sosyal sidebar küçük göster */
+  .social-sidebar { display: flex !important; top: 180px !important; bottom: auto !important; right: 0 !important; }
+  .social-link { width: 36px !important; height: 36px !important; border-radius: 6px 0 0 6px !important; }
+  .social-link svg { width: 16px !important; height: 16px !important; }
 
   /* Mobil menü hizalama */
   .nav-dropdown > a { padding: 10px 14px !important; display: block; width: 100%; color: rgba(255,255,255,0.62) !important; font-size: 15px !important; font-weight: 500 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; }
