@@ -374,6 +374,11 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
+.feature-icon img {
+  max-height: 72px;
+  width: auto;
+}
+
 .hero-features .feature-icon i {
   color: #ffffff;
   font-size: 3rem;
