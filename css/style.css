@@ -993,28 +993,28 @@ footer {
   .rau-intro-card { min-width: 0; word-break: break-word; }
 
   /* Hero feature ikonları mobil */
-  .feature-icon img { width: 52px !important; height: 52px !important; }
-  .feature-svg-icon { width: 52px !important; height: 52px !important; }
-  .feature-title { font-size: 0.72rem !important; text-align: center !important; }
-  .feature-desc { font-size: 0.68rem !important; text-align: center !important; }
+  .feature-icon img { width: 44px !important; height: 44px !important; }
+  .feature-svg-icon { width: 44px !important; height: 44px !important; }
+  .feature-title { font-size: 0.62rem !important; text-align: center !important; white-space: nowrap !important; }
+  .feature-desc { font-size: 0.58rem !important; text-align: center !important; white-space: nowrap !important; }
   .hero-features-grid {
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 6px !important;
-    padding: 0 8px !important;
+    gap: 4px !important;
+    padding: 0 4px !important;
   }
   .feature-item {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 6px !important;
-    padding: 8px 4px !important;
+    gap: 4px !important;
+    padding: 6px 2px !important;
   }
   .feature-item:not(:last-child) {
     border-right: 1px solid rgba(255,255,255,0.15) !important;
-    padding-right: 4px !important;
+    padding-right: 2px !important;
   }
   .feature-item:not(:first-child) {
-    padding-left: 4px !important;
+    padding-left: 2px !important;
   }
 
   /* Neden Biz banner düzelt */
