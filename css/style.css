@@ -349,22 +349,22 @@ ul { list-style: none; }
 .hero-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 0;
 }
 
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 10px;
 }
 
 .feature-item:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-  padding-right: 2rem;
+  padding-right: 0.8rem;
 }
 
 .feature-item:not(:first-child) {
-  padding-left: 2rem;
+  padding-left: 0;
 }
 
 .feature-icon {
@@ -372,6 +372,11 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.feature-icon img {
+  max-height: 72px;
+  width: auto;
 }
 
 .hero-features .feature-icon i {
@@ -399,6 +404,7 @@ ul { list-style: none; }
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 2px;
+  white-space: nowrap;
 }
 
 .feature-desc {
