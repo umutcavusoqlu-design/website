@@ -346,10 +346,31 @@
     }, 2000);
   });
 
-  // Scroll düzeltme
-  var hash = window.location.hash;
-  if(hash) {
-    window.scrollTo(0, 0);
+  // Tüm anchor linkleri yakala
+  document.querySelectorAll('a[href*="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      var hashIndex = href.indexOf('#');
+      if(hashIndex === -1) return;
+      var hash = href.slice(hashIndex);
+      var pagePart = href.slice(0, hashIndex);
+      // Aynı sayfadaysak
+      if(!pagePart || window.location.pathname.endsWith(pagePart)) {
+        e.preventDefault();
+        var target = document.querySelector(hash);
+        if(target) {
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          history.pushState(null, '', hash);
+        }
+      }
+    });
+  });
+
+  // Sayfa hash ile açıldıysa
+  if(window.location.hash) {
+    var hash = window.location.hash;
+    history.replaceState(null, '', window.location.pathname);
     window.addEventListener('load', function(){
       setTimeout(function(){
         var target = document.querySelector(hash);
@@ -357,7 +378,7 @@
           var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
-      }, 100);
+      }, 50);
     });
   }
 })();
