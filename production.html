@@ -328,34 +328,40 @@
 
     </div>
   </footer>
-  <script>
-  (function(){
-    var groups = new Map();
-    document.querySelectorAll('.prod-slide').forEach(function(img){
-      var parent = img.parentElement;
-      if(!groups.get(parent)) groups.set(parent, []);
-      groups.get(parent).push(img);
-    });
-    groups.forEach(function(imgs){
-      var i = 0;
-      setInterval(function(){
-        imgs[i].style.opacity = '0';
-        i = (i+1) % imgs.length;
-        imgs[i].style.opacity = '1';
-      }, 2000);
-    });
+<script>
+(function(){
+  // Slider
+  var groups = new Map();
+  document.querySelectorAll('.prod-slide').forEach(function(img){
+    var parent = img.parentElement;
+    if(!groups.get(parent)) groups.set(parent, []);
+    groups.get(parent).push(img);
+  });
+  groups.forEach(function(imgs){
+    var i = 0;
+    setInterval(function(){
+      imgs[i].style.opacity = '0';
+      i = (i+1) % imgs.length;
+      imgs[i].style.opacity = '1';
+    }, 2000);
+  });
 
-    // Anchor'a scroll sorununu düzelt
-    if(window.location.hash) {
-      var target = document.querySelector(window.location.hash);
-      if(target) {
-        setTimeout(function(){
-          window.scrollTo({ top: target.offsetTop - 110, behavior: 'auto' });
-        }, 50);
-      }
-    }
-  })();
-  </script>
+  // Scroll düzeltme
+  var hash = window.location.hash;
+  if(hash) {
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        var target = document.querySelector(hash);
+        if(target) {
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 100);
+    });
+  }
+})();
+</script>
   <script src="js/main.js"></script>
 
   <a href="#iletisim" class="teklif-btn">
