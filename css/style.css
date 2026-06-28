@@ -985,6 +985,12 @@ footer {
   .rau-intro-grid { width: 100%; overflow: hidden; }
   .rau-intro-card { min-width: 0; word-break: break-word; }
 
+  /* Hero feature ikonları mobil */
+  .feature-icon img { width: 70px !important; height: 70px !important; }
+  .feature-title { font-size: 0.8rem !important; }
+  .hero-features-grid { gap: 8px !important; padding: 0 8px !important; }
+  .feature-item { gap: 8px !important; }
+
   /* Neden Biz banner düzelt */
   .rau-intro-banner { overflow: hidden; width: 100%; padding: 0 16px; box-sizing: border-box; margin: 0 !important; }
   .rau-intro-grid { grid-template-columns: 1fr !important; width: 100%; }
