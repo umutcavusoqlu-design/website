@@ -921,6 +921,7 @@ footer {
   .hero-inner { padding: 120px 0 60px; max-width: calc(100% - 52px) !important; }
   .hero-title { font-size: clamp(1.4rem, 6vw, 2rem) !important; white-space: normal !important; overflow-wrap: break-word !important; word-break: break-word !important; }
   .hero-desc { max-width: 100% !important; }
+  .hero-label { font-size: 0.6rem !important; letter-spacing: 1px !important; }
   .hero-image { display: none; }
   .hero-features-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .feature-item:not(:last-child) { border-right: none; padding-right: 0; }
@@ -995,8 +996,8 @@ footer {
   /* Hero feature ikonları mobil */
   .feature-icon img { width: 44px !important; height: 44px !important; }
   .feature-svg-icon { width: 44px !important; height: 44px !important; }
-  .feature-title { font-size: 0.62rem !important; text-align: center !important; white-space: nowrap !important; }
-  .feature-desc { font-size: 0.58rem !important; text-align: center !important; white-space: nowrap !important; }
+  .feature-title { font-size: 0.58rem !important; text-align: center !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+  .feature-desc { font-size: 0.54rem !important; text-align: center !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
   .hero-features-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 4px !important;
