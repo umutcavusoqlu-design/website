@@ -39,6 +39,15 @@
       gap: 60px;
       align-items: center;
     }
+    .pillar-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+    }
+    .pillar-card h4 { color: var(--navy); font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
+    .pillar-card p  { color: var(--gray); font-size: 0.78rem; line-height: 1.5; }
     .about-img {
       border-radius: 8px;
       overflow: hidden;
@@ -153,20 +162,28 @@
     <div class="container">
       <div class="about-grid">
 
-        <div class="about-img">
-          <img src="images/about-factory.jpg"
-               alt="RAU Metals Factory"
-               onerror="this.style.display='none'" />
-          🏭
-        </div>
-
         <div class="about-text" data-animate>
           <span class="section-tag">HİKAYEMİZ</span>
           <h2 class="section-title">Biz Kimiz</h2>
-          <p>RAU Metals, endüstriyel, inşaat, güneş enerjisi ve otomotiv sektörlerine hassas mühendislik çözümleri sunarak küresel pazarlara hizmet eden önde gelen bir alüminyum ekstrüzyon profil üreticisidir.</p>
-          <p>20 yılı aşkın deneyimimizle, son teknoloji tesisimiz ISO sertifikası ve titiz kalite kontrol güvencesiyle tam spesifikasyona göre özel profiller üretmektedir.</p>
-          <p>Avrupa, Orta Doğu ve ötesinde 30'dan fazla ülkeye ihracat yaparak kalite ve güvenilirlik temeline dayalı kalıcı ortaklıklar kuruyoruz.</p>
-          <a href="contact.html" class="btn btn-orange" style="margin-top:12px;">Bize Ulaşın →</a>
+          <p>RAU Metals, alüminyum sektöründe edindiğimiz bilgi, uzmanlık ve sektör tecrübesiyle, müşterilerimize yalnızca ürün değil, ihtiyaçlarına özel çözümler sunmayı hedefliyoruz. Endüstriyel ve özel alüminyum profiller başta olmak üzere, kalite, güven ve sürdürülebilir iş ortaklıklarını işimizin temel değerleri olarak benimsiyoruz.</p>
+          <p>RAU Metals olarak, her projeye mühendislik bakış açısıyla yaklaşıyor; müşterilerimizin beklentilerini doğru analiz ederek, rekabetçi, yenilikçi ve katma değer yaratan çözümler geliştiriyoruz.</p>
+          <p>Deneyimden aldığımız güç ve geleceğe dönük vizyonumuzla, yurt içi ve uluslararası pazarlarda güvenilir bir çözüm ortağı olmayı amaçlıyoruz.</p>
+          <p>Çünkü biz, metalin ötesinde değer üretiyoruz.</p>
+        </div>
+
+        <div data-animate class="delay-1" style="align-self: center;">
+          <div class="pillar-card">
+            <h4>Misyon</h4>
+            <p>Kalite, güven, müşteri odaklılık ve sürekli gelişim ilkeleri doğrultusunda; endüstriyel ve özel alüminyum profil çözümlerini zamanında, izlenebilir ve yüksek standartlarda sunarak müşterilerimizin rekabet gücüne katkı sağlamak.</p>
+          </div>
+          <div class="pillar-card">
+            <h4>Vizyon</h4>
+            <p>Sürdürülebilir üretim anlayışı ve ileri mühendislik çözümleriyle alüminyum sektöründe küresel ölçekte öncü ve referans gösterilen bir marka olmak.</p>
+          </div>
+          <div class="pillar-card">
+            <h4>Temel Değerler</h4>
+            <p>Kalite, güven, şeffaflık ve sürekli gelişim ilkelerini iş yapış biçimimizin merkezine koyuyoruz. Müşteri memnuniyetini önceliğimiz olarak görüyor, sürdürülebilir iş ortaklıkları kurmayı ve mühendislik odaklı yaklaşımımızla katma değer yaratan çözümler sunmayı hedefliyoruz.</p>
+          </div>
         </div>
 
       </div>
@@ -174,57 +191,6 @@
   </section>
 
   <!-- İSTATİSTİKLER -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div data-animate>
-          <div class="stat-num">20+</div>
-          <div class="stat-label">Yıllık Deneyim</div>
-        </div>
-        <div data-animate class="delay-1">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">Hizmet Verilen Ülke</div>
-        </div>
-        <div data-animate class="delay-2">
-          <div class="stat-num">500+</div>
-          <div class="stat-label">Profil Çeşidi</div>
-        </div>
-        <div data-animate class="delay-3">
-          <div class="stat-num">1000+</div>
-          <div class="stat-label">Memnun Müşteri</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DEĞERLERİMİZ -->
-  <section class="values-section">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:8px;">
-        <span class="section-tag">DEĞERLERİMİZ</span>
-      </div>
-      <h2 class="section-title" style="text-align:center;">Temel Değerlerimiz</h2>
-
-      <div class="values-grid">
-        <div class="value-card" data-animate>
-          <div class="value-icon">🎯</div>
-          <div class="value-title">Hassasiyet</div>
-          <p class="value-desc">Ürettiğimiz her profil tam boyutsal toleransları ve yüzey kalitesi standartlarını karşılar.</p>
-        </div>
-        <div class="value-card" data-animate class="delay-1">
-          <div class="value-icon">🤝</div>
-          <div class="value-title">Güvenilirlik</div>
-          <p class="value-desc">Tutarlı kalite ve zamanında teslimat ile müşterilerimizle uzun vadeli ilişkiler kuruyoruz.</p>
-        </div>
-        <div class="value-card" data-animate class="delay-2">
-          <div class="value-icon">🌱</div>
-          <div class="value-title">Sürdürülebilirlik</div>
-          <p class="value-desc">Alüminyum %100 geri dönüştürülebilir. Çevreye duyarlı üretime kararlıyız.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER (tüm sayfalarda aynı) -->
 
   <footer style="position:relative; overflow:hidden;">
