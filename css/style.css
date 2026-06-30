@@ -294,7 +294,7 @@ ul { list-style: none; }
 
 /* Büyük başlık */
 .hero-title {
-  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+  font-size: clamp(5rem, 11vw, 9rem) !important;
   font-weight: 900;
   color: var(--white);
   line-height: 1.06;
@@ -2097,4 +2097,22 @@ footer {
 
 .sector-grid {
   margin-top: 0 !important;
+}
+
+.hero-slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.hero-slogan span {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
 }
