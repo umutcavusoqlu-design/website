@@ -414,8 +414,8 @@ ul { list-style: none; }
 
 /* ---- ÜRÜNLER / HİZMETLER BÖLÜMÜ ---- */
 .products-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   background: #f8f9fa;
 }
 
@@ -615,10 +615,10 @@ html[lang="de"] .process-labels span:not(.arrow),
 /* ---- NEDEN BİZ + SERTİFİKALAR ---- */
 .why-section {
   background: var(--dark, #0d1b2a);
-  padding: 0;
+  padding: 24px 0;
   display: flex;
   align-items: center;
-  min-height: 160px;
+  min-height: auto;
 }
 
 .why-grid {
@@ -1906,4 +1906,194 @@ footer {
 
 .footer-social {
   margin-top: -28px !important;
+}
+
+.process-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.process-step {
+  width: 170px;
+  text-align: center;
+}
+
+.process-icon-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+}
+
+.process-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid #d8dde3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #1a1a1a;
+}
+
+.process-num {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #b9c0c8;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-step h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.process-step p {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.process-arrow {
+  align-self: center;
+  font-size: 1.2rem;
+  color: #b9c0c8;
+  margin-top: 22px;
+}
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.sector-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+
+.sector-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sector-card span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 4px;
+}
+
+@media (max-width: 900px) {
+  .process-steps { gap: 16px; }
+  .process-arrow { display: none; }
+  .sector-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.rau-intro-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4px 20px 16px;
+}
+
+.rau-intro-text p {
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: #444;
+  text-align: center;
+}
+
+.rau-intro-text p {
+  display: block;
+}
+
+.rau-intro-text p br.force-line {
+  display: block;
+}
+
+.rau-intro-grid {
+  gap: 14px !important;
+}
+
+.rau-intro-card {
+  padding: 18px 14px !important;
+}
+
+.rau-intro-card h3 {
+  font-size: 0.92rem !important;
+  margin-bottom: 8px !important;
+}
+
+.rau-intro-card p {
+  font-size: 0.82rem !important;
+  line-height: 1.6 !important;
+}
+
+.rau-intro-text p {
+  font-size: 1.05rem !important;
+}
+
+.rau-intro-card p {
+  font-size: 1.05rem !important;
+}
+
+.rau-intro-card h3 {
+  font-size: 1.05rem !important;
+}
+
+.process-icon {
+  border: none !important;
+  background: transparent !important;
+}
+
+.process-num {
+  display: none !important;
+}
+
+.process-icon img {
+  width: 104px !important;
+  height: 76px !important;
+}
+
+.process-title {
+  margin-bottom: 16px !important;
+}
+
+.process-title[style*="margin-top:60px"] {
+  margin-top: 28px !important;
+}
+
+.sector-grid {
+  margin-top: 0 !important;
 }
