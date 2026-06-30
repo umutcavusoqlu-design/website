@@ -793,6 +793,7 @@ html[lang="de"] .process-labels span:not(.arrow),
 }
 
 
+/* ⚠️ KİLİTLİ: Footer stilleri onaylandı, talimat verilmeden değiştirme */
 /* ---- FOOTER ---- */
 footer {
   background: var(--navy);
@@ -1964,13 +1965,13 @@ footer {
 }
 
 .process-step h4 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .process-step p {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: #666;
   line-height: 1.5;
 }
@@ -1992,7 +1993,7 @@ footer {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
 }
 
 .sector-card img {
@@ -2008,7 +2009,7 @@ footer {
   right: 0;
   background: rgba(0,0,0,0.65);
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-align: center;
   padding: 10px 4px;
@@ -2028,7 +2029,7 @@ footer {
 }
 
 .rau-intro-text p {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   line-height: 1.9;
   color: #444;
   text-align: center;
@@ -2051,25 +2052,25 @@ footer {
 }
 
 .rau-intro-card h3 {
-  font-size: 0.92rem !important;
+  font-size: 1.1rem;
   margin-bottom: 8px !important;
 }
 
 .rau-intro-card p {
-  font-size: 0.82rem !important;
+  font-size: 0.95rem;
   line-height: 1.6 !important;
 }
 
 .rau-intro-text p {
-  font-size: 1.05rem !important;
+  font-size: 0.95rem;
 }
 
 .rau-intro-card p {
-  font-size: 1.05rem !important;
+  font-size: 0.95rem;
 }
 
 .rau-intro-card h3 {
-  font-size: 1.05rem !important;
+  font-size: 1.1rem;
 }
 
 .process-icon {
