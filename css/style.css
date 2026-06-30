@@ -1233,7 +1233,7 @@ footer {
 
 .page-hero {
   background: var(--dark, #0d1b2a);
-  padding: 100px 0 40px;
+  padding: 90px 0 30px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
