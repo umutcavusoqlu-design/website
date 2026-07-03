@@ -135,6 +135,7 @@
       transition: var(--transition);
     }
     .file-upload:hover { border-color: var(--orange); background: rgba(232,100,10,0.03); }
+    .file-upload.drag-over { border-color: var(--orange); background: rgba(26,111,255,0.05); }
     .file-upload input { display: none; }
     .file-upload-icon { font-size: 1.8rem; margin-bottom: 8px; }
     .file-upload-text { font-size: 0.82rem; color: var(--gray); }
@@ -283,16 +284,16 @@
               <div class="form-group">
                 <label>Ad Soyad *</label>
                 <input type="text" required
-                       data-placeholder-en="John Smith"
+                       data-placeholder-en="Ad Soyad"
                        data-placeholder-tr="Ad Soyad"
-                       placeholder="John Smith" />
+                       placeholder="Ad Soyad" />
               </div>
               <div class="form-group">
-                <label>Firma</label>
-                <input type="text"
-                       data-placeholder-en="Company Name"
+                <label>Firma *</label>
+                <input type="text" required
+                       data-placeholder-en="Firma Adı"
                        data-placeholder-tr="Firma Adı"
-                       placeholder="Company Name" />
+                       placeholder="Firma Adı" />
               </div>
             </div>
 
@@ -300,13 +301,13 @@
               <div class="form-group">
                 <label>E-posta *</label>
                 <input type="email" required
-                       data-placeholder-en="you@company.com"
+                       data-placeholder-en="siz@firma.com"
                        data-placeholder-tr="siz@firma.com"
-                       placeholder="you@company.com" />
+                       placeholder="siz@firma.com" />
               </div>
               <div class="form-group">
-                <label>Telefon</label>
-                <input type="tel"
+                <label>Telefon *</label>
+                <input type="tel" required
                        data-placeholder-en="+90 000 000 00 00"
                        data-placeholder-tr="+90 000 000 00 00"
                        placeholder="+90 000 000 00 00" />
@@ -314,30 +315,31 @@
             </div>
 
             <div class="form-group">
-              <label>Ürün / Uygulama</label>
-              <select>
+              <label>Ürün / Uygulama *</label>
+              <select required>
                 <option value="">Kategori seçin</option>
-                <option value="industrial">Endüstriyel Profiller</option>
-                <option value="construction">İnşaat Profilleri</option>
-                <option value="solar">Güneş Enerjisi Profilleri</option>
-                <option value="custom">Özel Profil</option>
-                <option value="other">Diğer</option>
+                <option value="insaat">İnşaat & Mimari Sistemler</option>
+                <option value="endustriyel">Endüstriyel & Makine İmalatı</option>
+                <option value="otomotiv">Otomotiv & Ulaşım</option>
+                <option value="enerji">Enerji & Elektrik-Elektronik</option>
+                <option value="mobilya">Mobilya & İç Mekân Çözümleri</option>
+                <option value="ozel">Özel Uygulamalar</option>
               </select>
             </div>
 
             <div class="form-group">
               <label>Mesaj *</label>
               <textarea required
-                        data-placeholder-en="Please describe your requirements, quantities and any technical specifications..."
-                        data-placeholder-tr="Lütfen gereksinimlerinizi, miktarlarınızı ve teknik özelliklerinizi açıklayın..."
-                        placeholder="Please describe your requirements, quantities and any technical specifications..."></textarea>
+                        data-placeholder-en="Talep ettiğiniz ürün, miktar ve tüm teknik detayları buraya yazınız."
+                        data-placeholder-tr="Talep ettiğiniz ürün, miktar ve tüm teknik detayları buraya yazınız."
+                        placeholder="Talep ettiğiniz ürün, miktar ve tüm teknik detayları buraya yazınız."></textarea>
             </div>
 
             <!-- Dosya yükleme (çizim için) -->
             <div class="form-group">
               <label>Çizim Yükle (opsiyonel)</label>
               <label class="file-upload" for="file-input">
-                <input type="file" id="file-input" accept=".pdf,.dwg,.dxf,.jpg,.png" />
+                <input type="file" id="file-input" accept=".pdf,.dwg,.dxf,.jpg,.png" multiple />
                 <div class="file-upload-icon">📎</div>
                 <div class="file-upload-text">
                   <span>Yüklemek için tıklayın</span>
@@ -345,10 +347,69 @@
                   <span style="color:var(--gray)">PDF, DWG, DXF, JPG, PNG</span>
                 </div>
               </label>
+              <div id="file-preview" style="margin-top:8px; padding:8px; background:#f4f6f8; border-radius:8px; border:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;"></div>
             </div>
 
             <button type="submit" class="btn btn-orange form-submit">Mesaj Gönder →</button>
 
+          <script>
+let selectedFiles = [];
+
+(function() {
+  const label = document.querySelector('.file-upload');
+  label.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    label.classList.add('drag-over');
+  });
+  label.addEventListener('dragleave', function() {
+    label.classList.remove('drag-over');
+  });
+  label.addEventListener('drop', function(e) {
+    e.preventDefault();
+    label.classList.remove('drag-over');
+    addFiles(e.dataTransfer.files);
+  });
+})();
+
+function addFiles(files) {
+  Array.from(files).forEach(function(file) {
+    const index = selectedFiles.length;
+    selectedFiles.push(file);
+    addFileCard(file, index);
+  });
+}
+
+document.getElementById('file-input').addEventListener('change', function(e) {
+  addFiles(e.target.files);
+  e.target.value = '';
+});
+
+function addFileCard(file, index) {
+  const preview = document.getElementById('file-preview');
+  const iconText = file.type.startsWith('image/') ? '🖼️' : (file.name.endsWith('.pdf') ? '📕' : '📐');
+  const card = document.createElement('div');
+  card.id = 'file-card-' + index;
+  card.style.cssText = 'display:flex; align-items:center; gap:10px;';
+  card.innerHTML = '<span style="font-size:1.5rem;">' + iconText + '</span>' +
+    '<div style="flex:1; min-width:0;">' +
+      '<p style="font-size:0.8rem; font-weight:600; color:#1e293b; margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + file.name + '</p>' +
+      '<p style="font-size:0.7rem; color:#6b7280; margin:0;">' + (file.size / 1024).toFixed(1) + ' KB</p>' +
+    '</div>';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.onclick = function() { removeFile(index); };
+  btn.style.cssText = 'background:none; border:none; color:#6b7280; cursor:pointer; font-size:1.2rem; flex-shrink:0;';
+  btn.textContent = '✕';
+  card.appendChild(btn);
+  preview.appendChild(card);
+}
+
+function removeFile(index) {
+  selectedFiles[index] = null;
+  const card = document.getElementById('file-card-' + index);
+  if (card) card.remove();
+}
+</script>
           </form>
 
           <!-- Form gönderildikten sonra gösterilecek mesaj -->
@@ -421,7 +482,7 @@
       </div>
 
     </div>
-    <img src="images/world-map.png" alt="" style="position:absolute; right:420px; bottom:60px; width:300px; opacity:0.3; pointer-events:none; z-index:0;">
+    <img src="images/world-map.png" alt="" style="position:absolute; right:450px; bottom:60px; width:300px; opacity:0.3; pointer-events:none; z-index:0;">
   </footer>
   <script src="js/main.js"></script>
 
@@ -432,14 +493,11 @@
       e.preventDefault(); /* Sayfanın yenilenmesini engelle */
       document.getElementById("contact-form").style.display = "none";
       document.getElementById("success-msg").style.display  = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   </script>
 
 
-  <a href="#iletisim" class="teklif-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    <span>TEKLİF AL</span>
-  </a>
 
   <div class="social-sidebar">
     <a href="https://wa.me/" class="social-link" target="_blank" aria-label="WhatsApp">
