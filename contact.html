@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İletişim | RAU Metals</title>
+  <meta name="description" content="RAU Metals ile iletişime geçin. Teklif talep edin, teknik sorularınızı iletin.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/style.css" />
   <style>
@@ -181,6 +182,7 @@
       .contact-form-card { padding: 24px; }
     }
   </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -194,7 +196,7 @@
           <a href="index.html">Anasayfa</a>
           <a href="about.html">Hakkımızda</a>
           <div class="nav-dropdown">
-            <a href="production.html">Üretim <span class="dropdown-arrow">▾</span></a>
+            <a href="production.html">Tedarik <span class="dropdown-arrow">▾</span></a>
             <div class="dropdown-menu">
               <a href="production.html#kaliphane">Kalıphane</a>
               <a href="production.html#ekstruzyon">Ekstrüzyon</a>
@@ -339,6 +341,7 @@
             <!-- Dosya yükleme (çizim için) -->
             <div class="form-group">
               <label>Çizim Yükle (opsiyonel)</label>
+              <p style="font-size:0.75rem; color:#6b7280; margin-bottom:8px;">DWG, DXF veya PDF formatları tercih edilir. Maksimum dosya boyutu: 10MB</p>
               <label class="file-upload" for="file-input">
                 <input type="file" id="file-input" accept=".pdf,.dwg,.dxf,.jpg,.png" multiple />
                 <div class="file-upload-icon">📎</div>
@@ -350,6 +353,15 @@
               </label>
               <div id="file-preview" style="margin-top:8px; padding:8px; background:#f4f6f8; border-radius:8px; border:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;"></div>
             </div>
+
+            <div style="margin-bottom:16px;">
+              <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:0.82rem; color:#6b7280; line-height:1.6;">
+                <input type="checkbox" required style="margin-top:3px; flex-shrink:0; accent-color:#1a6fff;" id="kvkk-onay">
+                <span>Kişisel verilerimin işlenmesine ilişkin <a href="#" style="color:#1a6fff; text-decoration:underline;">Gizlilik Politikası</a>'nı okudum ve onaylıyorum. *</span>
+              </label>
+            </div>
+
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADvnE275xSiKGk8W" data-theme="light" style="margin-bottom:16px;"></div>
 
             <button type="submit" class="btn btn-orange form-submit">Mesaj Gönder →</button>
 
@@ -437,7 +449,7 @@ function removeFile(index) {
         <!-- Hakkında -->
         <div class="footer-about">
           <a href="index.html" class="logo"><img src="images/logo.png" alt="RAU Metals" class="logo-img footer-logo" /></a>
-          <p>Alüminyum ekstrüzyon profillerde tedarik, üretim yönetimi, kalite kontrol ve lojistik çözümleri sunuyoruz.</p>
+          <p>RAU Metals, alüminyum ekstrüzyon profillerde teknik tedarik, üretici koordinasyonu, kalite takibi ve lojistik yönetimi çözümleri sunar.</p>
         </div>
 
         <div class="footer-contact-info">
@@ -479,7 +491,7 @@ function removeFile(index) {
       </div>
 
     </div>
-    <img src="images/world-map.png" alt="" style="position:absolute; right:450px; bottom:60px; width:300px; opacity:0.3; pointer-events:none; z-index:0;">
+    <img src="images/world-map.png" alt="" style="position:absolute; right:450px; bottom:60px; width:300px; opacity:0.3; pointer-events:none; z-index:0;" loading="lazy">
   </footer>
   <script src="js/main.js"></script>
 
