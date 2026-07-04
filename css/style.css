@@ -1392,6 +1392,37 @@ footer {
   transform: rotate(180deg);
 }
 
+.nav-dropdown.lang-selector {
+  display: flex;
+  align-items: center;
+}
+.lang-selector .lang-btn {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  height: auto;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+.lang-selector .lang-btn:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff !important;
+}
+.lang-selector .dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
 .rau-intro-banner {
   background: #ffffff;
   border-radius: 16px 16px 0 0;
