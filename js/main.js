@@ -49,18 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
   var animElements = document.querySelectorAll("[data-animate]");
 
   if (animElements.length > 0 && "IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target); /* Bir kez tetiklenince yeter */
+          const el = entry.target;
+          const siblings = Array.from(el.parentElement.querySelectorAll('[data-animate]'));
+          const index = siblings.indexOf(el);
+          const existingDelay = el.style.animationDelay;
+          const delay = existingDelay ? parseFloat(existingDelay) * 1000 : index * 150;
+          setTimeout(() => {
+            el.classList.add('visible');
+          }, delay);
+          observer.unobserve(el);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0 });
 
-    animElements.forEach(function (el) {
-      observer.observe(el);
-    });
+    animElements.forEach(el => observer.observe(el));
   } else {
     /* Eski tarayıcılar için animasyonsuz göster */
     animElements.forEach(function (el) {
@@ -78,5 +83,31 @@ document.addEventListener("DOMContentLoaded", function () {
       link.classList.add("active");
     }
   });
+
+  const scrollAnimElements = document.querySelectorAll('[data-scroll-anim]');
+
+  if (scrollAnimElements.length > 0) {
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-visible');
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    scrollAnimElements.forEach(el => scrollObserver.observe(el));
+  }
+
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    const speed = Math.abs(currentScroll - lastScroll);
+    const duration = Math.max(0.3, 1.2 - speed * 0.01);
+    document.querySelectorAll('[data-scroll-anim]:not(.scroll-visible)').forEach(el => {
+      el.style.transitionDuration = duration + 's';
+    });
+    lastScroll = currentScroll;
+  }, { passive: true });
 
 });

@@ -931,13 +931,11 @@ footer {
 /* ---- ANİMASYON (görünüme girince belirir) ---- */
 [data-animate] {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 [data-animate].visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Gecikme sınıfları — kartlar art arda belirir */
@@ -945,6 +943,17 @@ footer {
 [data-animate].delay-2 { transition-delay: 0.2s; }
 [data-animate].delay-3 { transition-delay: 0.3s; }
 [data-animate].delay-4 { transition-delay: 0.4s; }
+
+[data-scroll-anim] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-scroll-anim].scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ---- MOBİL UYUMLU (Responsive) ---- */
 @media (max-width: 1024px) {
@@ -1918,7 +1927,7 @@ footer {
 
 .process-steps {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
@@ -1927,6 +1936,21 @@ footer {
 .process-step {
   width: 170px;
   text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-color: var(--orange);
+  transition: all 0.3s ease;
 }
 
 .process-icon-wrap {
@@ -1977,10 +2001,17 @@ footer {
 }
 
 .process-arrow {
-  align-self: center;
-  font-size: 1.2rem;
-  color: #b9c0c8;
-  margin-top: 22px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4a6fa5;
+  align-self: flex-start;
+  margin-top: 80px;
+  animation: pulse-arrow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-arrow {
+  0%, 100% { opacity: 1; transform: translateX(0); }
+  50% { opacity: 0.4; transform: translateX(4px); }
 }
 
 .sector-grid {

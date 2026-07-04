@@ -11,7 +11,8 @@
       "PowerShell(git *)",
       "Bash(git commit *)",
       "Bash(git checkout *)",
-      "Bash(git merge *)"
+      "Bash(git merge *)",
+      "Bash(git stash *)"
     ]
   }
 }
