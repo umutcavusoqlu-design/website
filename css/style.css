@@ -1523,9 +1523,8 @@ footer {
   font-size: 1.1rem;
   font-weight: 800;
   color: #0d1b2a;
-  letter-spacing: 1.5px;
+  letter-spacing: 0;
   margin-bottom: 16px;
-  text-transform: uppercase;
 }
 
 .rau-intro-card p {
@@ -2096,4 +2095,18 @@ footer {
   line-height: 1.15;
   text-transform: uppercase;
   font-family: 'Cormorant Garamond', serif;
+}
+
+@media (max-width: 768px) {
+  #surec .container > div:last-child {
+    grid-template-columns: 1fr;
+  }
+  #surec .container > div:last-child > div:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 32px;
+    background: #d1d5db;
+    margin: 0 auto;
+  }
 }
