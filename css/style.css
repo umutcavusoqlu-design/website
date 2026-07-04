@@ -251,11 +251,12 @@ ul { list-style: none; }
   background-image:
     linear-gradient(
       to right,
-      rgba(5,10,20,0.75) 0%,
-      rgba(5,10,20,0.75) 30%,
+      rgba(5,10,20,0.80) 0%,
+      rgba(5,10,20,0.80) 30%,
       rgba(5,10,20,0.20) 60%,
       rgba(5,10,20,0.00) 100%
     ),
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url('../images/aluminyum-profil.png');
   background-size: cover;
   background-position: center center;
