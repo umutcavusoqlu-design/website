@@ -1015,10 +1015,6 @@ footer {
   .footer-social { align-items: center !important; }
   .footer-social-links { justify-content: center; }
 
-  /* Makaleler tek sütun */
-  .articles-grid { grid-template-columns: 1fr !important; }
-  .article-card { width: 100% !important; }
-
   .header-inner { padding: 4px 16px; justify-content: space-between; }
   .logo { flex: 1; display: flex; justify-content: center; }
   #menu-toggle { flex: 0 0 auto; }
@@ -1250,84 +1246,6 @@ footer {
   color: rgba(255,255,255,0.6);
   font-size: 1rem;
   margin-top: 12px;
-}
-
-.articles-section {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.article-card {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.article-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
-
-.article-img {
-  height: 160px;
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
-}
-
-.article-category {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #4a9eff;
-  background: rgba(74,158,255,0.15);
-  padding: 4px 10px;
-  border-radius: 4px;
-}
-
-.article-body {
-  padding: 24px;
-}
-
-.article-date {
-  font-size: 0.8rem;
-  color: #999;
-  margin-bottom: 8px;
-}
-
-.article-body h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0d1b2a;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.article-body p {
-  font-size: 0.88rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.article-link {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #1a6fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.article-link:hover {
-  color: #0044cc;
 }
 
 .teklif-btn {
