@@ -971,7 +971,7 @@ footer {
   .header-inner { padding: 4px 16px; }
   .nav-cta { width: 100%; }
   .nav-cta .btn { width: 100%; justify-content: center; }
-  .social-sidebar { display: none !important; }
+  .social-sidebar a:not(:first-child) { display: none; }
   .teklif-btn { display: none !important; }
   .hero-inner { padding: 120px 0 60px; max-width: calc(100% - 52px) !important; }
   .hero-title { font-size: clamp(1.4rem, 6vw, 2rem) !important; white-space: normal !important; overflow-wrap: break-word !important; word-break: break-word !important; }
@@ -1289,18 +1289,33 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: rgba(13, 27, 42, 0.85);
-  color: #ffffff;
-  border-radius: 8px 0 0 8px;
+  width: 44px;
+  height: 44px;
+  background: #0d1b2e;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
-.social-link:hover {
-  width: 56px;
-  transform: translateX(-4px);
+.social-link[aria-label="WhatsApp"] { color: #25D366; }
+.social-link[aria-label="LinkedIn"]  { color: #0A66C2; }
+
+.social-link[aria-label="WhatsApp"]:hover {
+  background: #25D366;
+  border-color: #25D366;
+  box-shadow: 0 2px 12px rgba(37,211,102,0.4);
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+.social-link[aria-label="LinkedIn"]:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  box-shadow: 0 2px 12px rgba(10,102,194,0.4);
+  color: #fff;
+  transform: translateX(-3px);
 }
 
 .social-link svg {
@@ -1308,12 +1323,6 @@ footer {
   height: 22px;
   flex-shrink: 0;
 }
-
-.social-link[aria-label="WhatsApp"]:hover { background: #25D366; }
-.social-link[aria-label="LinkedIn"]:hover { background: #0077B5; }
-.social-link[aria-label="Instagram"]:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.social-link[aria-label="YouTube"]:hover { background: #FF0000; }
-.social-link[aria-label="X"]:hover { background: #000000; }
 
 /* ---- NAV DROPDOWN ---- */
 .nav-dropdown {

@@ -1,0 +1,34 @@
+﻿80:    .cert-detail-name {
+189:    .testing-section .cert-detail-name {
+311:          <div class="cert-detail-name">ISO 9001:2015</div>
+316:          <div class="cert-detail-name">ISO 14001:2015</div>
+321:          <div class="cert-detail-name">ISO 50001:2018</div>
+326:          <div class="cert-detail-name">ISO 45001:2018</div>
+331:          <div class="cert-detail-name">ISO 27001</div>
+336:          <div class="cert-detail-name">QUALICOAT</div>
+341:          <div class="cert-detail-name">QUALANOD</div>
+346:          <div class="cert-detail-name">RoHS</div>
+351:          <div class="cert-detail-name">REACH</div>
+356:          <div class="cert-detail-name">Sıfır Atık Belgesi</div>
+361:          <div class="cert-detail-name">TS EN 755-1</div>
+366:          <div class="cert-detail-name">TS EN 12020-1</div>
+371:          <div class="cert-detail-name">CE Sertifikaları</div>
+376:          <div class="cert-detail-name">UKCA</div>
+381:          <div class="cert-detail-name">TS 4922</div>
+386:          <div class="cert-detail-name">IATF 16949</div>
+406:          <h3 class="cert-detail-name">Optik Emisyon Spektrometresi (OES)</h3>
+411:          <h3 class="cert-detail-name">Metalurjik Mikroskop ve Mikroyapı Analiz Yazılımı</h3>
+416:          <h3 class="cert-detail-name">Numune Hazırlama Cihazları</h3>
+421:          <h3 class="cert-detail-name">Çekme-Basma Test Cihazı (Universal Tensile Tester)</h3>
+426:          <h3 class="cert-detail-name">Sertlik Ölçüm Cihazları</h3>
+432:          <h3 class="cert-detail-name">Kaplama Kalınlığı Ölçüm Cihazı (Eddy Current Prensipli)</h3>
+439:          <h3 class="cert-detail-name">Reflektometre / Parlaklık Ölçer</h3>
+444:          <h3 class="cert-detail-name">Yüzey Sızdırmazlık (Admittance/Seal) Test Cihazı</h3>
+449:          <h3 class="cert-detail-name">Boya Kalınlığı Ölçüm Cihazı</h3>
+454:          <h3 class="cert-detail-name">Çentik Açma (Cross-Hatch) Test Kiti</h3>
+459:          <h3 class="cert-detail-name">Darbe (Impact) Test Cihazı</h3>
+464:          <h3 class="cert-detail-name">Silindir Mandrel Bükme Cihazı</h3>
+469:          <h3 class="cert-detail-name">Glossmetre (Parlaklık Ölçer)</h3>
+474:          <h3 class="cert-detail-name">Kürlenme Takip Cihazı (Oven Tracker)</h3>
+481:          <h3 class="cert-detail-name">Profil Projektör / Optik Ölçüm Cihazı</h3>
+486:          <h3 class="cert-detail-name">Yüzey Pürüzlülük Ölçüm Cihazı</h3>
