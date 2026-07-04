@@ -60,7 +60,7 @@ ul { list-style: none; }
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   color: var(--navy);
   line-height: 1.25;
@@ -2092,7 +2092,7 @@ footer {
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 1px;
-  line-height: 1.15;
+  line-height: 1.2;
   text-transform: uppercase;
   font-family: 'Cormorant Garamond', serif;
 }
