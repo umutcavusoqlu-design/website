@@ -51,9 +51,6 @@
       scroll-margin-top: 110px;
     }
 
-    #kalite-kontrol {
-      scroll-margin-top: 110px;
-    }
 
     /* ---- SERTİFİKALAR (büyütülmüş) ---- */
     .certs-section { padding: 40px 0; background: var(--navy); }
@@ -133,7 +130,7 @@
     }
 
     /* ---- TEST EKİPMANLARI ---- */
-    .testing-section { padding: 40px 0; background: var(--navy); }
+    .testing-section { padding: 40px 0; background: var(--white); }
     .testing-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -174,16 +171,17 @@
     }
 
     .testing-section .cert-detail-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #f4f6f8;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
     }
 
     .testing-section .cert-detail-name {
-      color: var(--white);
+      color: var(--navy);
     }
 
     .testing-section .cert-detail-desc {
-      color: rgba(255,255,255,0.5);
+      color: var(--gray);
     }
 
     @media (max-width: 1024px) {
@@ -226,11 +224,9 @@
             <div class="dropdown-menu">
               <a href="quality.html?s=taahhut">Taahhüdümüz</a>
               <a href="quality.html?s=sertifikalar">Sertifikalar</a>
-              <a href="quality.html?s=kalite-kontrol">Kalite Kontrol</a>
               <a href="quality.html?s=laboratuvar">Laboratuvar</a>
             </div>
           </div>
-          <a href="articles.html">Makaleler</a>
           <a href="contact.html">İletişim</a>
         </nav>
       </div>
@@ -375,81 +371,13 @@
   </section>
 
   <!-- ===================================================
-       KALİTE KONTROL SÜRECİ
-  =================================================== -->
-  <section class="qc-section" id="kalite-kontrol" data-scroll-anim>
-    <div class="container">
-      <span class="section-tag">KALİTE KONTROL</span>
-      <h2 class="section-title" data-scroll-anim>Kalite Kontrol Sürecimiz</h2>
-
-      <div class="qc-steps">
-
-        <div class="qc-step-card">
-          <div class="qc-step-num">1</div>
-          <div class="qc-step-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <div class="qc-step-title">Gelen Malzeme Muayenesi</div>
-          <p class="qc-step-desc" data-scroll-anim>Gelen tüm bilyetler, spektrometre kullanılarak kimyasal bileşim açısından test edilir. Uygunluk sertifikaları sipariş gerekliliklerine göre doğrulanır.</p>
-        </div>
-
-        <div class="qc-step-card" class="delay-1">
-          <div class="qc-step-num">2</div>
-          <div class="qc-step-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="qc-step-title">Süreç İçi Kontroller</div>
-          <p class="qc-step-desc" data-scroll-anim>Boyutsal örnekleme, preste ve her yüzey işlemi aşamasından sonra yapılır. Tolerans dışı profiller derhal karantinaya alınır.</p>
-        </div>
-
-        <div class="qc-step-card" class="delay-2">
-          <div class="qc-step-num">3</div>
-          <div class="qc-step-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-          </div>
-          <div class="qc-step-title">Mekanik Test</div>
-          <p class="qc-step-desc" data-scroll-anim>Belirtilen temperliğe (T5, T6 vb.) uyumu doğrulamak için parti başına çekme dayanımı, akma dayanımı ve sertlik ölçülür.</p>
-        </div>
-
-        <div class="qc-step-card">
-          <div class="qc-step-num">4</div>
-          <div class="qc-step-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <div class="qc-step-title">Yüzey Kalitesi Muayenesi</div>
-          <p class="qc-step-desc" data-scroll-anim>Kaplama kalınlığını, yapışmayı ve görünümü kontrol etmek için anodize edilmiş ve toz boyalı yüzeylerin görsel ve enstrümantal muayenesi.</p>
-        </div>
-
-        <div class="qc-step-card" class="delay-1">
-          <div class="qc-step-num">5</div>
-          <div class="qc-step-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div class="qc-step-title">Boyutsal Doğrulama (CMM)</div>
-          <p class="qc-step-desc" data-scroll-anim>Kritik profiller, onaylı çizimlere göre kesit boyutlarını doğrulamak için Koordinat Ölçüm Makinasında ölçülür.</p>
-        </div>
-
-        <div class="qc-step-card" class="delay-2">
-          <div class="qc-step-num">6</div>
-          <div class="qc-step-icon">
-            <svg class="icon-svg" style="stroke:var(--orange)" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </div>
-          <div class="qc-step-title">Nihai Serbest Bırakma &amp; Dokümantasyon</div>
-          <p class="qc-step-desc" data-scroll-anim>Partiler, ancak tüm muayeneler geçildikten sonra serbest bırakılır. Her sevkiyatla birlikte malzeme test raporları ve uygunluk sertifikaları düzenlenir.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================================================
        TEST EKİPMANLARI
   =================================================== -->
   <div id="laboratuvar" style="scroll-margin-top: 110px;"></div>
   <section class="testing-section" data-scroll-anim>
     <div class="container">
       <span class="section-tag">LABORATUVAR</span>
-      <h2 class="section-title light" data-scroll-anim>Test Ekipmanları</h2>
+      <h2 class="section-title" data-scroll-anim>Test Ekipmanları</h2>
 
       <div class="certs-grid">
 
