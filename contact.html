@@ -523,10 +523,11 @@ function removeFile(index) {
       formData.append('subject', form.querySelector('select[name="subject"]').value);
       formData.append('message', form.querySelector('textarea[name="message"]').value);
 
-      if (selectedFiles.length > 0) {
-        const file = selectedFiles.find(f => f !== null);
-        if (file) formData.append('file', file);
-      }
+      selectedFiles.forEach(function(file) {
+        if (file !== null) {
+          formData.append('file', file);
+        }
+      });
 
       try {
         const response = await fetch('https://rau-metals-contact.umut-cavusoqlu.workers.dev', {
