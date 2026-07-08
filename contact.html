@@ -353,7 +353,7 @@
               <label>Çizim Yükle (opsiyonel)</label>
               <p style="font-size:0.75rem; color:#6b7280; margin-bottom:8px;">DWG, DXF veya PDF formatları tercih edilir. Maksimum dosya boyutu: 10MB</p>
               <label class="file-upload" for="file-input">
-                <input type="file" id="file-input" name="file" accept=".pdf,.dwg,.dxf,.jpg,.png" />
+                <input type="file" id="file-input" name="file" accept=".pdf,.dwg,.dxf,.jpg,.png" multiple />
                 <div class="file-upload-icon">📎</div>
                 <div class="file-upload-text">
                   <span>Yüklemek için tıklayın</span>
@@ -539,6 +539,7 @@ function removeFile(index) {
         if (result.success) {
           btn.textContent = '✓ Mesajınız İletildi';
           btn.style.backgroundColor = '#22c55e';
+          setTimeout(() => { btn.textContent = 'Mesaj Gönder →'; btn.style.backgroundColor = ''; btn.disabled = false; }, 5000);
           form.reset();
           selectedFiles = [];
           document.getElementById('file-preview').innerHTML = '';
@@ -546,7 +547,7 @@ function removeFile(index) {
           throw new Error(result.error);
         }
       } catch (err) {
-        btn.textContent = 'Hata! Tekrar Deneyin';
+        btn.textContent = 'Hata! Tekrar Deneyin ↩';
         btn.style.backgroundColor = '#ef4444';
         btn.disabled = false;
         console.error(err);
