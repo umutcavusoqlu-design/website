@@ -351,9 +351,9 @@
             <!-- Dosya yükleme (çizim için) -->
             <div class="form-group">
               <label>Çizim Yükle (opsiyonel)</label>
-              <p style="font-size:0.75rem; color:#6b7280; margin-bottom:8px;">DWG, DXF veya PDF formatları tercih edilir. Maksimum dosya boyutu: 10MB</p>
+              <p style="font-size:0.75rem; color:#6b7280; margin-bottom:8px;">PDF, DWG, DXF, STEP, IGES, Excel, Word ve ZIP formatları desteklenmektedir. Maksimum dosya boyutu: 100MB</p>
               <label class="file-upload" for="file-input">
-                <input type="file" id="file-input" name="file" accept=".pdf,.dwg,.dxf,.jpg,.png" multiple />
+                <input type="file" id="file-input" name="file" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.step,.stp,.iges,.igs,.xlsx,.xls,.doc,.docx,.zip" multiple />
                 <div class="file-upload-icon">📎</div>
                 <div class="file-upload-text">
                   <span>Yüklemek için tıklayın</span>
@@ -396,6 +396,11 @@ let selectedFiles = [];
 
 function addFiles(files) {
   Array.from(files).forEach(function(file) {
+    const currentTotal = selectedFiles.filter(f => f !== null).reduce((sum, f) => sum + f.size, 0);
+    if (currentTotal + file.size > 104857600) {
+      alert('Toplam dosya boyutu 100MB sınırını aşıyor. Lütfen daha az veya küçük dosya seçin.');
+      return;
+    }
     const index = selectedFiles.length;
     selectedFiles.push(file);
     addFileCard(file, index);
