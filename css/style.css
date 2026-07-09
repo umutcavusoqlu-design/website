@@ -248,23 +248,22 @@ ul { list-style: none; }
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image:
-    linear-gradient(
-      to right,
-      rgba(5,10,20,0.80) 0%,
-      rgba(5,10,20,0.80) 30%,
-      rgba(5,10,20,0.20) 60%,
-      rgba(5,10,20,0.00) 100%
-    ),
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('../images/aluminyum-profil.png');
-  background-size: cover;
-  background-position: center center;
   background-color: #05080e;
 }
 
-/* .hero-bg artık kullanılmıyor — background .hero üzerinde */
-.hero-bg { display: none; }
+.hero-bg {
+  position: absolute;
+  inset: -10%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  animation: kenBurns 8s ease forwards;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1.08) translateX(-2%); }
+  100% { transform: scale(1) translateX(0); }
+}
 
 /* İçerik — z-index header'dan yüksek */
 .hero-main {

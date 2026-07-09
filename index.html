@@ -134,12 +134,12 @@
   <!-- =====================================================
        HERO — Ana banner bölümü
   ====================================================== -->
-  <section class="hero">
+  <section class="hero" style="position:relative; overflow:hidden;">
 
     <!-- Arka plan görseli + karartma katmanı
          images/ klasörüne "hero-bg.jpg" adıyla bir fabrika/endüstri
          fotoğrafı ekleyince otomatik görünür. Yoksa koyu degrade kalır. -->
-    <div class="hero-bg"></div>
+    <div class="hero-bg" id="heroBg"></div>
 
     <!-- Metin + ürün görseli -->
     <div class="hero-main">
@@ -224,6 +224,46 @@
     </div>
   </section>
   <!-- /HERO -->
+<script>
+(function() {
+  const images = [
+    "url('images/aluminyum-profil.png')",
+    "url('images/hero-bg-2.webp')",
+    "url('images/hero-bg-3.webp')",
+    "url('images/hero-bg-4.webp')",
+    "url('images/hero-bg-5.webp')",
+    "url('images/hero-bg-6.webp')",
+    "url('images/hero-bg-7.webp')",
+    "url('images/hero-bg-8.webp')"
+  ];
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+  const gradient = "linear-gradient(to right, rgba(5,10,20,0.80) 0%, rgba(5,10,20,0.50) 40%, rgba(5,10,20,0.00) 100%), linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), ";
+  const bg = document.getElementById('heroBg');
+  let cur = 0;
+
+  function setBg(i) {
+    bg.style.backgroundImage = gradient + images[i];
+    bg.style.animation = 'none';
+    setTimeout(() => {
+      bg.style.animation = 'kenBurns 8s ease forwards';
+    }, 50);
+  }
+
+  setBg(0);
+  setInterval(() => {
+    cur = (cur + 1) % images.length;
+    bg.style.opacity = 0;
+    bg.style.transition = 'opacity 1.5s ease';
+    setTimeout(() => {
+      setBg(cur);
+      bg.style.opacity = 1;
+    }, 1500);
+  }, 7000);
+})();
+</script>
 
 
   <!-- =====================================================
