@@ -348,16 +348,17 @@ ul { list-style: none; }
 }
 
 .hero-features-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 
 .feature-item {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 0 24px;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
 }
 
 .feature-item:not(:last-child) {
@@ -366,6 +367,7 @@ ul { list-style: none; }
 .feature-item:not(:first-child) {
   padding-left: 0;
 }
+
 
 .feature-icon {
   display: flex;
@@ -400,7 +402,7 @@ ul { list-style: none; }
 
 .feature-title {
   color: #ffffff;
-  font-size: 0.945rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 2px;
 }
@@ -1473,13 +1475,16 @@ footer {
   border-radius: 12px;
   padding: 28px 20px;
   text-align: center;
-  border: 1px solid #e2e8f0;
+  border: 1.5px solid #1a2b4a;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
 
 .rau-intro-card:hover {
   transform: translateY(-4px);
+  border-color: #1a2b4a;
+  box-shadow: 0 4px 16px rgba(26,43,74,0.12);
+  transition: border-color 0.35s, box-shadow 0.35s;
 }
 
 .rau-intro-card--highlight {
@@ -1528,17 +1533,17 @@ footer {
 }
 
 .rau-intro-card h3 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #0d1b2a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0d1b2e;
   letter-spacing: 0;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .rau-intro-card p {
-  font-size: 0.98rem;
-  color: #555;
-  line-height: 1.8;
+  font-size: 0.88rem;
+  color: #6b7280;
+  line-height: 1.75;
 }
 
 .lab-equipment-grid {
@@ -2039,26 +2044,8 @@ footer {
   padding: 18px 14px !important;
 }
 
-.rau-intro-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px !important;
-}
-
-.rau-intro-card p {
-  font-size: 0.95rem;
-  line-height: 1.6 !important;
-}
-
 .rau-intro-text p {
   font-size: 0.95rem;
-}
-
-.rau-intro-card p {
-  font-size: 0.95rem;
-}
-
-.rau-intro-card h3 {
-  font-size: 1.1rem;
 }
 
 .process-icon {
