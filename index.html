@@ -157,7 +157,7 @@
 
             <div style="display:flex; gap:16px; margin-top:28px; flex-wrap:wrap;">
               <a href="contact.html" class="btn btn-orange" style="font-size:0.85rem; padding:12px 24px;">Teklif Al →</a>
-              <a href="#surec" class="btn btn-outline" style="font-size:0.85rem; padding:12px 24px; color:#fff; border-color:rgba(255,255,255,0.4);">Süreci İncele</a>
+              <a href="#surec" id="sureci-incele-btn" class="btn btn-outline" style="font-size:0.85rem; padding:12px 24px; color:#fff; border-color:rgba(255,255,255,0.4);">Süreci İncele</a>
             </div>
 
           </div>
@@ -229,52 +229,103 @@
       <p style="color:#6b7280; font-size:0.95rem; max-width:780px; margin:12px auto 0; line-height:1.7;">RAU Metals, alüminyum ekstrüzyon tedarik sürecini; teknik değerlendirme, doğru üretici seçimi, üretim takibi, kalite kontrol ve sevkiyat aşamalarıyla planlı, izlenebilir ve şeffaf bir şekilde yönetir.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative;">
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px; align-items:stretch;">
 
-      <div style="position:absolute; top:28px; left:10%; right:10%; height:1px; background:linear-gradient(to right, #e5e7eb, #d1d5db, #e5e7eb); z-index:0;"></div>
-
-      <div style="text-align:center; padding:0 16px; position:relative; z-index:1;">
-        <div style="width:56px; height:56px; border-radius:50%; background:#fff; border:1.5px solid #d1d5db; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <span style="font-size:0.95rem; font-weight:800; color:#0d1b2e; letter-spacing:-0.5px;">01</span>
-        </div>
+      <div id="surec-kart-0" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Talep ve Teknik Değerlendirme</h4>
-        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75;">İhtiyacınızı dinler; ölçü, alaşım, yüzey, tolerans, paketleme ve teslimat beklentilerini teknik açıdan netleştiririz.</p>
+        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75; flex:1;">İhtiyacınızı dinler; ölçü, alaşım, yüzey, tolerans, paketleme ve teslimat beklentilerini teknik açıdan netleştiririz.</p>
       </div>
 
-      <div style="text-align:center; padding:0 16px; position:relative; z-index:1;">
-        <div style="width:56px; height:56px; border-radius:50%; background:#fff; border:1.5px solid #d1d5db; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <span style="font-size:0.95rem; font-weight:800; color:#0d1b2e; letter-spacing:-0.5px;">02</span>
-        </div>
+      <div id="surec-kart-1" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Doğru Üretici Seçimi</h4>
-        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75;">Projenize uygun üretim kabiliyeti, kalite yaklaşımı ve termin performansına sahip üreticiyi belirler; fiyat–kalite–termin dengesini sizin adınıza değerlendiririz.</p>
+        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75; flex:1;">Projenize uygun üretim kabiliyeti, kalite yaklaşımı ve termin performansına sahip üreticiyi belirler; fiyat–kalite–termin dengesini sizin adınıza değerlendiririz.</p>
       </div>
 
-      <div style="text-align:center; padding:0 16px; position:relative; z-index:1;">
-        <div style="width:56px; height:56px; border-radius:50%; background:#fff; border:1.5px solid #d1d5db; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <span style="font-size:0.95rem; font-weight:800; color:#0d1b2e; letter-spacing:-0.5px;">03</span>
-        </div>
+      <div id="surec-kart-2" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Üretim ve Tedarik Koordinasyonu</h4>
-        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75;">Onaylanan teknik bilgiler doğrultusunda siparişi üreticiyle koordine eder, tedarik planını oluşturur ve süreci düzenli olarak takip ederiz.</p>
+        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75; flex:1;">Onaylanan teknik bilgiler doğrultusunda siparişi üreticiyle koordine eder, tedarik planını oluşturur ve süreci düzenli olarak takip ederiz.</p>
       </div>
 
-      <div style="text-align:center; padding:0 16px; position:relative; z-index:1;">
-        <div style="width:56px; height:56px; border-radius:50%; background:#fff; border:1.5px solid #d1d5db; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <span style="font-size:0.95rem; font-weight:800; color:#0d1b2e; letter-spacing:-0.5px;">04</span>
-        </div>
+      <div id="surec-kart-3" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Kalite Kontrol ve Dokümantasyon</h4>
-        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75;">Üretim sürecinde ölçüsel ve görsel kontrolleri takip eder; talep edilen rapor, sertifika ve kalite dokümanlarının sürece uygun şekilde hazırlanmasını koordine ederiz.</p>
+        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75; flex:1;">Üretim sürecinde ölçüsel ve görsel kontrolleri takip eder; talep edilen rapor, sertifika ve kalite dokümanlarının sürece uygun şekilde hazırlanmasını koordine ederiz.</p>
       </div>
 
-      <div style="text-align:center; padding:0 16px; position:relative; z-index:1;">
-        <div style="width:56px; height:56px; border-radius:50%; background:#fff; border:1.5px solid #d1d5db; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <span style="font-size:0.95rem; font-weight:800; color:#0d1b2e; letter-spacing:-0.5px;">05</span>
-        </div>
+      <div id="surec-kart-4" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Lojistik ve Teslimat Yönetimi</h4>
-        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75;">Paketleme, sevkiyat ve teslimat sürecini organize eder; ürünlerin planlanan termin doğrultusunda güvenli şekilde ulaştırılmasını takip ederiz.</p>
+        <p style="font-size:0.78rem; color:#6b7280; line-height:1.75; flex:1;">Paketleme, sevkiyat ve teslimat sürecini organize eder; ürünlerin planlanan termin doğrultusunda güvenli şekilde ulaştırılmasını takip ederiz.</p>
       </div>
 
     </div>
   </div>
+<script>
+(function() {
+  const kartlar = [0,1,2,3,4].map(i => document.getElementById('surec-kart-'+i));
+  let aktif = -1;
+  let timer = null;
+
+  function hepsiniSifirla() {
+    kartlar.forEach(k => {
+      k.style.borderColor = '#e5e7eb';
+      k.style.background = '#fff';
+      k.style.boxShadow = 'none';
+      k.querySelector('h4').style.color = '#0d1b2e';
+    });
+  }
+
+  function yandir(i) {
+    kartlar.forEach((k, j) => {
+      if (j <= i) {
+        k.style.borderColor = '#1a2b4a';
+        k.style.background = '#f0f4f9';
+        k.style.boxShadow = '0 4px 16px rgba(26,43,74,0.12)';
+        k.querySelector('h4').style.color = '#1a2b4a';
+      } else {
+        k.style.borderColor = '#e5e7eb';
+        k.style.background = '#fff';
+        k.style.boxShadow = 'none';
+        k.querySelector('h4').style.color = '#0d1b2e';
+      }
+    });
+    aktif = i;
+  }
+
+  function baslat() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => {
+      const sonraki = (aktif + 1) % 5;
+      if (sonraki === 0) {
+        hepsiniSifirla();
+        setTimeout(() => { aktif = -1; yandir(0); }, 400);
+      } else {
+        yandir(sonraki);
+      }
+    }, 1400);
+  }
+
+  kartlar.forEach((k, i) => {
+    k.style.transition = 'border-color 0.35s, background 0.35s, box-shadow 0.35s';
+    k.style.cursor = 'pointer';
+    k.addEventListener('click', () => yandir(i));
+  });
+
+  yandir(0);
+  baslat();
+
+  const btn = document.getElementById('sureci-incele-btn');
+  if (btn) {
+    btn.addEventListener('click', function() {
+      if (timer) clearInterval(timer);
+      hepsiniSifirla();
+      setTimeout(() => {
+        aktif = -1;
+        yandir(0);
+        baslat();
+      }, 400);
+    });
+  }
+})();
+</script>
 </section>
   <!-- /SÜREÇ YÖNETİMİ -->
 
