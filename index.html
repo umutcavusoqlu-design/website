@@ -28,11 +28,12 @@
       font-size: clamp(5rem, 11vw, 9rem) !important;
     }
     .hero-slogan span {
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-      font-size: clamp(2.8rem, 6vw, 5.2rem) !important;
-      font-weight: 700 !important;
-      line-height: 1.05 !important;
-      letter-spacing: -0.01em !important;
+      font-family: 'Cormorant', serif !important;
+      font-style: italic !important;
+      font-weight: 300 !important;
+      font-size: clamp(3.2rem, 7vw, 6rem) !important;
+      line-height: 1.02 !important;
+      letter-spacing: 0.01em !important;
     }
     .feature-item {
       align-items: center !important;
@@ -80,7 +81,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant:ital,wght@1,300&display=swap" rel="stylesheet">
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 </head>
 <body>
@@ -148,7 +149,7 @@
     <!-- Arka plan görseli + karartma katmanı
          images/ klasörüne "hero-bg.jpg" adıyla bir fabrika/endüstri
          fotoğrafı ekleyince otomatik görünür. Yoksa koyu degrade kalır. -->
-    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-bg"></div>
 
     <!-- Metin + ürün görseli -->
     <div class="hero-main">
@@ -233,46 +234,6 @@
     </div>
   </section>
   <!-- /HERO -->
-<script>
-(function() {
-  const images = [
-    "url('images/aluminyum-profil.png')",
-    "url('images/hero-bg-2.webp')",
-    "url('images/hero-bg-3.webp')",
-    "url('images/hero-bg-4.webp')",
-    "url('images/hero-bg-5.webp')",
-    "url('images/hero-bg-6.webp')",
-    "url('images/hero-bg-7.webp')",
-    "url('images/hero-bg-8.webp')"
-  ];
-  for (let i = images.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [images[i], images[j]] = [images[j], images[i]];
-  }
-  const gradient = "linear-gradient(to right, rgba(5,10,20,0.80) 0%, rgba(5,10,20,0.50) 40%, rgba(5,10,20,0.00) 100%), linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), ";
-  const bg = document.getElementById('heroBg');
-  let cur = 0;
-
-  function setBg(i) {
-    bg.style.backgroundImage = gradient + images[i];
-    bg.style.animation = 'none';
-    setTimeout(() => {
-      bg.style.animation = 'kenBurns 8s ease forwards';
-    }, 50);
-  }
-
-  setBg(0);
-  setInterval(() => {
-    cur = (cur + 1) % images.length;
-    bg.style.opacity = 0;
-    bg.style.transition = 'opacity 1.5s ease';
-    setTimeout(() => {
-      setBg(cur);
-      bg.style.opacity = 1;
-    }, 1500);
-  }, 7000);
-})();
-</script>
 
 
   <!-- =====================================================
@@ -396,7 +357,7 @@
        HİZMET VERDİĞİMİZ SEKTÖRLER
   ====================================================== -->
   <section style="padding:0 0 40px; background:#fff;">
-    <div style="background:#0d1b2e; padding:24px 0; text-align:center; margin-bottom:40px;">
+    <div style="background:#05080e; padding:24px 0; text-align:center; margin-bottom:40px;">
       <h2 style="color:#ffffff; font-size:clamp(1.8rem, 3vw, 2.5rem); font-weight:700; line-height:1.25;">Hizmet Verdiğimiz Sektörler</h2>
     </div>
     <div class="container">

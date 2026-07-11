@@ -9,8 +9,8 @@
 
 /* ---- TEMEL DEĞİŞKENLER ---- */
 :root {
-  --navy:        #0d1b2e;
-  --navy-light:  #162540;
+  --navy:        #05080e;
+  --navy-light:  #0d1a2b;
   --orange:      #1a6fff;   /* vurgu rengi — tutarlılık için header mavi ile aynı */
   --orange-dark: #0f58e0;
   --white:       #ffffff;
@@ -119,12 +119,16 @@ ul { list-style: none; }
   transform: translateX(-50%);
   width: calc(100% - 48px);
   max-width: 1320px;
-  background: rgba(5, 10, 20, 0.55);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: transparent;
+  box-shadow: none;
   border-radius: 12px;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-header.scrolled {
+  background-color: rgba(5, 8, 14, 0.95); /* --navy */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Container'ı header içinde tam genişliğe aç */
@@ -201,7 +205,6 @@ ul { list-style: none; }
 
 .lang-switcher button {
   background: none;
-  border: none;
   color: rgba(255,255,255,0.45);
   font-size: 14px;
   font-weight: 700;
@@ -264,12 +267,10 @@ ul { list-style: none; }
   z-index: 0;
   background-size: cover;
   background-position: center;
-  animation: kenBurns 8s ease forwards;
-}
-
-@keyframes kenBurns {
-  0%   { transform: scale(1.08) translateX(-2%); }
-  100% { transform: scale(1) translateX(0); }
+  background-image:
+    linear-gradient(to right, rgba(5,10,20,0.80) 0%, rgba(5,10,20,0.50) 40%, rgba(5,10,20,0.00) 100%),
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('../images/hero-bg-9.webp');
 }
 
 /* İçerik — z-index header'dan yüksek */
@@ -482,7 +483,7 @@ ul { list-style: none; }
 
 /* Görsel yoksa placeholder renk göster */
 .product-card-img.placeholder {
-  background: linear-gradient(135deg, #1a3a5c, #0d1b2e);
+  background: linear-gradient(135deg, #1a3a5c, #05080e);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -621,7 +622,7 @@ html[lang="de"] .process-labels span:not(.arrow),
 
 /* ---- NEDEN BİZ + SERTİFİKALAR ---- */
 .why-section {
-  background: var(--dark, #0d1b2a);
+  background: var(--dark, #05080e);
   padding: 24px 0;
   display: flex;
   align-items: center;
@@ -1244,7 +1245,7 @@ footer {
 }
 
 .page-hero {
-  background: var(--dark, #0d1b2a);
+  background: var(--dark, #05080e);
   padding: 90px 0 30px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -1300,7 +1301,7 @@ footer {
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: #0d1b2e;
+  background: #05080e;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
@@ -1419,8 +1420,7 @@ footer {
   display: flex !important;
   align-items: center;
   gap: 6px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
   color: #fff !important;
   font-size: 0.8rem;
   font-weight: 600;
