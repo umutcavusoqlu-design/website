@@ -31,11 +31,16 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   color: var(--text);
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
 }
 
 img { max-width: 100%; display: block; }
@@ -60,6 +65,7 @@ ul { list-style: none; }
 }
 
 .section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   color: var(--navy);
@@ -79,7 +85,7 @@ ul { list-style: none; }
   cursor: pointer;
   transition: var(--transition);
   border: 2px solid transparent;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.04em;
 }
 
@@ -162,12 +168,13 @@ ul { list-style: none; }
 }
 
 #nav-links > a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: rgba(255,255,255,0.62);
   font-size: 15px;
   font-weight: 500;
   padding: 0;
   transition: var(--transition);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.08em;
   white-space: normal;
 }
@@ -294,8 +301,9 @@ ul { list-style: none; }
 
 /* Büyük başlık */
 .hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(5rem, 11vw, 9rem) !important;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--white);
   line-height: 1.06;
   margin-bottom: 22px;
@@ -1028,7 +1036,7 @@ footer {
   .social-link svg { width: 16px !important; height: 16px !important; }
 
   /* Mobil menü hizalama */
-  .nav-dropdown > a { padding: 10px 14px !important; display: block; width: 100%; color: rgba(255,255,255,0.62) !important; font-size: 15px !important; font-weight: 500 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; }
+  .nav-dropdown > a { padding: 10px 14px !important; display: block; width: 100%; color: rgba(255,255,255,0.62) !important; font-size: 15px !important; font-weight: 500 !important; text-transform: none !important; letter-spacing: 0.08em !important; }
 
   /* Mobil menü — Üretim ve Kalite hizalama */
   .nav-dropdown { width: 100%; text-align: left; }
@@ -1333,12 +1341,13 @@ footer {
 }
 
 .nav-dropdown > a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-size: 15px;
   letter-spacing: 0.08em;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: none;
   transition: color 0.2s ease;
   display: inline-block;
   padding: 0;
@@ -1371,13 +1380,15 @@ footer {
 }
 
 .nav-dropdown .dropdown-menu a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
   display: block;
   padding: 10px 20px;
   color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-size: 0.82rem;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: none;
   transition: all 0.2s ease;
   border-left: 2px solid transparent;
 }
@@ -2083,13 +2094,12 @@ footer {
 }
 
 .hero-slogan span {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(2rem, 4.5vw, 4rem);
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 1px;
   line-height: 1.2;
-  text-transform: uppercase;
-  font-family: 'Cormorant Garamond', serif;
 }
 
 @media (max-width: 768px) {
