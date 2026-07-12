@@ -807,14 +807,57 @@ footer {
   background: var(--navy);
   border-top: 3px solid var(--orange);
   padding: 32px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+}
+
+.footer-cta {
+  position: relative;
+  z-index: 1;
+  align-self: flex-end;
+  max-width: 480px;
+}
+.footer-cta h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.footer-cta p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+  max-width: 400px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 32px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
   padding-bottom: 24px;
   align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.earth-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.earth-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 80%;
+  opacity: 0.25;
 }
 
 .footer-about p {
@@ -823,6 +866,31 @@ footer {
   margin-top: 12px;
   line-height: 1.7;
   max-width: 260px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  grid-column: 2;
+}
+.footer-nav h4 {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.footer-nav a {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-nav a:hover {
+  color: #ffffff;
 }
 
 .footer-contact-info h4,
@@ -1198,6 +1266,8 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+  grid-column: 1;
+  padding-left: 60px;
 }
 
 .footer-logo {
@@ -1862,6 +1932,7 @@ footer {
 .footer-contact-info {
   display: flex;
   flex-direction: column;
+  grid-column: 3;
 }
 
 .footer-contact-info .contact-row p {
@@ -2291,4 +2362,22 @@ footer {
     background: #d1d5db;
     margin: 0 auto;
   }
+}
+
+/* FOOTER FINAL OVERRIDE — önceki tüm çakışan kuralları geçersiz kılar */
+.footer-row {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr !important;
+  align-items: start !important;
+  justify-items: start !important;
+  gap: 40px !important;
+  width: 100% !important;
+}
+.footer-cta { grid-column: 1 !important; }
+.footer-about { grid-column: 2 !important; }
+.footer-nav { grid-column: 3 !important; }
+.footer-contact-info { grid-column: 4 !important; }
+
+.footer-nav a, .footer-contact-info p, .footer-contact-info span {
+  color: rgba(255,255,255,0.85) !important;
 }
