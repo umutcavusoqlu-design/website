@@ -2,3 +2,4 @@ node_modules/
 package.json
 package-lock.json
 convert-webp.js
+.claude/settings.local.json
