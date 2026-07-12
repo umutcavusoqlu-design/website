@@ -20,8 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
       menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
     });
 
-    /* Menüdeki bir linke tıklanınca menüyü kapat */
+    /* Menüdeki bir linke tıklanınca menüyü kapat
+       (mega trigger linkleri hariç — onlar mobilde accordion aç/kapa yapıyor,
+       .mega-source .mega-grid içindeki gerçek alt linkler istisna DEĞİL) */
     navLinks.querySelectorAll("a").forEach(function (link) {
+      var isMegaTrigger = link.parentElement &&
+        link.parentElement.classList.contains("nav-dropdown") &&
+        link.parentElement.classList.contains("mega");
+      if (isMegaTrigger) return;
+
       link.addEventListener("click", function () {
         navLinks.classList.remove("open");
         menuToggle.textContent = "☰";
@@ -40,6 +47,115 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         header.classList.remove("scrolled");
       }
+    });
+  }
+
+  /* ---------- MEGA MENU: TEK PANEL, İÇERİK DEĞİŞİMİ ----------
+     Tedarik/Kalite arasında panel kapanıp açılmaz, sadece içerik
+     ve yükseklik yumuşakça değişir (Apple tarzı davranış) */
+  var megaTriggers = document.querySelectorAll('.nav-dropdown.mega');
+  var megaOverlay = document.getElementById('megaOverlay');
+  var megaPanel = document.getElementById('megaPanelShared');
+  var megaGridContent = document.getElementById('megaGridContent');
+
+  if (megaTriggers.length && megaPanel && megaGridContent && megaOverlay) {
+    var closeTimer = null;
+    var isOpen = false;
+
+    function cancelClose() {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
+    }
+
+    function openWithContent(sourceGridEl) {
+      cancelClose();
+      var startHeight = megaPanel.offsetHeight;
+
+      var doSwap = function () {
+        megaGridContent.innerHTML = sourceGridEl.innerHTML;
+        var targetHeight = megaGridContent.scrollHeight;
+
+        megaPanel.style.height = startHeight + 'px';
+
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            megaPanel.style.height = targetHeight + 'px';
+            megaGridContent.style.opacity = '1';
+          });
+        });
+
+        if (!isOpen) {
+          megaOverlay.classList.add('active');
+          if (header) header.classList.add('scrolled');
+          isOpen = true;
+        }
+      };
+
+      if (isOpen) {
+        /* Panel zaten açık: önce mevcut metni kısaca soldur,
+           sonra içeriği değiştirip yeniden belirt */
+        megaGridContent.style.opacity = '0';
+        setTimeout(doSwap, 150);
+      } else {
+        /* İlk açılış: doğrudan soluk başlayıp belirsin */
+        megaGridContent.style.opacity = '0';
+        doSwap();
+      }
+    }
+
+    function scheduleClose() {
+      cancelClose();
+      closeTimer = setTimeout(function () {
+        megaPanel.style.height = '0px';
+        megaOverlay.classList.remove('active');
+        if (header && window.scrollY <= 50) {
+          header.classList.remove('scrolled');
+        }
+        isOpen = false;
+      }, 200);
+    }
+
+    megaTriggers.forEach(function (trigger) {
+      var sourceGrid = trigger.querySelector('.mega-source .mega-grid');
+      if (!sourceGrid) return;
+
+      trigger.addEventListener('mouseenter', function () {
+        openWithContent(sourceGrid);
+      });
+      trigger.addEventListener('mouseleave', function () {
+        scheduleClose();
+      });
+    });
+
+    megaPanel.addEventListener('mouseenter', function () {
+      cancelClose();
+    });
+    megaPanel.addEventListener('mouseleave', function () {
+      scheduleClose();
+    });
+
+    megaOverlay.addEventListener('click', function () {
+      cancelClose();
+      megaPanel.style.height = '0px';
+      megaOverlay.classList.remove('active');
+      if (header && window.scrollY <= 50) {
+        header.classList.remove('scrolled');
+      }
+      isOpen = false;
+    });
+
+    /* Mobilde Tedarik/Kalite başlığına tıklayınca aç/kapa (accordion) */
+    megaTriggers.forEach(function (trigger) {
+      var link = trigger.querySelector('a');
+      if (!link) return;
+      link.addEventListener('click', function (e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          trigger.classList.toggle('open');
+        }
+      });
     });
   }
 

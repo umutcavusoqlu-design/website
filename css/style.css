@@ -123,7 +123,7 @@ ul { list-style: none; }
   box-shadow: none;
   border-radius: 12px;
   z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 #main-header.scrolled {
@@ -1410,6 +1410,137 @@ footer {
 
 .nav-dropdown:hover .dropdown-arrow {
   transform: rotate(180deg);
+}
+
+/* ---- MEGA MENU (Tedarik / Kalite) ---- */
+
+/* Sayfa içeriğini karartan/bulanıklaştıran overlay */
+.mega-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 4, 8, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 998;
+}
+.mega-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Eski per-dropdown panel'ler artık sadece veri kaynağı, hiç görünmesin */
+.mega-source {
+  display: none !important;
+}
+
+/* TEK paylaşılan mega panel: tam genişlik, header'ın hemen altında, viewport'a göre sabit.
+   top: 99px = #main-header top:16px + .header-inner padding 4px+4px + .logo-img height 75px */
+.mega-panel-shared {
+  position: fixed;
+  top: 99px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1320px;
+  height: 0;
+  overflow: hidden;
+  background: rgba(5, 8, 14, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  z-index: 999;
+  transition: height 0.45s ease;
+}
+
+.mega-panel-shared .mega-panel-track {
+  overflow: hidden;
+}
+
+.mega-panel-track {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.mega-grid {
+  width: 100%;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 40px;
+}
+
+#megaGridContent {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mega-panel-shared .mega-grid a,
+.nav-dropdown.mega .mega-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.mega-grid a:hover {
+  background: rgba(74,158,255,0.06);
+  border-left-color: #1a6fff;
+  transform: translateX(4px);
+}
+
+.mega-title {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.mega-desc {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.4;
+}
+
+/* Mobilde paylaşılan panel devre dışı, eski basit dropdown davranışına dön */
+@media (max-width: 900px) {
+  .mega-panel-shared {
+    display: none !important;
+  }
+  .mega-source {
+    display: none;
+  }
+  /* Mobilde eski basit dropdown davranışı geri gelsin: mega-source'u
+     tekrar görünür yap ama sade liste olarak */
+  .nav-dropdown.mega.open .mega-source {
+    display: block !important;
+    position: static;
+    width: 100%;
+    height: auto;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: none;
+    box-shadow: none;
+    border-top: none;
+  }
+  .nav-dropdown.mega.open .mega-source .mega-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 4px;
+    max-width: none;
+  }
+  .mega-overlay { display: none; }
 }
 
 .nav-dropdown.lang-selector {
