@@ -872,6 +872,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 10px;
   grid-column: 2;
 }
@@ -1932,6 +1933,7 @@ footer {
 .footer-contact-info {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start !important;
   grid-column: 3;
 }
 
@@ -2367,11 +2369,12 @@ footer {
 /* FOOTER FINAL OVERRIDE — önceki tüm çakışan kuralları geçersiz kılar */
 .footer-row {
   display: grid !important;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr !important;
+  grid-template-columns: 1.3fr 1fr 0.6fr 1fr !important;
   align-items: start !important;
   justify-items: start !important;
   gap: 40px !important;
   width: 100% !important;
+  margin-bottom: 40px !important;
 }
 .footer-cta { grid-column: 1 !important; }
 .footer-about { grid-column: 2 !important; }
@@ -2380,4 +2383,41 @@ footer {
 
 .footer-nav a, .footer-contact-info p, .footer-contact-info span {
   color: rgba(255,255,255,0.85) !important;
+}
+.footer-nav {
+  align-self: end !important;
+  justify-self: end !important;
+}
+.footer-contact-info {
+  align-self: start !important;
+  margin-top: 56px !important;
+  justify-self: end !important;
+}
+.footer-about {
+  align-self: end !important;
+}
+.footer-contact-info h4 {
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 4px !important;
+}
+.footer-nav {
+  gap: 14px !important;
+}
+.footer-contact-info .contact-row {
+  gap: 14px !important;
+}
+.footer-nav a {
+  font-size: 0.82rem !important;
+  line-height: 1.4 !important;
+}
+.footer-contact-info .contact-row p,
+.footer-contact-info .contact-row p span {
+  font-size: 0.82rem !important;
+  line-height: 1.4 !important;
+}
+.footer-contact-info {
+  gap: 14px !important;
 }
