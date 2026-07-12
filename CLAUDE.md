@@ -41,22 +41,6 @@ All user-visible strings are duplicated in HTML as `data-en` / `data-tr` attribu
 - For strings containing HTML tags (e.g. `<br>`), also add `data-html` so `innerHTML` is used instead of `textContent`.
 - Input placeholders use `data-placeholder-en` / `data-placeholder-tr` instead.
 
-### CSS design tokens (`css/style.css`)
-
-All colors and the global transition duration are defined as CSS custom properties at `:root`:
-
-```css
---navy        : #0d1b2e   /* header, footer, dark sections */
---navy-light  : #162540
---orange      : #1a6fff   /* accent / CTA — named "orange" for legacy reasons but is blue */
---orange-dark : #0f58e0
---light       : #f4f6f8
---gray        : #6b7280
---border      : #e2e8f0
---text        : #1e293b
---transition  : 0.3s ease
-```
-
 Page-specific styles are written as `<style>` blocks inside each HTML file's `<head>`.
 
 ### Scroll / animation system (`js/main.js`)
