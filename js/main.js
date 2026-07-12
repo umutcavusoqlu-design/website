@@ -69,6 +69,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+    function closeNow() {
+      cancelClose();
+      megaPanel.style.height = '0px';
+      megaOverlay.classList.remove('active');
+      if (header && window.scrollY <= 50) {
+        header.classList.remove('scrolled');
+      }
+      isOpen = false;
+    }
+
     function openWithContent(sourceGridEl) {
       cancelClose();
       var startHeight = megaPanel.offsetHeight;
@@ -107,14 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function scheduleClose() {
       cancelClose();
-      closeTimer = setTimeout(function () {
-        megaPanel.style.height = '0px';
-        megaOverlay.classList.remove('active');
-        if (header && window.scrollY <= 50) {
-          header.classList.remove('scrolled');
-        }
-        isOpen = false;
-      }, 200);
+      closeTimer = setTimeout(closeNow, 200);
     }
 
     megaTriggers.forEach(function (trigger) {
@@ -137,13 +140,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     megaOverlay.addEventListener('click', function () {
-      cancelClose();
-      megaPanel.style.height = '0px';
-      megaOverlay.classList.remove('active');
-      if (header && window.scrollY <= 50) {
-        header.classList.remove('scrolled');
-      }
-      isOpen = false;
+      closeNow();
+    });
+
+    megaGridContent.addEventListener('click', function (e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      closeNow();
     });
 
     /* Mobilde Tedarik/Kalite başlığına tıklayınca aç/kapa (accordion) */
