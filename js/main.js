@@ -41,13 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
      biraz daha koyu ve gölgeli olur                */
   var header = document.getElementById("main-header");
   if (header) {
-    window.addEventListener("scroll", function () {
+    function updateHeaderScrolled() {
       if (window.scrollY > 50) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
       }
-    });
+    }
+    window.addEventListener("scroll", updateHeaderScrolled);
+    updateHeaderScrolled();
+    window.addEventListener("load", updateHeaderScrolled);
+    setTimeout(updateHeaderScrolled, 100);
+    setTimeout(updateHeaderScrolled, 400);
   }
 
   /* ---------- MEGA MENU: TEK PANEL, İÇERİK DEĞİŞİMİ ----------

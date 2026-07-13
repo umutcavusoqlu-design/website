@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    style.css — RAU Metals Ana Stil Dosyası
    Renk Paleti:
      --navy   : Koyu lacivert (header, footer, koyu bölümler)
@@ -1027,14 +1027,9 @@ footer {
 }
 
 /* ---- ANİMASYON (görünüme girince belirir) ---- */
-[data-animate] {
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
-}
 
-[data-animate].visible {
-  opacity: 1;
-}
+
+
 
 /* Gecikme sınıfları — kartlar art arda belirir */
 [data-animate].delay-1 { transition-delay: 0.1s; }
@@ -1592,7 +1587,7 @@ footer {
   background: rgba(5, 8, 14, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 0 0 16px 16px;
+  border-radius: 12px 12px 16px 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   z-index: 999;
   transition: height 0.45s ease;
@@ -1645,6 +1640,24 @@ footer {
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.08em;
+}
+
+.mega-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mega-arrow {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  transition: transform 0.2s ease;
+}
+
+.mega-grid a:hover .mega-arrow {
+  transform: translateX(3px);
+  color: #ffffff;
 }
 
 .mega-desc {
@@ -2481,4 +2494,15 @@ footer {
 }
 .footer-contact-info {
   gap: 14px !important;
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
 }
