@@ -177,10 +177,12 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const el = entry.target;
-          const siblings = Array.from(el.parentElement.querySelectorAll('[data-animate]'));
+          const siblings = Array.from(el.parentElement.children).filter(function (child) {
+            return child.hasAttribute('data-animate');
+          });
           const index = siblings.indexOf(el);
           const existingDelay = el.style.animationDelay;
-          const delay = existingDelay ? parseFloat(existingDelay) * 1000 : index * 150;
+          const delay = existingDelay ? parseFloat(existingDelay) * 1000 : Math.min(index * 120, 480);
           setTimeout(() => {
             el.classList.add('visible');
           }, delay);
