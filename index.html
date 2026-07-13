@@ -200,7 +200,7 @@
         <div class="hero-inner">
 
           <!-- SOL: metin içeriği -->
-          <div class="hero-content">
+          <div class="hero-content" data-animate>
 
             <p class="hero-label" style="text-align:left; color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:12px; font-family:'Plus Jakarta Sans', sans-serif;">Alüminyum Tedarik ve Süreç Yönetim Ortağınız</p>
             <div class="hero-slogan">
@@ -293,7 +293,7 @@
   <section id="surec" style="scroll-margin-top:120px; padding:48px 0; background:#f8f9fb;">
   <div style="max-width:1320px; margin:0 auto; padding:0 40px;">
     <div style="text-align:center; margin-bottom:48px;">
-<h2 class="section-title" style="margin-top:8px;">Tedarik Süreci Yönetimimiz</h2>
+<h2 class="section-title" data-animate style="margin-top:8px;">Tedarik Süreci Yönetimimiz</h2>
 <div style="width:200px; height:3px; background:#e5e7eb; border-radius:2px; margin:12px auto 32px; overflow:hidden;">
   <div id="surec-bar" style="height:100%; width:20%; background:linear-gradient(to right, #1a2b4a, #c0a060); border-radius:2px; transition:width 0.5s ease;"></div>
 </div>
@@ -302,27 +302,27 @@
 
     <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px; align-items:stretch;">
 
-      <div id="surec-kart-0" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
+      <div id="surec-kart-0" data-animate style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1.05rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Talep ve Teknik Değerlendirme</h4>
         <p style="font-size:0.88rem; color:#6b7280; line-height:1.75; flex:1;">İhtiyacınızı dinler; ölçü, alaşım, yüzey, tolerans, paketleme ve teslimat beklentilerini teknik açıdan netleştiririz.</p>
       </div>
 
-      <div id="surec-kart-1" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
+      <div id="surec-kart-1" data-animate style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1.05rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Doğru Üretici Seçimi</h4>
         <p style="font-size:0.88rem; color:#6b7280; line-height:1.75; flex:1;">Projenize uygun üretim kabiliyeti, kalite yaklaşımı ve termin performansına sahip üreticiyi belirler; fiyat–kalite–termin dengesini sizin adınıza değerlendiririz.</p>
       </div>
 
-      <div id="surec-kart-2" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
+      <div id="surec-kart-2" data-animate style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1.05rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Üretim ve Tedarik Koordinasyonu</h4>
         <p style="font-size:0.88rem; color:#6b7280; line-height:1.75; flex:1;">Onaylanan teknik bilgiler doğrultusunda siparişi üreticiyle koordine eder, tedarik planını oluşturur ve süreci düzenli olarak takip ederiz.</p>
       </div>
 
-      <div id="surec-kart-3" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
+      <div id="surec-kart-3" data-animate style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1.05rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Kalite Kontrol ve Dokümantasyon</h4>
         <p style="font-size:0.88rem; color:#6b7280; line-height:1.75; flex:1;">Üretim sürecinde ölçüsel ve görsel kontrolleri takip eder; talep edilen rapor, sertifika ve kalite dokümanlarının sürece uygun şekilde hazırlanmasını koordine ederiz.</p>
       </div>
 
-      <div id="surec-kart-4" style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
+      <div id="surec-kart-4" data-animate style="background:#fff; border:1.5px solid #e5e7eb; border-radius:12px; padding:24px 16px; text-align:center; display:flex; flex-direction:column;">
         <h4 style="font-size:1.05rem; font-weight:700; color:#0d1b2e; margin-bottom:8px;">Lojistik ve Teslimat Yönetimi</h4>
         <p style="font-size:0.88rem; color:#6b7280; line-height:1.75; flex:1;">Paketleme, sevkiyat ve teslimat sürecini organize eder; ürünlerin planlanan termin doğrultusunda güvenli şekilde ulaştırılmasını takip ederiz.</p>
       </div>
@@ -379,7 +379,7 @@
   }
 
   kartlar.forEach((k, i) => {
-    k.style.transition = 'border-color 0.35s, background 0.35s, box-shadow 0.35s';
+    k.style.transition = 'border-color 0.35s, background 0.35s, box-shadow 0.35s, opacity 0.7s ease, transform 0.7s ease';
     k.style.cursor = 'pointer';
     k.addEventListener('click', () => yandir(i));
   });
@@ -413,12 +413,12 @@
     </div>
     <div class="container">
       <div class="sector-grid">
-        <div class="sector-card"><img src="images/sector-insaat.webp" alt="İnşaat & Mimari Sistemler" loading="lazy"><span>İnşaat & Mimari Sistemler</span></div>
-        <div class="sector-card"><img src="images/sector-endustriyel.webp" alt="Endüstriyel & Makine İmalatı" loading="lazy"><span>Endüstriyel & Makine İmalatı</span></div>
-        <div class="sector-card"><img src="images/sector-otomotiv.webp" alt="Otomotiv & Ulaşım" loading="lazy"><span>Otomotiv & Ulaşım</span></div>
-        <div class="sector-card"><img src="images/sector-gunes.webp" alt="Enerji & Elektrik-Elektronik" loading="lazy"><span>Enerji & Elektrik-Elektronik</span></div>
-        <div class="sector-card"><img src="images/sector-mobilya.webp" alt="Mobilya & İç Mekân Çözümleri" loading="lazy"><span>Mobilya & İç Mekân Çözümleri</span></div>
-        <div class="sector-card"><img src="images/sector-ozel.webp" alt="Özel Uygulamalar" loading="lazy"><span>Özel Uygulamalar</span></div>
+        <div class="sector-card" data-animate><img src="images/sector-insaat.webp" alt="İnşaat & Mimari Sistemler" loading="lazy"><span>İnşaat & Mimari Sistemler</span></div>
+        <div class="sector-card" data-animate><img src="images/sector-endustriyel.webp" alt="Endüstriyel & Makine İmalatı" loading="lazy"><span>Endüstriyel & Makine İmalatı</span></div>
+        <div class="sector-card" data-animate><img src="images/sector-otomotiv.webp" alt="Otomotiv & Ulaşım" loading="lazy"><span>Otomotiv & Ulaşım</span></div>
+        <div class="sector-card" data-animate><img src="images/sector-gunes.webp" alt="Enerji & Elektrik-Elektronik" loading="lazy"><span>Enerji & Elektrik-Elektronik</span></div>
+        <div class="sector-card" data-animate><img src="images/sector-mobilya.webp" alt="Mobilya & İç Mekân Çözümleri" loading="lazy"><span>Mobilya & İç Mekân Çözümleri</span></div>
+        <div class="sector-card" data-animate><img src="images/sector-ozel.webp" alt="Özel Uygulamalar" loading="lazy"><span>Özel Uygulamalar</span></div>
       </div>
     </div>
   </section>
@@ -431,7 +431,7 @@
   ====================================================== -->
   <section class="why-section">
     <div class="container">
-      <h2 class="section-title light">Neden RAU Metals?</h2>
+      <h2 class="section-title light" data-animate>Neden RAU Metals?</h2>
     </div>
   </section>
   <!-- /NEDEN BİZ -->
@@ -447,15 +447,15 @@
       <p>RAU Metals, kurucu ortaklarının alüminyum sektöründeki saha, üretim ve ticaret tecrübesini; teknik tedarik, üretici koordinasyonu, kalite takibi ve lojistik yönetimiyle bir araya getirir. Amacımız, müşterilerimize yalnızca ürün değil; güvenilir, izlenebilir ve katma değer yaratan bir tedarik süreci sunmaktır.</p>
     </div>
     <div class="rau-intro-grid">
-      <div class="rau-intro-card">
+      <div class="rau-intro-card" data-animate>
         <h3>Deneyim</h3>
         <p>Kurucu ortaklarımızın alüminyum sektöründeki toplam 45 yıllık tecrübesiyle, müşteri ihtiyaçlarını doğru analiz eder ve projeye uygun tedarik çözümleri geliştiririz.</p>
       </div>
-      <div class="rau-intro-card">
+      <div class="rau-intro-card" data-animate>
         <h3>Kalite Yaklaşımı</h3>
         <p>Kaliteyi yalnızca ürün uygunluğu olarak değil; üretici seçimi, süreç takibi, dokümantasyon ve teslimat yönetiminin bir parçası olarak ele alırız.</p>
       </div>
-      <div class="rau-intro-card">
+      <div class="rau-intro-card" data-animate>
         <h3>Termin Disiplini</h3>
         <p>Siparişten sevkiyata kadar süreci planlı şekilde takip eder, müşterilerimize şeffaf ve düzenli bilgi akışı sağlamayı hedefleriz.</p>
       </div>

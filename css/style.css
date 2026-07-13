@@ -1028,25 +1028,22 @@ footer {
 
 /* ---- ANİMASYON (görünüme girince belirir) ---- */
 
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
 
-
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Gecikme sınıfları — kartlar art arda belirir */
 [data-animate].delay-1 { transition-delay: 0.1s; }
 [data-animate].delay-2 { transition-delay: 0.2s; }
 [data-animate].delay-3 { transition-delay: 0.3s; }
 [data-animate].delay-4 { transition-delay: 0.4s; }
-
-[data-scroll-anim] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-[data-scroll-anim].scroll-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ---- MOBİL UYUMLU (Responsive) ---- */
 @media (max-width: 1024px) {
@@ -2494,15 +2491,4 @@ footer {
 }
 .footer-contact-info {
   gap: 14px !important;
-}
-
-[data-animate] {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-[data-animate].visible {
-  opacity: 1;
-  transform: translateY(0);
 }
