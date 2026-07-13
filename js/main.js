@@ -208,30 +208,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const scrollAnimElements = document.querySelectorAll('[data-scroll-anim]');
-
-  if (scrollAnimElements.length > 0) {
-    const scrollObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('scroll-visible');
-          scrollObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    scrollAnimElements.forEach(el => scrollObserver.observe(el));
-  }
-
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    const speed = Math.abs(currentScroll - lastScroll);
-    const duration = Math.max(0.3, 1.2 - speed * 0.01);
-    document.querySelectorAll('[data-scroll-anim]:not(.scroll-visible)').forEach(el => {
-      el.style.transitionDuration = duration + 's';
-    });
-    lastScroll = currentScroll;
-  }, { passive: true });
-
 });
