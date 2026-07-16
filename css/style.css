@@ -1438,6 +1438,7 @@ footer {
   text-transform: none;
   transition: color 0.2s ease;
   display: inline-block;
+  white-space: nowrap;
   padding: 0;
   margin: 0;
 }
