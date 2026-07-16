@@ -14,10 +14,14 @@ Static multi-page website for **RAU Metals**, an aluminum extrusion profiles man
 | `production.html` | Production details |
 | `quality.html` | Quality & certifications |
 | `about.html` | Company info |
-| `services.html` | Services |
 | `contact.html` | Contact form + info cards |
+| `kvkk.html` | Privacy policy / KVKK disclosure |
+| `kullanim-sartlari.html` | Terms of use |
+| `404.html` | Not-found page |
 
-All pages share `css/style.css`, `js/lang.js`, and `js/main.js` loaded at the bottom of `<body>`.
+All pages share `css/style.css` and `js/main.js`, loaded at the bottom of `<body>`.
+
+**Note:** There is no `services.html` page currently in the project.
 
 ## Running / Previewing
 
@@ -33,13 +37,9 @@ No compilation, bundling, or installation step required.
 
 ## Architecture
 
-### Bilingual content system (`js/lang.js`)
+### Language switcher (currently non-functional)
 
-All user-visible strings are duplicated in HTML as `data-en` / `data-tr` attributes. `lang.js` reads the active language from `localStorage` (key: `rau-lang`, default `en`) and sets `element.textContent` from the matching attribute on `DOMContentLoaded`. To switch languages, call `switchLang('en')` or `switchLang('tr')`.
-
-- Add new translatable text by putting both attributes on the element: `data-en="..." data-tr="..."`.
-- For strings containing HTML tags (e.g. `<br>`), also add `data-html` so `innerHTML` is used instead of `textContent`.
-- Input placeholders use `data-placeholder-en` / `data-placeholder-tr` instead.
+The header includes a TR/EN flag dropdown, but it is **visual only** — there is no `js/lang.js` file, no `data-en`/`data-tr` attributes, and no JS wired up to switch languages. All visible text is hardcoded in Turkish. If bilingual support is implemented in the future, this section should be rewritten to document the real mechanism.
 
 Page-specific styles are written as `<style>` blocks inside each HTML file's `<head>`.
 
