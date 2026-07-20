@@ -2493,3 +2493,10 @@ footer {
 .footer-contact-info {
   gap: 14px !important;
 }
+
+#main-header, #main-header.scrolled, .page-hero, .container, #main-header .container {
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
