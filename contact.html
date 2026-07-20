@@ -379,15 +379,15 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label>Ad Soyad *</label>
-                <input type="text" name="name" required
+                <label for="field-name">Ad Soyad *</label>
+                <input type="text" id="field-name" name="name" required
                        data-placeholder-en="Ad Soyad"
                        data-placeholder-tr="Ad Soyad"
                        placeholder="Ad Soyad" />
               </div>
               <div class="form-group">
-                <label>Firma *</label>
-                <input type="text" name="company" required
+                <label for="field-company">Firma *</label>
+                <input type="text" id="field-company" name="company" required
                        data-placeholder-en="Firma Adı"
                        data-placeholder-tr="Firma Adı"
                        placeholder="Firma Adı" />
@@ -396,15 +396,15 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label>E-posta *</label>
-                <input type="email" name="email" required
+                <label for="field-email">E-posta *</label>
+                <input type="email" id="field-email" name="email" required
                        data-placeholder-en="siz@firma.com"
                        data-placeholder-tr="siz@firma.com"
                        placeholder="siz@firma.com" />
               </div>
               <div class="form-group">
-                <label>Telefon *</label>
-                <input type="tel" name="phone" required
+                <label for="field-phone">Telefon *</label>
+                <input type="tel" id="field-phone" name="phone" required
                        data-placeholder-en="+90 000 000 00 00"
                        data-placeholder-tr="+90 000 000 00 00"
                        placeholder="+90 000 000 00 00" />
@@ -412,8 +412,8 @@
             </div>
 
             <div class="form-group">
-              <label>Ürün / Uygulama *</label>
-              <select name="subject" required>
+              <label for="field-subject">Ürün / Uygulama *</label>
+              <select id="field-subject" name="subject" required>
                 <option value="">Kategori seçin</option>
                 <option value="insaat">İnşaat & Mimari Sistemler</option>
                 <option value="endustriyel">Endüstriyel & Makine İmalatı</option>
@@ -425,8 +425,8 @@
             </div>
 
             <div class="form-group">
-              <label>Mesaj *</label>
-              <textarea name="message" required
+              <label for="field-message">Mesaj *</label>
+              <textarea id="field-message" name="message" required
                         data-placeholder-en="Talep ettiğiniz ürün, miktar ve tüm teknik detayları buraya yazınız."
                         data-placeholder-tr="Talep ettiğiniz ürün, miktar ve tüm teknik detayları buraya yazınız."
                         placeholder="Talep ettiğiniz ürün, miktar ve tüm teknik detayları buraya yazınız."></textarea>
@@ -434,7 +434,7 @@
 
             <!-- Dosya yükleme (çizim için) -->
             <div class="form-group">
-              <label>Çizim Yükle (opsiyonel)</label>
+              <p class="form-group-title" style="font-size:0.82rem; font-weight:600; color:var(--navy); margin-bottom:6px;">Çizim Yükle (opsiyonel)</p>
               <p style="font-size:0.75rem; color:#6b7280; margin-bottom:8px;">PDF, DWG, DXF, STEP, IGES, Excel, Word ve ZIP formatları desteklenmektedir. Maksimum dosya boyutu: 100MB</p>
               <label class="file-upload" for="file-input">
                 <input type="file" id="file-input" name="file" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.step,.stp,.iges,.igs,.xlsx,.xls,.doc,.docx,.zip" multiple />
