@@ -1,45 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://raumetals.com/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/"/>
   </url>
   <url>
     <loc>https://raumetals.com/about</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/about"/>
   </url>
   <url>
     <loc>https://raumetals.com/production</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/production"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/production"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/production"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/production"/>
   </url>
   <url>
     <loc>https://raumetals.com/quality</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/quality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/quality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/quality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/quality"/>
   </url>
   <url>
     <loc>https://raumetals.com/contact</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/contact"/>
   </url>
   <url>
     <loc>https://raumetals.com/kvkk</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/kvkk"/>
   </url>
   <url>
     <loc>https://raumetals.com/kullanim-sartlari</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/kullanim-sartlari"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/about</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/about"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/production</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/production"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/production"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/production"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/production"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/quality</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/quality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/quality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/quality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/quality"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/contact</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/contact"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/kvkk</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/kvkk"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/en/kullanim-sartlari</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/kullanim-sartlari"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/about</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/about"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/production</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/production"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/production"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/production"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/production"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/quality</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/quality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/quality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/quality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/quality"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/contact</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/contact"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/kvkk</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/kvkk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/kvkk"/>
+  </url>
+  <url>
+    <loc>https://raumetals.com/de/kullanim-sartlari</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://raumetals.com/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://raumetals.com/en/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://raumetals.com/de/kullanim-sartlari"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://raumetals.com/kullanim-sartlari"/>
   </url>
 </urlset>
