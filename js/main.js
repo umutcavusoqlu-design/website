@@ -201,11 +201,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ---------- AKTİF SAYFA LİNKİ ----------
      Hangi sayfada olduğunu algıla ve o linki
-     navigasyonda "aktif" olarak işaretle         */
-  var currentPage = window.location.pathname.split("/").pop() || "index.html";
+     navigasyonda "aktif" olarak işaretle.
+     Site artık uzantısız URL'ler kullanıyor (ör. /about), ama yerel
+     önizlemede (about.html'i doğrudan açma) hâlâ .html uzantısı
+     görülebilir — ikisini de aynı sayfa adına indirger.            */
+  function sayfaAdi(yol) {
+    var parcalar = yol.split("/").filter(Boolean);
+    var son = parcalar.length ? parcalar[parcalar.length - 1] : "index";
+    son = son.replace(/\.html$/, "");
+    return son === "" ? "index" : son;
+  }
+  var currentPage = sayfaAdi(window.location.pathname);
   document.querySelectorAll("#nav-links a").forEach(function (link) {
     var href = link.getAttribute("href");
-    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+    if (href && sayfaAdi(href) === currentPage) {
       link.classList.add("active");
     }
   });
