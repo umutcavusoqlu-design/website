@@ -623,6 +623,7 @@ function removeFile(index) {
       formData.append('phone', form.querySelector('input[name="phone"]').value);
       formData.append('subject', form.querySelector('select[name="subject"]').value);
       formData.append('message', form.querySelector('textarea[name="message"]').value);
+      formData.append('cf-turnstile-response', form.querySelector('[name="cf-turnstile-response"]').value);
 
       selectedFiles.forEach(function(file) {
         if (file !== null) {
