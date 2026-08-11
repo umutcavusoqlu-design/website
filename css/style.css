@@ -143,7 +143,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 60px;
+  padding: 4px clamp(16px, 5vw, 60px);
   gap: 0;
 }
 
@@ -167,7 +167,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: clamp(16px, 4vw, 40px);
   position: relative;
 }
 
@@ -1047,10 +1047,11 @@ footer {
 
 /* ---- MOBİL UYUMLU (Responsive) ---- */
 @media (max-width: 1024px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .apps-grid     { grid-template-columns: repeat(3, 1fr); }
-  .footer-grid   { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .why-grid      { grid-template-columns: 1fr; }
+  .products-grid  { grid-template-columns: repeat(2, 1fr); }
+  .apps-grid      { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid    { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .why-grid       { grid-template-columns: 1fr; }
+  .rau-intro-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -2331,7 +2332,10 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(0,0,0,0.65);
   color: #fff;
   font-size: 0.95rem;
@@ -2499,4 +2503,33 @@ footer {
   border-bottom: none !important;
   box-shadow: none !important;
   outline: none !important;
+}
+
+/* ---- FOOTER: MOBİL TEK SÜTUN ----
+   FOOTER FINAL OVERRIDE bloğu (yukarıda) 4 sütunlu masaüstü grid'ini
+   !important ile her genişlikte uyguluyor. Eski mobil kuralı yanlışlıkla
+   artık kullanılmayan .footer-grid sınıfını hedefliyordu (gerçek markup
+   .footer-row kullanıyor) — bu yüzden footer mobilde hiç tek sütuna
+   inmiyordu. Bu blok aynı özgüllük ve önceliği .footer-row ve doğrudan
+   çocuklarına doğru uygular. */
+@media (max-width: 768px) {
+  .footer-row {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    justify-items: center !important;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+  }
+  .footer-cta,
+  .footer-about,
+  .footer-nav,
+  .footer-contact-info {
+    grid-column: 1 !important;
+    justify-self: center !important;
+    align-self: auto !important;
+    margin-top: 0 !important;
+  }
+  .footer-nav {
+    align-items: center !important;
+  }
 }
