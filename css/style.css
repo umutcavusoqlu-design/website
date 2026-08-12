@@ -388,7 +388,7 @@ ul { list-style: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .feature-item {
@@ -406,6 +406,9 @@ ul { list-style: none; }
 }
 .feature-item > div > span {
   overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .feature-item:not(:last-child) {
@@ -453,6 +456,9 @@ ul { list-style: none; }
   font-weight: 700;
   margin-bottom: 2px;
   overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .feature-desc {
