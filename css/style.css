@@ -262,8 +262,16 @@ ul { list-style: none; }
 }
 
 .hero-bg {
+  /* inset:0 yerine sabit 100vh: .hero, taşan içerik yüzünden (yüksek
+     zoom'da) 100vh'ı aşıp içerik-güdümlü büyüyebiliyordu; bg katmanı
+     ebeveynin gerçek yüksekliğini izlerse bu, cover oranını kaydırıyordu.
+     Sabit 100vh, arkaplanı içerik yüksekliğinden tamamen bağımsız kılıp
+     zoom'dan bağımsız aynı kırpma oranını garanti ediyor. */
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
   z-index: 0;
   background-size: cover;
   background-repeat: no-repeat;
