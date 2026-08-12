@@ -390,6 +390,16 @@ ul { list-style: none; }
   padding: 0;
 }
 
+/* İkon dışındaki metin sütunu, flex öğelerinin varsayılan min-width:auto
+   davranışı yüzünden küçülemiyordu — EN/DE çevirilerinde ("Zertifiziertes
+   Herstellernetzwerk" gibi) bu, tüm satırın taşmasına yol açıyordu. */
+.feature-item > div {
+  min-width: 0;
+}
+.feature-item > div > span {
+  overflow-wrap: break-word;
+}
+
 .feature-item:not(:last-child) {
 }
 
@@ -434,6 +444,7 @@ ul { list-style: none; }
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 2px;
+  overflow-wrap: break-word;
 }
 
 .feature-desc {
@@ -1052,6 +1063,14 @@ footer {
   .footer-grid    { grid-template-columns: 1fr 1fr; gap: 24px; }
   .why-grid       { grid-template-columns: 1fr; }
   .rau-intro-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* EN/DE çevirilerinde nav metinleri (ör. "Startseite", "Produktion",
+     "Über uns") TR'den uzun olduğu için 769-1024px aralığında
+     header.clamp() değerleri tek başına yetmiyor — bu aralıkta
+     daha sıkı sabit değerlere düşürüyoruz. */
+  .header-inner      { padding: 4px 16px; }
+  #nav-links         { gap: 10px; }
+  .nav-dropdown.mega { padding: 0 6px; }
 }
 
 @media (max-width: 768px) {
@@ -1639,6 +1658,7 @@ footer {
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.08em;
+  overflow-wrap: break-word;
 }
 
 .mega-title-row {
@@ -1666,6 +1686,7 @@ footer {
   font-weight: 400;
   color: rgba(255,255,255,0.55);
   line-height: 1.4;
+  overflow-wrap: break-word;
 }
 
 /* Mobilde paylaşılan panel devre dışı, eski basit dropdown davranışına dön */
